@@ -6,6 +6,7 @@ import { MotionDiv } from '@/components/shared/MotionDiv';
 import { StatsCounter } from '@/components/shared/StatsCounter';
 import { HowYouCanHelp } from '@/components/home/HowYouCanHelp';
 import { FeaturedAnimals } from '@/components/home/FeaturedAnimals';
+import { WhatWeDo } from '@/components/home/WhatWeDo';
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'hero');
 
@@ -57,6 +58,9 @@ export default function Home() {
 
         {/* How You Can Help Section */}
         <HowYouCanHelp />
+
+        {/* What We Do Section */}
+        <WhatWeDo />
         
         {/* Featured Animals Section */}
         <FeaturedAnimals />

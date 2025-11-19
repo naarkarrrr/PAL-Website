@@ -23,33 +23,29 @@ import { Logo } from '../shared/Logo';
 const mainNav: { title: string; href: string; description?: string, subLinks?: { title: string; href: string; description: string }[] }[] = [
     { title: "Home", href: "/" },
     { 
-      title: "About", 
-      href: "/about",
+      title: "Who We Are", 
+      href: "#",
       subLinks: [
         { title: "Our Story", href: "/our-story", description: "Our journey and commitment to animals." },
         { title: "Mission & Vision", href: "/mission-vision", description: "Our goals and guiding principles." },
         { title: "Our Team", href: "/team", description: "Meet our dedicated team members." },
+        { title: "Success Stories", href: "/success-stories", description: "Happy adoption tales." },
       ]
     },
     { 
-      title: "Shop", 
-      href: "/shop",
-      subLinks: [
-        { title: "All Products", href: "/shop", description: "Browse all our pet supplies." },
-        { title: "Food", href: "/shop/food", description: "Nutritious food for your pets." },
-        { title: "Toys", href: "/shop/toys", description: "Fun and engaging toys." },
-      ]
-    },
-    { 
-      title: "Pages", 
+      title: "What We Do", 
       href: "#",
       subLinks: [
-        { title: "Success Stories", href: "/success-stories", description: "Happy adoption tales." },
-        { title: "Gallery", href: "/gallery", description: "Photos from our community." },
-        { title: "Donate", href: "/donate", description: "Support our cause." },
+        { title: "Legal Help", href: "/legal-help", description: "Legal support against animal cruelty." },
+        { title: "Rescue & Rehab", href: "/rescue-rehab", description: "Emergency rescue and rehabilitation." },
+        { title: "Spay & Neuter", href: "/spay-neuter", description: "Controlling overpopulation humanely." },
+        { title: "Feed The Stray", href: "/feed-the-stray", description: "Providing regular, nutritious meals." },
+        { title: "Vaccination Drive", href: "/vaccination-drive", description: "Protecting strays from deadly diseases." },
+        { title: "Adoption & Release", href: "/adoption-and-release", description: "Finding loving forever homes." },
       ]
     },
-    { title: "Contacts", href: "/contact" },
+    { title: "Adopt", href: "/adopt" },
+    { title: "Contact", href: "/contact" },
 ];
 
 
