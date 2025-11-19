@@ -7,7 +7,7 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "PAL Foundation | Animal Rescue, Adoption & Welfare",
-  description: "PAL Foundation is a non-profit animal rescue organization. We rescue, rehabilitate, and rehome animals in need. Adopt a pet, volunteer, or donate to support our mission.",
+  description: "Support PAL Foundation, a non-profit animal rescue. We rescue, rehabilitate, and rehome animals in need. Adopt, volunteer, or donate today.",
 };
 
 export default function RootLayout({
