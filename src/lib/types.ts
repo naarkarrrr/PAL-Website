@@ -60,6 +60,9 @@ export interface SuccessStory {
   story: string;
   imageUrl: string;
   imageHint: string;
+  author?: string;
+  date?: Date;
+  tags?: string[];
 }
 
 // Mission Type
@@ -89,3 +92,5 @@ export interface Story {
         event: string;
     }[];
 }
+
+    
