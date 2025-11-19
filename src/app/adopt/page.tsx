@@ -79,20 +79,21 @@ export default function AdoptPage() {
                   </SelectContent>
                 </Select>
             </div>
-             <div>
-               <label htmlFor="age" className="block text-sm font-medium text-foreground mb-2">Age</label>
-                 <Select>
-                  <SelectTrigger id="age" className="bg-background">
-                    <SelectValue placeholder="Any Age" />
-                  </Trigger>
-                  <SelectContent>
-                    <SelectItem value="puppy">Puppy/Kitten</SelectItem>
-                    <SelectItem value="young">Young</SelectItem>
-                    <SelectItem value="adult">Adult</SelectItem>
-                     <SelectItem value="senior">Senior</SelectItem>
-                  </SelectContent>
-                </Select>
+            <div>
+              <label htmlFor="age" className="block text-sm font-medium text-foreground mb-2">Age</label>
+              <Select>
+                <SelectTrigger id="age" className="bg-background">
+                  <SelectValue placeholder="Any Age" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="puppy">Puppy/Kitten</SelectItem>
+                  <SelectItem value="young">Young</SelectItem>
+                  <SelectItem value="adult">Adult</SelectItem>
+                  <SelectItem value="senior">Senior</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
+=
             <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base">
               <Search className="mr-2 h-4 w-4"/>
               Find a Pet
