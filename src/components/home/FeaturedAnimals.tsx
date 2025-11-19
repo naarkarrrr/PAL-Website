@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { MotionDiv } from '@/components/shared/MotionDiv';
+import { ArrowRight } from 'lucide-react';
 
 const featuredAnimals = PlaceHolderImages.filter(p => ['1', '2', '3']);
 
@@ -52,7 +53,9 @@ export function FeaturedAnimals() {
         </div>
         <div className="text-center mt-12">
           <Button asChild size="lg" variant="outline">
-            <Link href="/adopt">Meet More Animals</Link>
+            <Link href="/adopt">
+              Meet More Animals <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
         </div>
       </div>
