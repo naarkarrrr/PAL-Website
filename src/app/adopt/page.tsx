@@ -1,3 +1,5 @@
+
+'use client';
 import { PageHeader } from "@/components/shared/PageHeader";
 import { AnimalCard } from "@/components/adoption/AnimalCard";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -12,6 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { useEffect, useState } from "react";
 
 
 async function getAnimals(): Promise<Animal[]> {
@@ -25,7 +28,7 @@ async function getAnimals(): Promise<Animal[]> {
              p.imageHint.includes('tabby') ? 'Tabby' :
              p.imageHint.includes('shepherd') ? 'German Shepherd' : 'Mixed Breed',
       age: 'Adult',
-      gender: Math.random() > 0.5 ? 'Male' : 'Female',
+      gender: 'Female', // Static for now to avoid hydration issues
       personality: 'Friendly and playful',
       description: `This is a wonderful animal looking for a forever home.`,
       imageUrl: p.imageUrl,
@@ -36,14 +39,22 @@ async function getAnimals(): Promise<Animal[]> {
 }
 
 
-export default async function AdoptPage() {
-  const animals = await getAnimals();
+export default function AdoptPage() {
+  const [animals, setAnimals] = useState<Animal[]>([]);
+
+  useEffect(() => {
+    async function fetchAnimals() {
+      const fetchedAnimals = await getAnimals();
+      setAnimals(fetchedAnimals);
+    }
+    fetchAnimals();
+  }, []);
 
   return (
     <div>
       <PageHeader
         title="Adopt a Pet"
-        subtitle="Browse our loving animals who are waiting for a forever home. Give a rescue pet a second chance."
+        subtitle="Find your perfect companion. Give a rescue pet a second chance at a happy life."
       />
       <div className="container mx-auto px-4 py-16">
         <div className="bg-card shadow-lg rounded-xl p-6 mb-12 sticky top-24 z-10 border">

@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -6,6 +7,7 @@ import type { Animal } from '@/lib/types';
 import { PawPrint, Heart } from 'lucide-react';
 import Link from 'next/link';
 import { MotionDiv } from '@/components/shared/MotionDiv';
+import { useEffect, useState } from 'react';
 
 async function getAnimalById(id: string): Promise<Animal | null> {
   // Mock fetching logic
@@ -31,8 +33,17 @@ async function getAnimalById(id: string): Promise<Animal | null> {
   };
 }
 
-export default async function AnimalDetailPage({ params }: { params: { id: string } }) {
-  const animal = await getAnimalById(params.id);
+export default function AnimalDetailPage({ params }: { params: { id: string } }) {
+  const [animal, setAnimal] = useState<Animal | null>(null);
+
+  useEffect(() => {
+    async function fetchAnimal() {
+      const fetchedAnimal = await getAnimalById(params.id);
+      setAnimal(fetchedAnimal);
+    }
+    fetchAnimal();
+  }, [params.id]);
+
 
   if (!animal) {
     return <div className="text-center py-20">Animal not found.</div>;
