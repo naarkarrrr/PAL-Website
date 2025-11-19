@@ -1,10 +1,12 @@
+
 'use server';
 
 import { revalidatePath } from 'next/cache';
 import { addDoc, collection } from 'firebase/firestore';
 import { z } from 'zod';
 import { db } from './firebase';
-import { AmbulanceRequestSchema, AnimalSchema, ContactSchema, VolunteerSchema } from './types';
+import { AmbulanceRequestSchema, AnimalSchema, ContactSchema, MembershipSchema, VolunteerSchema } from './types';
+// import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 // Generic function to handle form submission
 async function handleFormSubmission(
@@ -44,4 +46,44 @@ export async function submitContactForm(data: unknown) {
 
 export async function addAnimal(data: unknown) {
   return handleFormSubmission('animals', AnimalSchema, data, '/adopt');
+}
+
+
+// Function to upload a file to Firebase Storage
+// async function uploadFileToStorage(file: File, uid: string) {
+//   const storage = getStorage();
+//   const storageRef = ref(storage, `volunteers/${uid}/aadhaar/${file.name}`);
+//   const snapshot = await uploadBytes(storageRef, file);
+//   const downloadURL = await getDownloadURL(snapshot.ref);
+//   return downloadURL;
+// }
+
+
+export async function submitMembershipForm(data: unknown) {
+  try {
+    const validatedData = MembershipSchema.parse(data);
+    // const { aadhaarCard, ...formData } = validatedData;
+    
+    // let fileUrl = '';
+    // if (aadhaarCard && aadhaarCard.size > 0) {
+    //   // A real UID should be generated or retrieved from auth
+    //   const uid = new Date().getTime().toString(); 
+    //   fileUrl = await uploadFileToStorage(aadhaarCard, uid);
+    // }
+
+    await addDoc(collection(db, 'membershipApplications'), {
+      ...validatedData,
+      // aadhaarCardUrl: fileUrl,
+      createdAt: new Date(),
+    });
+
+    return { success: true, message: 'Registration submitted! We will reach out soon.' };
+
+  } catch (error) {
+    console.error('Error submitting membership form:', error);
+     if (error instanceof z.ZodError) {
+      return { success: false, message: 'Validation failed.', errors: error.errors };
+    }
+    return { success: false, message: 'An unexpected error occurred.' };
+  }
 }

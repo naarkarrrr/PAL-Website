@@ -1,4 +1,5 @@
-import { VolunteerForm } from '@/components/forms/VolunteerForm';
+
+import { MembershipForm } from '@/components/forms/MembershipForm';
 import { PageHeader } from '@/components/shared/PageHeader';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -14,11 +15,11 @@ export default function VolunteerPage() {
         imageHint={headerImage?.imageHint}
       />
       <div className="container mx-auto max-w-2xl px-4 py-16">
-        <h2 className="text-2xl font-bold text-center mb-4 font-headline">Volunteer Application Form</h2>
+        <h2 className="text-2xl font-bold text-center mb-4 font-headline">PAL Membership Application</h2>
         <p className="text-center text-muted-foreground mb-8">
-          We're excited to have you on board! Please fill out the form below, and we'll be in touch soon.
+          Fill out the form below to apply for a PAL Foundation membership card.
         </p>
-        <VolunteerForm />
+        <MembershipForm />
       </div>
     </div>
   );

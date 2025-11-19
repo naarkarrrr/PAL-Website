@@ -1,3 +1,4 @@
+
 import { z } from 'zod';
 import type { LucideIcon } from 'lucide-react';
 
@@ -35,6 +36,32 @@ export const VolunteerSchema = z.object({
   }),
 });
 export type Volunteer = z.infer<typeof VolunteerSchema>;
+
+export const MembershipSchema = z.object({
+  fullName: z.string().min(2, 'Full name is required.'),
+  email: z.string().email('Invalid email address.'),
+  phoneNumber: z.string().min(10, 'A valid 10-digit phone number is required.'),
+  areaPincode: z.string().optional(),
+  whatsappGroup: z.enum(['Group 1', 'Group 2', 'Not a Member']),
+  communityAnimalsCount: z.preprocess(
+    (val) => (val === '' ? undefined : Number(val)),
+    z.number().int().nonnegative().optional()
+  ),
+  whatsappNumber: z.string().optional(),
+  aadhaarNumber: z.string().optional(),
+  partOfNGO: z.enum(['Yes', 'No']),
+  ngoName: z.string().optional(),
+  hasNGOMembershipCard: z.enum(['Yes', 'No']),
+  ngoCardName: z.string().optional(),
+  membershipReason: z.string().min(10, 'Please provide a reason for membership.'),
+  selectedDate: z.date(),
+  selectedTime: z.string().min(1, 'Please select a time'),
+  aadhaarCard: z.any().optional(),
+  agreement: z.boolean().refine((val) => val === true, {
+    message: 'You must agree to the terms and conditions.',
+  }),
+});
+export type Membership = z.infer<typeof MembershipSchema>;
 
 
 // Contact Schema
