@@ -2,14 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, PawPrint, X, Heart } from 'lucide-react';
+import { Menu, Heart, X } from 'lucide-react';
 import { useState } from 'react';
-
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Logo } from '@/components/shared/Logo';
 import { cn } from '@/lib/utils';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const navLinks = [
   { href: '/adopt', label: 'Adopt' },
@@ -24,18 +23,17 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/90 backdrop-blur-sm">
       <div className="container flex h-20 items-center justify-between">
         <Logo />
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                'relative transition-colors hover:text-accent',
+                'relative transition-colors hover:text-primary',
                 pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href)) 
                     ? 'text-foreground' 
                     : 'text-muted-foreground'
@@ -44,7 +42,7 @@ export function Header() {
               {link.label}
               {(pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))) && (
                  <motion.div
-                    className="absolute bottom-[-6px] left-0 right-0 h-0.5 bg-accent rounded-full"
+                    className="absolute bottom-[-6px] left-0 right-0 h-0.5 bg-primary rounded-full"
                     layoutId="underline"
                  />
               )}
@@ -53,13 +51,12 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button asChild className="hidden md:flex bg-accent text-accent-foreground hover:bg-accent/90">
+          <Button asChild className="hidden md:flex bg-primary text-primary-foreground hover:bg-primary/90">
             <Link href="/donate">
               <Heart className="mr-2 h-4 w-4" /> Donate
             </Link>
           </Button>
 
-          {/* Mobile Navigation */}
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="ghost" size="icon">
@@ -71,6 +68,9 @@ export function Header() {
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-4 border-b">
                    <Logo />
+                   <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
+                     <X className="h-6 w-6" />
+                   </Button>
                 </div>
                 <nav className="flex-grow p-4">
                   <ul className="space-y-4">
@@ -79,8 +79,8 @@ export function Header() {
                         <Link
                           href={link.href}
                           className={cn(
-                            'block text-lg font-medium transition-colors hover:text-accent',
-                             pathname === link.href ? 'text-accent' : 'text-foreground'
+                            'block text-lg font-medium transition-colors hover:text-primary',
+                             pathname === link.href ? 'text-primary' : 'text-foreground'
                           )}
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
@@ -91,7 +91,7 @@ export function Header() {
                   </ul>
                 </nav>
                 <div className="p-4 border-t mt-auto">
-                  <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                  <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
                     <Link href="/donate" onClick={() => setIsMobileMenuOpen(false)}>
                       <Heart className="mr-2 h-4 w-4" /> Donate
                     </Link>

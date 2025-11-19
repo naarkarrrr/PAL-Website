@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 export function Logo({ className }: { className?: string }) {
   return (
     <Link href="/" className={cn("flex items-center gap-2 text-xl font-bold font-headline", className)}>
-      <PawPrint className="h-6 w-6 text-accent" />
+      <PawPrint className="h-6 w-6 text-primary" />
       <span>Kindred Paws</span>
     </Link>
   );
