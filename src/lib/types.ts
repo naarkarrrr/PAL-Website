@@ -140,6 +140,13 @@ export const SponsorSchema = z.object({
 });
 export type Sponsor = z.infer<typeof SponsorSchema>;
 
+// Login Schema
+export const LoginSchema = z.object({
+  email: z.string().email('Please enter a valid email address.'),
+  password: z.string().min(6, 'Password must be at least 6 characters long.'),
+});
+export type LoginCredentials = z.infer<typeof LoginSchema>;
+
 
 // Success Story Type
 export interface SuccessStory {

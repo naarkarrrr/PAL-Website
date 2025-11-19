@@ -1,14 +1,15 @@
 'use client';
 
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { getAuth, onAuthStateChanged, signInAnonymously, signOut, User } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, User } from 'firebase/auth';
 import { initializeFirebase } from '@/firebase';
 import { useRouter } from 'next/navigation';
+import type { LoginCredentials } from '@/lib/types';
 
 interface AuthContextType {
   user: User | null;
   loading: boolean;
-  signIn: () => Promise<void>;
+  signIn: (credentials: LoginCredentials) => Promise<void>;
   signOut: () => Promise<void>;
 }
 
@@ -29,13 +30,24 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     return () => unsubscribe();
   }, [auth]);
 
-  const signIn = async () => {
+  const signIn = async ({ email, password }: LoginCredentials) => {
     try {
-      await signInAnonymously(auth);
-      router.push('/admin/dashboard');
-    } catch (error) {
-      console.error('Anonymous sign-in failed', error);
-      throw error;
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (error: any) {
+      if (error.code === 'auth/user-not-found' || error.code === 'auth/invalid-credential') {
+        // If user not found, try to create a new user
+        try {
+          await createUserWithEmailAndPassword(auth, email, password);
+        } catch (creationError) {
+          console.error('User creation failed', creationError);
+          throw creationError;
+        }
+      } else {
+        console.error('Sign-in failed', error);
+        throw error;
+      }
+    } finally {
+        router.push('/admin/dashboard');
     }
   };
 
