@@ -61,7 +61,7 @@ export function Header() {
 
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
-             {mainNav.map((item) => (
+            {mainNav.map((item) => (
               <NavigationMenuItem key={item.title}>
                 {item.subLinks ? (
                   <>
@@ -69,7 +69,7 @@ export function Header() {
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                         {item.subLinks.map((component) => (
-                          <ListItem
+                           <ListItem
                             key={component.title}
                             title={component.title}
                             href={component.href}
