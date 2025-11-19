@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Search, ShoppingBag, Calendar } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -20,99 +20,37 @@ import React from 'react';
 import { Logo } from '../shared/Logo';
 
 
-const whoWeAreComponents: { title: string; href: string; description: string }[] = [
-  {
-    title: "Our Story",
-    href: "/our-story",
-    description: "Learn about our journey, mission, and the people behind our cause.",
-  },
-  {
-    title: "Mission & Vision",
-    href: "/mission-vision",
-    description: "The driving force and long-term goals of the PAL Foundation.",
-  },
-  {
-    title: "Our Team",
-    href: "/team",
-    description: "Meet the dedicated individuals who make our work possible.",
-  },
-  {
-    title: "Success Stories",
-    href: "/success-stories",
-    description: "Read heartwarming stories of animals who found their forever homes.",
-  },
-]
-
-const whatWeDoComponents: { title: string; href: string; description: string }[] = [
-    {
-        title: "Legal Help",
-        href: "/what-we-do/legal-help",
-        description: "Free/low-cost legal guidance for animal cruelty cases.",
+const mainNav: { title: string; href: string; description?: string, subLinks?: { title: string; href: string; description: string }[] }[] = [
+    { title: "Home", href: "/" },
+    { 
+      title: "About", 
+      href: "/about",
+      subLinks: [
+        { title: "Our Story", href: "/our-story", description: "Our journey and commitment to animals." },
+        { title: "Mission & Vision", href: "/mission-vision", description: "Our goals and guiding principles." },
+        { title: "Our Team", href: "/team", description: "Meet our dedicated team members." },
+      ]
     },
-    {
-        title: "Animal Cruelty",
-        href: "/what-we-do/animal-cruelty",
-        description: "Awareness on laws and how to report cruelty.",
+    { 
+      title: "Shop", 
+      href: "/shop",
+      subLinks: [
+        { title: "All Products", href: "/shop", description: "Browse all our pet supplies." },
+        { title: "Food", href: "/shop/food", description: "Nutritious food for your pets." },
+        { title: "Toys", href: "/shop/toys", description: "Fun and engaging toys." },
+      ]
     },
-    {
-        title: "Spay & Neuter",
-        href: "/what-we-do/spay-neuter",
-        description: "Community dog management through the ABC program.",
+    { 
+      title: "Pages", 
+      href: "#",
+      subLinks: [
+        { title: "Success Stories", href: "/success-stories", description: "Happy adoption tales." },
+        { title: "Gallery", href: "/gallery", description: "Photos from our community." },
+        { title: "Donate", href: "/donate", description: "Support our cause." },
+      ]
     },
-    {
-        title: "Feed the Stray",
-        href: "/what-we-do/feed-the-stray",
-        description: "Daily and weekly feeding drives for stray animals.",
-    },
-    {
-        title: "Vaccination Drive",
-        href: "/what-we-do/vaccination-drive",
-        description: "Anti-rabies and health vaccination programs.",
-    },
-    {
-        title: "Adoption & Release",
-        href: "/what-we-do/adoption-release",
-        description: "Find loving homes for rescued animals.",
-    },
-    {
-        title: "Educate & Train",
-        href: "/what-we-do/educate-train",
-        description: "Workshops and awareness programs for all ages.",
-    },
-    {
-        title: "Ambulance",
-        href: "/ambulance",
-        description: "24/7 ambulance outreach for animals in distress.",
-    },
-]
-
-const getInvolvedComponents: { title: string; href: string; description: string }[] = [
-    {
-        title: "Become Member & Volunteer",
-        href: "/volunteer",
-        description: "Join our team and make a hands-on difference in the lives of animals.",
-    },
-    {
-        title: "Advocate AWO & Humanright Officer",
-        href: "/advocate",
-        description: "Become an advocate for animal welfare and rights in your community.",
-    },
-    {
-        title: "Adoption",
-        href: "/adopt",
-        description: "Give a loving home to a deserving animal. Find your new best friend.",
-    },
-    {
-        title: "Sponsor & Partner",
-        href: "/sponsor-partner",
-        description: "Support our cause through sponsorship or corporate partnership.",
-    },
-    {
-        title: "Collaboration",
-        href: "/collaboration",
-        description: "Work with us on projects and initiatives to further animal welfare.",
-    }
-]
+    { title: "Contacts", href: "/contact" },
+];
 
 
 export function Header() {
@@ -120,146 +58,67 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-sm">
+    <header className="sticky top-2.5 z-50 w-full border-b bg-background/95 backdrop-blur-sm">
       <div className="container flex h-20 items-center justify-between">
         <Logo />
 
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
-             <NavigationMenuItem>
-              <Link href="/" passHref>
-                <NavigationMenuLink active={pathname === '/'} className={navigationMenuTriggerStyle()}>
-                  Home
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-             <NavigationMenuItem>
-              <NavigationMenuTrigger>Who We are</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                  {whoWeAreComponents.map((component) => (
-                    <ListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-             <NavigationMenuItem>
-              <NavigationMenuTrigger>What We Do</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                  {whatWeDoComponents.map((component) => (
-                    <ListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-             <NavigationMenuItem>
-                <Link href="/media" passHref>
-                    <NavigationMenuLink active={pathname === '/media'} className={navigationMenuTriggerStyle()}>
-                    Media
+             {mainNav.map((item) => (
+              <NavigationMenuItem key={item.title}>
+                {item.subLinks ? (
+                  <>
+                    <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        {item.subLinks.map((component) => (
+                          <ListItem
+                            key={component.title}
+                            title={component.title}
+                            href={component.href}
+                          >
+                            {component.description}
+                          </ListItem>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </>
+                ) : (
+                  <Link href={item.href} legacyBehavior passHref>
+                    <NavigationMenuLink active={pathname === item.href} className={navigationMenuTriggerStyle()}>
+                      {item.title}
                     </NavigationMenuLink>
-                </Link>
-            </NavigationMenuItem>
-             <NavigationMenuItem>
-                <Link href="/how-to-help" passHref>
-                    <NavigationMenuLink active={pathname === '/how-to-help'} className={navigationMenuTriggerStyle()}>
-                    How to Help
-                    </NavigationMenuLink>
-                </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Get Involved</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                  {getInvolvedComponents.map((component) => (
-                    <ListItem
-                      key={component.title}
-                      title={component.title}
-                      href={component.href}
-                    >
-                      {component.description}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
+                  </Link>
+                )}
+              </NavigationMenuItem>
+            ))}
           </NavigationMenuList>
         </NavigationMenu>
 
-        <div className="flex items-center gap-2">
-           <Button asChild className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
-            <Link href="/donate">
-                Donate
+        <div className="flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-4">
+                <Button variant="ghost" size="icon">
+                    <Search className="h-5 w-5" />
+                </Button>
+                <div className="relative">
+                    <Button variant="ghost" size="icon">
+                        <ShoppingBag className="h-5 w-5" />
+                    </Button>
+                    <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">0</span>
+                </div>
+            </div>
+
+           <Button asChild className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground rounded-full">
+            <Link href="/contact">
+                <Calendar className="mr-2 h-4 w-4"/>
+                Appointment
             </Link>
           </Button>
 
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-            <SheetTrigger asChild className="md:hidden">
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Open menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="w-full max-w-sm bg-background p-0">
-              <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between p-4 border-b">
-                   <Logo />
-                   <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
-                     <X className="h-6 w-6" />
-                   </Button>
-                </div>
-                <nav className="flex-grow p-4 overflow-y-auto">
-                  <ul className="space-y-4">
-                    <li><Link href="/" className="block text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
-                    
-                    <li className="space-y-2">
-                        <h3 className="text-lg font-medium">Who We Are</h3>
-                        <ul className="pl-4 space-y-2">
-                            {whoWeAreComponents.map(c => <li key={c.href}><Link href={c.href} className="block text-md font-medium text-muted-foreground" onClick={() => setIsMobileMenuOpen(false)}>{c.title}</Link></li>)}
-                        </ul>
-                    </li>
-
-                    <li className="space-y-2">
-                        <h3 className="text-lg font-medium">What We Do</h3>
-                         <ul className="pl-4 space-y-2">
-                            {whatWeDoComponents.map(c => <li key={c.href}><Link href={c.href} className="block text-md font-medium text-muted-foreground" onClick={() => setIsMobileMenuOpen(false)}>{c.title}</Link></li>)}
-                        </ul>
-                    </li>
-
-                    <li><Link href="/media" className="block text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>Media</Link></li>
-                    <li><Link href="/how-to-help" className="block text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>How to Help</Link></li>
-                     
-                     <li className="space-y-2">
-                        <h3 className="text-lg font-medium">Get Involved</h3>
-                        <ul className="pl-4 space-y-2">
-                            {getInvolvedComponents.map(c => <li key={c.href}><Link href={c.href} className="block text-md font-medium text-muted-foreground" onClick={() => setIsMobileMenuOpen(false)}>{c.title}</Link></li>)}
-                        </ul>
-                    </li>
-
-                  </ul>
-                </nav>
-                <div className="p-4 border-t mt-auto">
-                   <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
-                     <Link href="/donate" onClick={() => setIsMobileMenuOpen(false)}>
-                        Donate
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+          <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            <Menu className="h-6 w-6" />
+            <span className="sr-only">Open menu</span>
+          </Button>
         </div>
       </div>
     </header>
