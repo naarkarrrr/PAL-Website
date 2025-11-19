@@ -16,7 +16,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full bg-primary/30">
+        <section className="w-full bg-primary/10">
           <div className="container mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 items-center gap-12">
             <MotionDiv 
               initial={{ opacity: 0, x: -50 }}
@@ -31,10 +31,10 @@ export default function Home() {
                 PAL Foundation is a non-profit organization dedicated to animal welfare, providing rescue, medical care, and a safe haven for animals in need.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-                <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                <Button asChild size="lg">
                   <Link href="/ambulance">Request Ambulance</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                <Button asChild size="lg" variant="outline">
                   <Link href="/donate">Donate Now</Link>
                 </Button>
               </div>
@@ -57,6 +57,9 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Stats Counter Section */}
+        <StatsCounter />
+
         {/* How You Can Help Section */}
         <HowYouCanHelp />
 
@@ -70,7 +73,7 @@ export default function Home() {
         <FeaturedAnimals />
 
         {/* Success Story Section */}
-        <section className="py-16 md:py-24 bg-background">
+        <section className="py-16 md:py-24 bg-card">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <MotionDiv 
@@ -98,7 +101,7 @@ export default function Home() {
                 <p className="text-lg text-muted-foreground mb-6">
                   Read about Charlie's journey from a shy stray to a cherished family member. Success stories like this are made possible by your support.
                 </p>
-                <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                <Button asChild size="lg">
                   <Link href="/success-stories">More Success Stories</Link>
                 </Button>
               </MotionDiv>

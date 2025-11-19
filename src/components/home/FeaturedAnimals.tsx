@@ -11,7 +11,7 @@ const featuredAnimals = PlaceHolderImages.filter(p => ['1', '2', '3']);
 
 export function FeaturedAnimals() {
   return (
-    <section className="py-16 md:py-24 bg-primary/30">
+    <section className="py-16 md:py-24 bg-primary/10">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold font-headline text-center mb-12">Recently Rescued</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -42,7 +42,7 @@ export function FeaturedAnimals() {
                   </p>
                 </CardContent>
                 <CardFooter className="p-4 pt-0 mt-auto">
-                  <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                  <Button asChild className="w-full">
                     <Link href={`/adopt/${animal.id}`}>Learn Their Story</Link>
                   </Button>
                 </CardFooter>
@@ -59,5 +59,3 @@ export function FeaturedAnimals() {
     </section>
   );
 }
-
-    
