@@ -8,9 +8,15 @@
     },
     {
       "id": "hero",
-      "description": "A woman in a pink sweater holding a white puppy.",
-      "imageUrl": "https://storage.googleapis.com/aifire.dev/PAL-assets/hero-person-dog.png",
-      "imageHint": "person puppy"
+      "description": "Sudhir Sir with cat",
+      "imageUrl": "https://i.postimg.cc/5ycnzVjz/IMG_20250423_WA0168_removebg_preview.png",
+      "imageHint": "Sudhir Sir with cat"
+    },
+    {
+      "id": "small-logo",
+      "description": "PAL Logo",
+      "imageUrl": "https://i.postimg.cc/yd7gyW49/Pal-Logo-01.png",
+      "imageHint": "pal small logo"
     },
     {
       "id": "1",
