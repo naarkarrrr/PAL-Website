@@ -15,7 +15,7 @@ const storiesData: SuccessStory[] = [
       imageUrl: PlaceHolderImages.find(p => p.id === 'story1')?.imageUrl || '',
       imageHint: PlaceHolderImages.find(p => p.id === 'story1')?.imageHint || '',
       author: 'Admin',
-      date: new Date(),
+      date: new Date('2024-05-15T10:00:00Z'),
       tags: ['Adoption', 'Dog'],
     },
     {
@@ -26,7 +26,7 @@ const storiesData: SuccessStory[] = [
       imageUrl: PlaceHolderImages.find(p => p.id === 'story2')?.imageUrl || '',
       imageHint: PlaceHolderImages.find(p => p.id === 'story2')?.imageHint || '',
       author: 'Admin',
-      date: new Date(),
+      date: new Date('2024-05-12T14:30:00Z'),
       tags: ['Senior', 'Cat'],
     },
     {
@@ -37,7 +37,7 @@ const storiesData: SuccessStory[] = [
       imageUrl: PlaceHolderImages.find(p => p.id === 'story3')?.imageUrl || '',
       imageHint: PlaceHolderImages.find(p => p.id === 'story3')?.imageHint || '',
       author: 'Admin',
-      date: new Date(),
+      date: new Date('2024-05-10T09:00:00Z'),
       tags: ['Rescue', 'Kitten'],
     },
 ];
