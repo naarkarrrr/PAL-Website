@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Heart } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -124,8 +124,8 @@ export function Header() {
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="/" passHref>
-                <NavigationMenuLink active={pathname === '/'} className={navigationMenuTriggerStyle()}>
+              <Link href="/" legacyBehavior passHref>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/' ? 'text-primary' : 'text-foreground')}>
                   Home
                 </NavigationMenuLink>
               </Link>
@@ -163,18 +163,18 @@ export function Header() {
               </NavigationMenuContent>
             </NavigationMenuItem>
              <NavigationMenuItem>
-              <Link href="/media" passHref>
-                <NavigationMenuLink active={pathname === '/media'} className={navigationMenuTriggerStyle()}>
-                  Media
-                </NavigationMenuLink>
-              </Link>
+                <Link href="/media" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/media' ? 'text-primary' : 'text-foreground')}>
+                    Media
+                    </NavigationMenuLink>
+                </Link>
             </NavigationMenuItem>
              <NavigationMenuItem>
-              <Link href="/how-to-help" passHref>
-                <NavigationMenuLink active={pathname === '/how-to-help'} className={navigationMenuTriggerStyle()}>
-                  How to Help
-                </NavigationMenuLink>
-              </Link>
+                <Link href="/how-to-help" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/how-to-help' ? 'text-primary' : 'text-foreground')}>
+                    How to Help
+                    </NavigationMenuLink>
+                </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuTrigger>Get Involved</NavigationMenuTrigger>
@@ -198,7 +198,7 @@ export function Header() {
         <div className="flex items-center gap-2">
            <Button asChild className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
             <Link href="/donate">
-                <span className="mr-2 h-4 w-4">❤️</span>
+                <Heart className="mr-2 h-4 w-4" />
                 Donate
             </Link>
           </Button>
@@ -235,7 +235,7 @@ export function Header() {
                 <div className="p-4 border-t mt-auto">
                    <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
                      <Link href="/donate" onClick={() => setIsMobileMenuOpen(false)}>
-                        <span className="mr-2 h-4 w-4">❤️</span>
+                        <Heart className="mr-2 h-4 w-4" />
                         Donate
                     </Link>
                   </Button>
@@ -252,11 +252,12 @@ export function Header() {
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+>(({ className, title, children, href, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
+        <Link
+          href={href!}
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
@@ -268,7 +269,7 @@ const ListItem = React.forwardRef<
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   )

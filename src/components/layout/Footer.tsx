@@ -21,9 +21,9 @@ export function Footer() {
             </p>
              <div className="flex justify-center md:justify-start gap-4 mt-6">
               {socialLinks.map((social) => (
-                <a key={social['aria-label']} href={social.href} aria-label={social['aria-label']} className="text-muted-foreground hover:text-accent">
+                <Link key={social['aria-label']} href={social.href} aria-label={social['aria-label']} className="text-muted-foreground hover:text-accent">
                   <social.icon className="h-6 w-6" />
-                </a>
+                </Link>
               ))}
             </div>
           </div>
