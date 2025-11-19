@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero",
-      "description": "A cutout image of the PAL foundation logo",
-      "imageUrl": "https://i.postimg.cc/3JVnWwKj/Pal-Logo-02.png",
-      "imageHint": "pal foundation logo"
+      "description": "hero image",
+      "imageUrl": "https://i.postimg.cc/5ycnzVjz/IMG_20250423_WA0168_removebg_preview.png",
+      "imageHint": "hero image"
     },
     {
       "id": "1",
