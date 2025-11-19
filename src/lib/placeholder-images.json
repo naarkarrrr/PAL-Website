@@ -3,7 +3,7 @@
     {
       "id": "hero",
       "description": "A cutout image of a happy dog.",
-      "imageUrl": "https://i.postimg.cc/jjw510df/IMG-20250423-WA0168-removebg-preview.png",
+      "imageUrl": "https://i.postimg.cc/5ycnzVjz/IMG-20250423-WA0168-removebg-preview.png",
       "imageHint": "happy cat cutout"
     },
     {
@@ -50,67 +50,67 @@
     },
     {
       "id": "story2",
-      "description": "An elderly person smiling while holding a cat.",
+      "description": "An elderly person holding a cat.",
       "imageUrl": "https://images.unsplash.com/photo-1706170324680-b502c50981e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZXJzb24lMjBjYXQ8ZW58MHx8fHwxNzYzNDM2NTk0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "person cat"
     },
     {
       "id": "story3",
-      "description": "A child playing with a kitten in a living room.",
+      "description": "A child with a kitten.",
       "imageUrl": "https://images.unsplash.com/photo-1760669254927-10849aa52a1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaGlsZCUyMGtpdHRlbnxlbnwwfHx8fDE3NjM1MzQ2NjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "child kitten"
     },
     {
       "id": "contact_header",
-      "description": "A close-up of a dog's nose.",
+      "description": "Close-up of a dog's nose.",
       "imageUrl": "https://images.unsplash.com/photo-1493723258571-01372f1c5e04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZG9nJTIwbm9zZXxlbnwwfHx8fDE3NjM1MzQ2NTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "dog nose"
     },
     {
       "id": "volunteer_header",
-      "description": "A group of volunteers caring for puppies.",
+      "description": "Volunteers with puppies.",
       "imageUrl": "https://images.unsplash.com/photo-1650101711559-4cf1a2da5a43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZW9wbGUlMjBwdXBwaWVzfGVufDB8fHx8MTc2MzUzNDY1OXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "people puppies"
     },
     {
       "id": "ambulance_header",
-      "description": "A person carefully carrying a small injured animal.",
+      "description": "Carrying an injured animal.",
       "imageUrl": "https://images.unsplash.com/photo-1554830072-52d78d0d4c18?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhbmltYWwlMjByZXNjdWV8ZW58MHx8fHwxNzYzNTM0NjU5fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "animal rescue"
     },
     {
       "id": "donate_header",
-      "description": "A collection of pet toys and food.",
+      "description": "Pet toys and food.",
       "imageUrl": "https://images.unsplash.com/photo-1591946614720-90a587da4a36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwZXQlMjBzdXBwbGllc3xlbnwwfHx8fDE3NjM0ODQwMDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "pet supplies"
     },
     {
       "id": "about_header",
-      "description": "A group of diverse volunteers smiling and working together.",
+      "description": "A group of diverse volunteers.",
       "imageUrl": "https://images.unsplash.com/photo-1743793174491-bcbdf1882ad5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkaXZlcnNlJTIwdm9sdW50ZWVyc3xlbnwwfHx8fDE3NjM1Mzc4MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "diverse volunteers"
     },
     {
       "id": "mission_header",
-      "description": "A path leading towards a bright horizon, symbolizing hope and future.",
+      "description": "A path leading to a bright horizon.",
       "imageUrl": "https://images.unsplash.com/photo-1588880956285-5cd24e4ad1f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxob3BlZnVsJTIwcGF0aHxlbnwwfHx8fDE3NjM1Mzc4MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "hopeful path"
     },
     {
       "id": "team_header",
-      "description": "A group of people working collaboratively in a modern office.",
+      "description": "A collaborative team at work.",
       "imageUrl": "https://images.unsplash.com/photo-1748256622734-92241ae7b43f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29sbGFib3JhdGl2ZSUyMHRlYW18ZW58MHx8fHwxNzYzNTM3ODA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "collaborative team"
     },
     {
       "id": "founder",
-      "description": "A portrait of a smiling, confident person.",
+      "description": "A portrait of a confident person.",
       "imageUrl": "https://images.unsplash.com/photo-1672072963471-cb38bd03fe41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb25maWRlbnQlMjBwZXJzb258ZW58MHx8fHwxNzYzNTM3ODA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "confident person"
     },
     {
       "id": "why_choose_us",
-      "description": "A happy Bernese Mountain Dog looking sideways.",
+      "description": "A happy Bernese Mountain Dog.",
       "imageUrl": "https://images.unsplash.com/photo-1559190394-df5a28aab5c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxoYXBweSUyMGRvZ3xlbnwwfHx8fDE3NjM0NDI2MTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "happy dog"
     }
