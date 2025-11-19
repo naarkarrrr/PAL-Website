@@ -33,22 +33,22 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-secondary text-secondary-foreground relative">
-        <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-secondary" />
+    <footer className="bg-primary text-primary-foreground relative">
+        <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-primary" />
 
       <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center md:text-left">
           {/* Logo and About */}
           <div className="flex flex-col items-center md:items-start md:col-span-1">
             <Logo />
-            <p className="mt-4 text-sm max-w-xs text-secondary-foreground/80">
+            <p className="mt-4 text-sm max-w-xs text-primary-foreground/80">
               We are a non-profit organization dedicated to rescuing, rehabilitating, and rehoming animals in need.
             </p>
              <div className="mt-6">
                 <h4 className="font-semibold mb-2 text-white">Follow Us On:</h4>
                 <div className="flex justify-center md:justify-start gap-4">
                 {socialLinks.map((social) => (
-                    <Link key={social['aria-label']} href={social.href} aria-label={social['aria-label']} className="hover:text-accent">
+                    <Link key={social['aria-label']} href={social.href} aria-label={social['aria-label']} className="text-primary-foreground/80 hover:text-accent">
                     <social.icon className="h-6 w-6" />
                     </Link>
                 ))}
@@ -64,7 +64,7 @@ export function Footer() {
             </h3>
             <ul className="space-y-2 text-sm">
               {quickLinks.map(link => (
-                  <li key={link.title}><Link href={link.href} className="hover:text-accent text-secondary-foreground/80">{link.title}</Link></li>
+                  <li key={link.title}><Link href={link.href} className="text-primary-foreground/80 hover:text-accent">{link.title}</Link></li>
               ))}
             </ul>
           </div>
@@ -77,7 +77,7 @@ export function Footer() {
             </h3>
             <ul className="space-y-2 text-sm">
                {supportLinks.map(link => (
-                  <li key={link.title}><Link href={link.href} className="hover:text-accent text-secondary-foreground/80">{link.title}</Link></li>
+                  <li key={link.title}><Link href={link.href} className="text-primary-foreground/80 hover:text-accent">{link.title}</Link></li>
               ))}
             </ul>
           </div>
@@ -88,7 +88,7 @@ export function Footer() {
                 Contact
                  <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-accent"></span>
             </h3>
-             <ul className="space-y-2 text-sm text-secondary-foreground/80">
+             <ul className="space-y-2 text-sm text-primary-foreground/80">
                 <li>555 A, East Manster Street, Ready</li>
                 <li>Halley Neon, UK 4512</li>
                 <li>+00 123 45678 44</li>
@@ -98,8 +98,8 @@ export function Footer() {
         </div>
 
       </div>
-       <div className="border-t border-primary/20 bg-secondary">
-          <div className="container mx-auto px-4 py-6 flex justify-between items-center text-xs">
+       <div className="border-t border-primary-foreground/20 bg-primary">
+          <div className="container mx-auto px-4 py-6 flex justify-between items-center text-xs text-primary-foreground/80">
             <p>&copy; {new Date().getFullYear()} PAL Foundation. All Rights Reserved.</p>
             <div className="flex gap-4">
                 <Link href="#" className="hover:text-accent">Support</Link>
