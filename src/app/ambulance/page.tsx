@@ -38,8 +38,8 @@ export default function AmbulancePage() {
                         </a>
                     </Button>
                 </div>
-                <div className="relative aspect-square max-w-md mx-auto">
-                    {ambulanceImage && (
+                {ambulanceImage && (
+                    <div className="relative aspect-square max-w-md mx-auto">
                         <Image
                             src={ambulanceImage.imageUrl}
                             alt={ambulanceImage.description}
@@ -47,8 +47,8 @@ export default function AmbulancePage() {
                             fill
                             className="object-contain"
                         />
-                    )}
-                </div>
+                    </div>
+                )}
             </div>
         </section>
 
