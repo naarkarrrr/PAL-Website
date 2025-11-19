@@ -81,7 +81,9 @@ export function Header() {
                     </NavigationMenuContent>
                   </>
                 ) : (
-                  <Link href={item.href || '#'} legacyBehavior passHref>
+                  <Link href={item.href || '#'}>
+                    {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */
+                    }
                     <NavigationMenuLink active={pathname === item.href} className={navigationMenuTriggerStyle()}>
                       {item.title}
                     </NavigationMenuLink>
@@ -113,7 +115,14 @@ export function Header() {
                     <nav className="mt-8 flex flex-col gap-4">
                         {mainNav.map((item) => (
                             item.href ? (
-                                <Link key={item.title} href={item.href} className={cn(navigationMenuTriggerStyle(), "justify-start")}>{item.title}</Link>
+                              <NavigationMenuLink
+                              href={item.href || "#"}
+                              active={pathname === item.href}
+                              className={navigationMenuTriggerStyle()}
+                            >
+                              {item.title}
+                            </NavigationMenuLink>
+                            
                             ) : (
                                 <div key={item.title}>
                                     <h3 className="font-bold px-4">{item.title}</h3>
@@ -141,21 +150,19 @@ const ListItem = forwardRef<
 >(({ className, title, children, ...props }, ref) => {
   return (
     <li>
-      <NavigationMenuLink asChild>
-        <Link
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </Link>
+      <NavigationMenuLink
+        href={props.href}
+        className={cn(
+          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+          className
+        )}
+      >
+        <div className="text-sm font-medium leading-none">{title}</div>
+        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          {children}
+        </p>
       </NavigationMenuLink>
+
     </li>
   )
 })
