@@ -3,17 +3,10 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Heart, Users, Shield, PawPrint } from 'lucide-react';
+import { Heart, Users, PawPrint, ArrowRight } from 'lucide-react';
 import { MotionDiv } from '@/components/shared/MotionDiv';
 
 const services = [
-  {
-    icon: Shield,
-    title: 'Ambulance Service',
-    description: 'Emergency rescue for animals in distress. Our team is ready to respond 24/7.',
-    href: '/ambulance',
-    cta: 'Request Help',
-  },
   {
     icon: Heart,
     title: 'Adoption',
@@ -45,7 +38,7 @@ export function HowYouCanHelp() {
         <p className="max-w-3xl mx-auto text-muted-foreground mb-12 text-lg">
           Every act of kindness, big or small, contributes to a brighter future for our animals. Your support can change lives.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <MotionDiv 
               key={service.title}
@@ -71,9 +64,14 @@ export function HowYouCanHelp() {
             </MotionDiv>
           ))}
         </div>
+         <div className="text-center mt-12">
+          <Button asChild size="lg" variant="outline">
+            <Link href="/what-we-do">
+              View All Services <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+        </div>
       </div>
     </section>
   );
 }
-
-    
