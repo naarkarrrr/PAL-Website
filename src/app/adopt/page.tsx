@@ -48,19 +48,19 @@ export default async function AdoptPage() {
         subtitle="Browse our loving animals who are waiting for a forever home."
       />
       <div className="container mx-auto px-4 py-16">
-        <div className="bg-background shadow-md rounded-lg p-6 mb-12 sticky top-20 z-10">
+        <div className="bg-card shadow-lg rounded-xl p-6 mb-12 sticky top-24 z-10 border">
           <div className="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 items-end">
-            <div className="sm:col-span-2 md:col-span-4 lg:col-span-1">
-              <label htmlFor="search" className="block text-sm font-medium text-foreground mb-1">Search</label>
+            <div className="sm:col-span-2 md:col-span-4 lg:col-span-2">
+              <label htmlFor="search" className="block text-sm font-medium text-foreground mb-2">Search by keyword</label>
               <div className="relative">
-                 <Input id="search" placeholder="Search by name, breed..." className="pl-10" />
+                 <Input id="search" placeholder="e.g. Golden Retriever, playful..." className="pl-10" />
                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               </div>
             </div>
              <div>
-              <label htmlFor="type" className="block text-sm font-medium text-foreground mb-1">Type</label>
+              <label htmlFor="type" className="block text-sm font-medium text-foreground mb-2">Animal Type</label>
                 <Select>
-                  <SelectTrigger id="type">
+                  <SelectTrigger id="type" className="bg-background">
                     <SelectValue placeholder="Any Type" />
                   </SelectTrigger>
                   <SelectContent>
@@ -71,9 +71,9 @@ export default async function AdoptPage() {
                 </Select>
             </div>
              <div>
-               <label htmlFor="age" className="block text-sm font-medium text-foreground mb-1">Age</label>
+               <label htmlFor="age" className="block text-sm font-medium text-foreground mb-2">Age</label>
                  <Select>
-                  <SelectTrigger id="age">
+                  <SelectTrigger id="age" className="bg-background">
                     <SelectValue placeholder="Any Age" />
                   </SelectTrigger>
                   <SelectContent>
@@ -84,20 +84,9 @@ export default async function AdoptPage() {
                   </SelectContent>
                 </Select>
             </div>
-             <div>
-                <label htmlFor="gender" className="block text-sm font-medium text-foreground mb-1">Gender</label>
-                 <Select>
-                  <SelectTrigger id="gender">
-                    <SelectValue placeholder="Any Gender" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="male">Male</SelectItem>
-                    <SelectItem value="female">Female</SelectItem>
-                  </SelectContent>
-                </Select>
-            </div>
-            <Button className="w-full">
-              Search
+            <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base">
+              <Search className="mr-2 h-4 w-4"/>
+              Find a Pet
             </Button>
           </div>
         </div>

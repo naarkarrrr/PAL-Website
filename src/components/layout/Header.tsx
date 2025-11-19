@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, PawPrint, X } from 'lucide-react';
+import { Menu, PawPrint, X, Heart } from 'lucide-react';
 import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -24,25 +24,27 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
       <div className="container flex h-20 items-center justify-between">
         <Logo />
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                'relative transition-colors hover:text-foreground',
-                pathname === link.href ? 'text-foreground font-semibold' : 'text-muted-foreground'
+                'relative transition-colors hover:text-accent',
+                pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href)) 
+                    ? 'text-foreground' 
+                    : 'text-muted-foreground'
               )}
             >
               {link.label}
-              {pathname === link.href && (
+              {(pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))) && (
                  <motion.div
-                    className="absolute bottom-[-4px] left-0 right-0 h-0.5 bg-accent"
+                    className="absolute bottom-[-6px] left-0 right-0 h-0.5 bg-accent rounded-full"
                     layoutId="underline"
                  />
               )}
@@ -50,10 +52,10 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
-          <Button asChild className="hidden md:flex">
+        <div className="flex items-center gap-2">
+          <Button asChild className="hidden md:flex bg-accent text-accent-foreground hover:bg-accent/90">
             <Link href="/donate">
-              <PawPrint className="mr-2 h-4 w-4" /> Donate
+              <Heart className="mr-2 h-4 w-4" /> Donate
             </Link>
           </Button>
 
@@ -65,7 +67,7 @@ export function Header() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-full max-w-sm bg-background">
+            <SheetContent side="left" className="w-full max-w-sm bg-background p-0">
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-4 border-b">
                    <Logo />
@@ -77,7 +79,7 @@ export function Header() {
                         <Link
                           href={link.href}
                           className={cn(
-                            'block text-lg font-medium transition-colors hover:text-foreground',
+                            'block text-lg font-medium transition-colors hover:text-accent',
                              pathname === link.href ? 'text-accent' : 'text-foreground'
                           )}
                           onClick={() => setIsMobileMenuOpen(false)}
@@ -88,10 +90,10 @@ export function Header() {
                     ))}
                   </ul>
                 </nav>
-                <div className="p-4 border-t">
-                  <Button asChild className="w-full">
+                <div className="p-4 border-t mt-auto">
+                  <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                     <Link href="/donate" onClick={() => setIsMobileMenuOpen(false)}>
-                      <PawPrint className="mr-2 h-4 w-4" /> Donate
+                      <Heart className="mr-2 h-4 w-4" /> Donate
                     </Link>
                   </Button>
                 </div>
