@@ -127,7 +127,7 @@ export function Header() {
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="/" passHref>
+              <Link href="/" passHref legacyBehavior>
                 <NavigationMenuLink active={pathname === '/'} className={navigationMenuTriggerStyle()}>
                   Home
                 </NavigationMenuLink>
@@ -166,14 +166,14 @@ export function Header() {
               </NavigationMenuContent>
             </NavigationMenuItem>
              <NavigationMenuItem>
-                <Link href="/media" passHref>
+                <Link href="/media" passHref legacyBehavior>
                     <NavigationMenuLink active={pathname === '/media'} className={navigationMenuTriggerStyle()}>
                     Media
                     </NavigationMenuLink>
                 </Link>
             </NavigationMenuItem>
              <NavigationMenuItem>
-                <Link href="/how-to-help" passHref>
+                <Link href="/how-to-help" passHref legacyBehavior>
                     <NavigationMenuLink active={pathname === '/how-to-help'} className={navigationMenuTriggerStyle()}>
                     How to Help
                     </NavigationMenuLink>
@@ -292,5 +292,3 @@ const ListItem = React.forwardRef<
   )
 })
 ListItem.displayName = "ListItem"
-
-    
