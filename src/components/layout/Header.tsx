@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Heart, PawPrint } from 'lucide-react';
+import { Menu, X, PawPrint } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -110,15 +110,17 @@ const getInvolvedComponents: { title: string; href: string; description: string 
     }
 ]
 
-
 function Logo({ className }: { className?: string }) {
-  return (
-    <Link href="/" className={cn("flex items-center gap-2", className)}>
-      <PawPrint className="h-6 w-6 text-accent" />
-      <span className="text-xl font-bold font-headline">Kindred Paws</span>
-    </Link>
-  );
-}
+    return (
+      <Link href="/" className={cn("flex items-center gap-2", className)}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+            <path fill="#D87093" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2.29 12.29L8.29 13.5l-1.42 1.42L9.71 18l4.24-4.24-1.41-1.41L9.71 14.17z" />
+            <path fill="#E6E6FA" d="M9.71 14.17l-1.42 1.42L12 18.41l5.66-5.66-1.41-1.41L12 15.59z" />
+        </svg>
+        <span className="text-xl font-bold font-headline">Kindred Paws</span>
+      </Link>
+    );
+  }
 
 
 export function Header() {
@@ -133,7 +135,7 @@ export function Header() {
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="/" legacyBehavior passHref>
+              <Link href="/" passHref>
                 <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/' ? 'text-primary' : 'text-foreground')}>
                   Home
                 </NavigationMenuLink>
@@ -172,14 +174,14 @@ export function Header() {
               </NavigationMenuContent>
             </NavigationMenuItem>
              <NavigationMenuItem>
-                <Link href="/media" legacyBehavior passHref>
+                <Link href="/media" passHref>
                     <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/media' ? 'text-primary' : 'text-foreground')}>
                     Media
                     </NavigationMenuLink>
                 </Link>
             </NavigationMenuItem>
              <NavigationMenuItem>
-                <Link href="/how-to-help" legacyBehavior passHref>
+                <Link href="/how-to-help" passHref>
                     <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/how-to-help' ? 'text-primary' : 'text-foreground')}>
                     How to Help
                     </NavigationMenuLink>
@@ -207,7 +209,7 @@ export function Header() {
         <div className="flex items-center gap-2">
            <Button asChild className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
             <Link href="/donate">
-                <Heart className="mr-2 h-4 w-4" />
+                <PawPrint className="mr-2 h-4 w-4" />
                 Donate
             </Link>
           </Button>
@@ -244,7 +246,7 @@ export function Header() {
                 <div className="p-4 border-t mt-auto">
                    <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
                      <Link href="/donate" onClick={() => setIsMobileMenuOpen(false)}>
-                        <Heart className="mr-2 h-4 w-4" />
+                        <PawPrint className="mr-2 h-4 w-4" />
                         Donate
                     </Link>
                   </Button>
