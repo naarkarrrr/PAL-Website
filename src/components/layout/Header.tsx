@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, PawPrint } from 'lucide-react';
+import { Menu, X, PawPrint, Heart } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -17,6 +17,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import React from 'react';
+import { Logo } from '../shared/Logo';
 
 
 const whoWeAreComponents: { title: string; href: string; description: string }[] = [
@@ -43,11 +44,6 @@ const whoWeAreComponents: { title: string; href: string; description: string }[]
 ]
 
 const whatWeDoComponents: { title: string; href: string; description: string }[] = [
-    {
-        title: "Ambulance",
-        href: "/ambulance",
-        description: "24/7 ambulance outreach for animals in distress.",
-    },
     {
         title: "Legal Help",
         href: "/what-we-do/legal-help",
@@ -83,6 +79,11 @@ const whatWeDoComponents: { title: string; href: string; description: string }[]
         href: "/what-we-do/educate-train",
         description: "Workshops and awareness programs for all ages.",
     },
+    {
+        title: "Ambulance",
+        href: "/ambulance",
+        description: "24/7 ambulance outreach for animals in distress.",
+    },
 ]
 
 const getInvolvedComponents: { title: string; href: string; description: string }[] = [
@@ -113,14 +114,6 @@ const getInvolvedComponents: { title: string; href: string; description: string 
     }
 ]
 
-function Logo({ className }: { className?: string }) {
-    return (
-        <Link href="/" className={cn("flex items-center gap-2 text-xl font-bold font-headline", className)}>
-             <PawPrint className="h-8 w-8 text-accent" />
-            Kindred Paws
-        </Link>
-    );
-}
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
