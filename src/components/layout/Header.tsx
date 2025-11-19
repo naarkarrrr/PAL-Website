@@ -18,35 +18,46 @@ import {
 } from "@/components/ui/navigation-menu"
 import { Logo } from '../shared/Logo';
 
-
-const mainNav: { title: string; href: string; description?: string, subLinks?: { title: string; href: string; description: string }[] }[] = [
+const mainNav: { title: string; href?: string; description?: string, subLinks?: { title: string; href: string; description: string }[] }[] = [
     { title: "Home", href: "/" },
     { 
-      title: "Who We Are", 
-      href: "#",
+      title: "About Us",
       subLinks: [
         { title: "Our Story", href: "/our-story", description: "Our journey and commitment to animals." },
         { title: "Mission & Vision", href: "/mission-vision", description: "Our goals and guiding principles." },
-        { title: "Our Team", href: "/team", description: "Meet our dedicated team members." },
-        { title: "Advisory Board", href: "/advisory-board", description: "Guiding our mission with expertise." },
+        { title: "Core Values", href: "/core-values", description: "The values that drive our work." },
+        { title: "Advisory Board Members", href: "/advisory-board", description: "Guiding our mission with expertise." },
         { title: "Trustees", href: "/trustees", description: "The governing body of our foundation." },
-        { title: "Success Stories", href: "/success-stories", description: "Happy adoption tales." },
+        { title: "Our Team", href: "/team", description: "Meet our dedicated team members." },
       ]
     },
     { 
-      title: "What We Do", 
-      href: "#",
+      title: "What We Do",
       subLinks: [
-        { title: "Legal Help", href: "/what-we-do/legal-help", description: "Legal support against animal cruelty." },
-        { title: "Rescue & Rehab", href: "/what-we-do/rescue-rehab", description: "Emergency rescue and rehabilitation." },
-        { title: "Spay & Neuter", href: "/what-we-do/spay-neuter", description: "Controlling overpopulation humanely." },
-        { title: "Feed The Stray", href: "/what-we-do/feed-the-stray", description: "Providing regular, nutritious meals." },
-        { title: "Vaccination Drive", href: "/what-we-do/vaccination-drive", description: "Protecting strays from deadly diseases." },
-        { title: "Adoption & Release", href: "/what-we-do/adoption-release", description: "Finding loving forever homes." },
+        { title: "Legal Help", href: "/legal-help", description: "Legal support against animal cruelty." },
+        { title: "Rescue & Rehab", href: "/rescue-rehab", description: "Emergency rescue and rehabilitation." },
+        { title: "Animal Cruelty", href: "/animal-cruelty", description: "Awareness on laws and reporting." },
+        { title: "Spray & Neuter", href: "/spray-neuter", description: "Controlling overpopulation humanely." },
+        { title: "Feed the Stray", href: "/feed-the-stray", description: "Providing regular, nutritious meals." },
+        { title: "Vaccination Drive", href: "/vaccination-drive", description: "Protecting strays from deadly diseases." },
+        { title: "Adoption & Release", href: "/adoption-and-release", description: "Finding loving forever homes." },
+        { title: "Educate & Train", href: "/educate-and-train", description: "Workshops and awareness programs." },
+        { title: "Ambulance", href: "/ambulance", description: "24/7 emergency response." },
       ]
     },
-    { title: "Adopt", href: "/adopt" },
-    { title: "Contact", href: "/contact" },
+    { title: "Gallery", href: "/gallery" },
+    {
+      title: "Projects",
+      subLinks: [
+        { title: "Water Bowl Project", href: "/water-bowl-project", description: "Hydration initiatives for strays." },
+        { title: "Feeding Drive", href: "/feeding-drive", description: "Sponsor a monthly or one-time feeding drive." },
+        { title: "Color Belt – Save the Life", href: "/color-belt-save-the-life", description: "Making strays more visible at night." },
+        { title: "Vaccination Drive (CSR)", href: "/vaccination-drive-2", description: "Corporate vaccination initiatives." },
+      ]
+    },
+    { title: "Sponsor/Partnership", href: "/sponsor-partnership" },
+    { title: "Sterilization", href: "/sterilization" },
+    { title: "Donate", href: "/donate" },
 ];
 
 
@@ -69,7 +80,7 @@ export function Header() {
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                         {item.subLinks.map((component) => (
-                           <ListItem
+                          <ListItem
                             key={component.title}
                             title={component.title}
                             href={component.href}
@@ -81,7 +92,7 @@ export function Header() {
                     </NavigationMenuContent>
                   </>
                 ) : (
-                  <Link href={item.href} legacyBehavior passHref>
+                  <Link href={item.href || '#'} legacyBehavior passHref>
                     <NavigationMenuLink active={pathname === item.href} className={navigationMenuTriggerStyle()}>
                       {item.title}
                     </NavigationMenuLink>
@@ -112,10 +123,35 @@ export function Header() {
             </Link>
           </Button>
 
-          <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            <Menu className="h-6 w-6" />
-            <span className="sr-only">Open menu</span>
-          </Button>
+          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+            <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                    <Menu className="h-6 w-6" />
+                    <span className="sr-only">Open menu</span>
+                </Button>
+            </SheetTrigger>
+            <SheetContent side="left">
+                 <div className="p-4">
+                    <Logo />
+                    <nav className="mt-8 flex flex-col gap-4">
+                        {mainNav.map((item) => (
+                            item.href ? (
+                                <Link key={item.title} href={item.href} className={cn(navigationMenuTriggerStyle(), "justify-start")}>{item.title}</Link>
+                            ) : (
+                                <div key={item.title}>
+                                    <h3 className="font-bold px-4">{item.title}</h3>
+                                    <div className="flex flex-col gap-2 mt-2">
+                                        {item.subLinks?.map((sub) =>(
+                                            <Link key={sub.title} href={sub.href} className={cn(navigationMenuTriggerStyle(), "justify-start font-normal text-muted-foreground")}>{sub.title}</Link>
+                                        ))}
+                                    </div>
+                                </div>
+                            )
+                        ))}
+                    </nav>
+                 </div>
+            </SheetContent>
+        </Sheet>
         </div>
       </div>
     </header>
@@ -148,3 +184,10 @@ const ListItem = forwardRef<
   )
 })
 ListItem.displayName = "ListItem"
+
+  
+  
+    
+  
+  
+  
