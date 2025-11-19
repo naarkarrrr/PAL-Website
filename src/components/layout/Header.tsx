@@ -45,7 +45,7 @@ const mainNav: { title: string; href?: string; description?: string, subLinks?: 
         { title: "Ambulance", href: "/ambulance", description: "24/7 emergency response." },
       ]
     },
-    { title: "Gallery", href: "/gallery" },
+    { title: "Gallery", href: "/gallary" },
     {
       title: "Projects",
       subLinks: [
@@ -92,11 +92,11 @@ export function Header() {
                     </NavigationMenuContent>
                   </>
                 ) : (
-                  <Link href={item.href || '#'} passHref>
-                    <NavigationMenuLink active={pathname === item.href} className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink asChild active={pathname === item.href}>
+                    <Link href={item.href || '#'} className={navigationMenuTriggerStyle()}>
                       {item.title}
-                    </NavigationMenuLink>
-                  </Link>
+                    </Link>
+                  </NavigationMenuLink>
                 )}
               </NavigationMenuItem>
             ))}
