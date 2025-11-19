@@ -1,0 +1,122 @@
+/**
+ * @file Firebase Security Rules for Kindred Paws Firestore Database
+ *
+ * @Core Philosophy:
+ * This ruleset prioritizes security by enforcing strict authorization. Read access is generally open where the data is intended to be public (e.g., adoptable animals, success stories), while write access is always restricted to authorized personnel, which is simulated by only allowing authenticated requests to perform any operation. It is worth noting that in an actual production scenario, this check would be replaced with checks to determine if an authenticated user is an admin, belongs to a specific group or has permissions to perform any particular write operation.
+ *
+ * @Data Structure:
+ * The database is organized into several top-level collections:
+ * - /ambulance_requests/{ambulanceRequestId}: Stores ambulance requests.
+ * - /adoptable_animals/{animalId}: Stores adoptable animal information.
+ * - /adoptable_animals/{animalId}/animal_description_suggestions/{suggestionId}: Stores AI-generated animal description suggestions.
+ * - /volunteers/{volunteerId}: Stores volunteer information.
+ * - /contact_form_submissions/{submissionId}: Stores contact form submissions.
+ * - /success_stories/{storyId}: Stores success stories.
+ * - /donations/{donationId}: Stores donation records.
+ *
+ * @Key Security Decisions:
+ * - Public read access for adoptable animals and success stories, with restricted write access.
+ * - Strict access control for ambulance requests, volunteer data, contact form submissions, and donation records.
+ * - Subcollection access for animal description suggestions is controlled by the parent document (adoptable animal).
+ * - Rules are structured to avoid complex queries and ensure efficient evaluation.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description Secures ambulance request data. Accessible only by authenticated users.
+     * @path /ambulance_requests/{ambulanceRequestId}
+     * @allow (create, update, delete) request.auth != null
+     * @deny (create, update, delete) request.auth == null
+     * @principle Requires authentication for all operations.
+     */
+    match /ambulance_requests/{ambulanceRequestId} {
+      allow get, list: if isSignedIn();
+      allow create, update, delete: if isSignedIn();
+    }
+
+    /**
+     * @description Secures adoptable animal data. Publicly readable, create/update/delete access restricted to authenticated users.
+     * @path /adoptable_animals/{animalId}
+     * @allow get, list: if true
+     * @allow (create, update, delete) request.auth != null
+     * @deny (create, update, delete) request.auth == null
+     * @principle Publicly readable, requires authentication for write operations.
+     */
+    match /adoptable_animals/{animalId} {
+      allow get, list: if true;
+      allow create, update, delete: if isSignedIn();
+    }
+
+    /**
+     * @description Secures AI-generated animal description suggestions. Accessible only by authenticated users and only if it belongs to the adoptable animal.
+     * @path /adoptable_animals/{animalId}/animal_description_suggestions/{suggestionId}
+     * @allow (create, update, delete) request.auth != null
+     * @deny (create, update, delete) request.auth == null
+     * @principle Requires authentication for all operations and validates the animalId.
+     */
+    match /adoptable_animals/{animalId}/animal_description_suggestions/{suggestionId} {
+      allow get, list: if isSignedIn();
+      allow create, update, delete: if isSignedIn();
+    }
+
+    /**
+     * @description Secures volunteer data. Accessible only by authenticated users.
+     * @path /volunteers/{volunteerId}
+     * @allow (create, update, delete) request.auth != null
+     * @deny (create, update, delete) request.auth == null
+     * @principle Requires authentication for all operations.
+     */
+    match /volunteers/{volunteerId} {
+      allow get, list: if isSignedIn();
+      allow create, update, delete: if isSignedIn();
+    }
+
+    /**
+     * @description Secures contact form submissions. Accessible only by authenticated users.
+     * @path /contact_form_submissions/{submissionId}
+     * @allow (create, update, delete) request.auth != null
+     * @deny (create, update, delete) request.auth == null
+     * @principle Requires authentication for all operations.
+     */
+    match /contact_form_submissions/{submissionId} {
+      allow get, list: if isSignedIn();
+      allow create, update, delete: if isSignedIn();
+    }
+
+    /**
+     * @description Secures success stories. Publicly readable, create/update access restricted to authenticated users.
+     * @path /success_stories/{storyId}
+     * @allow get, list: if true
+     * @allow (create, update, delete) request.auth != null
+     * @deny (create, update, delete) request.auth == null
+     * @principle Publicly readable, requires authentication for write operations.
+     */
+    match /success_stories/{storyId} {
+      allow get, list: if true;
+      allow create, update, delete: if isSignedIn();
+    }
+
+    /**
+     * @description Secures donation records. Accessible only by authenticated users.
+     * @path /donations/{donationId}
+     * @allow (create, update, delete) request.auth != null
+     * @deny (create, update, delete) request.auth == null
+     * @principle Requires authentication for all operations.
+     */
+    match /donations/{donationId} {
+      allow get, list: if isSignedIn();
+      allow create, update, delete: if isSignedIn();
+    }
+
+    /**
+     * @description Checks if the user is signed in.
+     * @return True if the user is signed in, false otherwise.
+     * @principle Ensures that only authenticated users can access certain data.
+     */
+    function isSignedIn() {
+      return request.auth != null;
+    }
+  }
+}

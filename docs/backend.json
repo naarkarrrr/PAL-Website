@@ -1,0 +1,449 @@
+{
+  "entities": {
+    "AmbulanceRequest": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "AmbulanceRequest",
+      "type": "object",
+      "description": "Represents a request for ambulance services for an animal.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the ambulance request."
+        },
+        "requestDateTime": {
+          "type": "string",
+          "description": "Date and time the request was submitted.",
+          "format": "date-time"
+        },
+        "animalType": {
+          "type": "string",
+          "description": "Type of animal requiring assistance (e.g., dog, cat)."
+        },
+        "animalBreed": {
+          "type": "string",
+          "description": "Breed of the animal, if known."
+        },
+        "animalAge": {
+          "type": "number",
+          "description": "Age of the animal in years."
+        },
+        "locationDescription": {
+          "type": "string",
+          "description": "Description of the animal's location."
+        },
+        "ownerName": {
+          "type": "string",
+          "description": "Name of the animal's owner or contact person."
+        },
+        "ownerContact": {
+          "type": "string",
+          "description": "Contact information (phone or email) for the owner.",
+          "format": "email"
+        },
+        "emergencyDescription": {
+          "type": "string",
+          "description": "Detailed description of the emergency situation."
+        }
+      },
+      "required": [
+        "id",
+        "requestDateTime",
+        "animalType",
+        "locationDescription",
+        "ownerName",
+        "ownerContact",
+        "emergencyDescription"
+      ]
+    },
+    "AdoptableAnimal": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "AdoptableAnimal",
+      "type": "object",
+      "description": "Represents an animal available for adoption.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the adoptable animal."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the animal."
+        },
+        "animalType": {
+          "type": "string",
+          "description": "Type of animal (e.g., dog, cat)."
+        },
+        "breed": {
+          "type": "string",
+          "description": "Breed of the animal, if known."
+        },
+        "age": {
+          "type": "number",
+          "description": "Age of the animal in years."
+        },
+        "gender": {
+          "type": "string",
+          "description": "Gender of the animal."
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of the animal's personality and history."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL of the animal's image.",
+          "format": "uri"
+        },
+        "isAdopted": {
+          "type": "boolean",
+          "description": "Indicates whether the animal has been adopted."
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "animalType",
+        "age",
+        "gender",
+        "description",
+        "imageUrl",
+        "isAdopted"
+      ]
+    },
+    "Volunteer": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Volunteer",
+      "type": "object",
+      "description": "Represents a volunteer who has signed up.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the volunteer."
+        },
+        "firstName": {
+          "type": "string",
+          "description": "First name of the volunteer."
+        },
+        "lastName": {
+          "type": "string",
+          "description": "Last name of the volunteer."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the volunteer.",
+          "format": "email"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "Phone number of the volunteer."
+        },
+        "availability": {
+          "type": "string",
+          "description": "Volunteer's availability (e.g., days and times)."
+        },
+        "interests": {
+          "type": "array",
+          "description": "Volunteer's interests and skills.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "firstName",
+        "lastName",
+        "email",
+        "phoneNumber",
+        "availability",
+        "interests"
+      ]
+    },
+    "ContactFormSubmission": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "ContactFormSubmission",
+      "type": "object",
+      "description": "Represents a message submitted through the contact form.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the contact form submission."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the person submitting the form."
+        },
+        "email": {
+          "type": "string",
+          "description": "Email address of the person submitting the form.",
+          "format": "email"
+        },
+        "subject": {
+          "type": "string",
+          "description": "Subject of the message."
+        },
+        "message": {
+          "type": "string",
+          "description": "Content of the message."
+        },
+        "submissionDateTime": {
+          "type": "string",
+          "description": "Date and time the form was submitted.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "email",
+        "subject",
+        "message",
+        "submissionDateTime"
+      ]
+    },
+    "SuccessStory": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "SuccessStory",
+      "type": "object",
+      "description": "Represents a success story about an animal.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the success story."
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the success story."
+        },
+        "story": {
+          "type": "string",
+          "description": "Content of the success story."
+        },
+        "animalName": {
+          "type": "string",
+          "description": "Name of the animal featured in the story."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL of the image associated with the story.",
+          "format": "uri"
+        },
+        "publishDate": {
+          "type": "string",
+          "description": "Date the story was published.",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "story",
+        "animalName",
+        "imageUrl",
+        "publishDate"
+      ]
+    },
+    "AnimalDescriptionSuggestion": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "AnimalDescriptionSuggestion",
+      "type": "object",
+      "description": "Represents an AI-generated suggestion for animal descriptions.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the description suggestion."
+        },
+        "animalId": {
+          "type": "string",
+          "description": "Reference to AdoptableAnimal. (Relationship: AdoptableAnimal 1:N AnimalDescriptionSuggestion)"
+        },
+        "suggestionText": {
+          "type": "string",
+          "description": "The AI generated suggested text description for the animal."
+        },
+        "isAccepted": {
+          "type": "boolean",
+          "description": "Indicates if the user has accepted the AI's suggestion."
+        }
+      },
+      "required": [
+        "id",
+        "animalId",
+        "suggestionText",
+        "isAccepted"
+      ]
+    },
+    "Donation": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Donation",
+      "type": "object",
+      "description": "Represents a donation made via Razorpay.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the donation record."
+        },
+        "transactionId": {
+          "type": "string",
+          "description": "Transaction ID provided by Razorpay."
+        },
+        "donationDateTime": {
+          "type": "string",
+          "description": "Date and time the donation was made.",
+          "format": "date-time"
+        },
+        "amount": {
+          "type": "number",
+          "description": "Amount donated in the smallest currency unit (e.g., cents, paisa)."
+        },
+        "donorName": {
+          "type": "string",
+          "description": "Name of the donor (optional)."
+        },
+        "donorEmail": {
+          "type": "string",
+          "description": "Email address of the donor (optional).",
+          "format": "email"
+        },
+        "paymentMethod": {
+          "type": "string",
+          "description": "Payment method used (e.g., UPI, QR code)."
+        }
+      },
+      "required": [
+        "id",
+        "transactionId",
+        "donationDateTime",
+        "amount",
+        "paymentMethod"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/ambulance_requests/{ambulanceRequestId}",
+        "definition": {
+          "entityName": "AmbulanceRequest",
+          "schema": {
+            "$ref": "#/backend/entities/AmbulanceRequest"
+          },
+          "description": "Stores ambulance requests. Accessible by authorized personnel.",
+          "params": [
+            {
+              "name": "ambulanceRequestId",
+              "description": "Unique identifier for the ambulance request."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/adoptable_animals/{animalId}",
+        "definition": {
+          "entityName": "AdoptableAnimal",
+          "schema": {
+            "$ref": "#/backend/entities/AdoptableAnimal"
+          },
+          "description": "Stores adoptable animals. Publicly readable, create/update access restricted.",
+          "params": [
+            {
+              "name": "animalId",
+              "description": "Unique identifier for the adoptable animal."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/adoptable_animals/{animalId}/animal_description_suggestions/{suggestionId}",
+        "definition": {
+          "entityName": "AnimalDescriptionSuggestion",
+          "schema": {
+            "$ref": "#/backend/entities/AnimalDescriptionSuggestion"
+          },
+          "description": "Stores AI generated suggestions for animal descriptions. Accessible only if the user has access to the parent document and only the suggestion that belongs to the adoptable animal.",
+          "params": [
+            {
+              "name": "animalId",
+              "description": "Unique identifier for the adoptable animal."
+            },
+            {
+              "name": "suggestionId",
+              "description": "Unique identifier for the animal description suggestion."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/volunteers/{volunteerId}",
+        "definition": {
+          "entityName": "Volunteer",
+          "schema": {
+            "$ref": "#/backend/entities/Volunteer"
+          },
+          "description": "Stores volunteer information. Accessible by authorized personnel.",
+          "params": [
+            {
+              "name": "volunteerId",
+              "description": "Unique identifier for the volunteer."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/contact_form_submissions/{submissionId}",
+        "definition": {
+          "entityName": "ContactFormSubmission",
+          "schema": {
+            "$ref": "#/backend/entities/ContactFormSubmission"
+          },
+          "description": "Stores contact form submissions. Accessible by authorized personnel.",
+          "params": [
+            {
+              "name": "submissionId",
+              "description": "Unique identifier for the contact form submission."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/success_stories/{storyId}",
+        "definition": {
+          "entityName": "SuccessStory",
+          "schema": {
+            "$ref": "#/backend/entities/SuccessStory"
+          },
+          "description": "Stores success stories. Publicly readable, create/update access is restricted.",
+          "params": [
+            {
+              "name": "storyId",
+              "description": "Unique identifier for the success story."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/donations/{donationId}",
+        "definition": {
+          "entityName": "Donation",
+          "schema": {
+            "$ref": "#/backend/entities/Donation"
+          },
+          "description": "Stores donation records. Accessible by authorized personnel.",
+          "params": [
+            {
+              "name": "donationId",
+              "description": "Unique identifier for the donation record."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to adhere to the principles of Authorization Independence, Clarity of Intent, DBAC, and QAPs, ensuring secure and scalable data management for the Kindred Paws application. Authorization Independence is achieved through denormalization, avoiding `get()` calls in security rules. Structural Segregation ensures collections have homogeneous security postures. Access Modeling employs path-based ownership and membership maps for collaborative data.\n\n*   **/ambulance_requests/{ambulanceRequestId}**: Stores ambulance request data. No specific ownership; accessible by authorized personnel.\n*   **/adoptable_animals/{animalId}**: Stores information about adoptable animals. Publicly readable, but create/update access is restricted.\n*   **/adoptable_animals/{animalId}/animal_description_suggestions/{suggestionId}**: Stores AI generated suggestions for animal descriptions. The `animalId` is denormalized to enforce Authorization Independence. A user can only create, read, update or delete a suggestion if that suggestion belongs to an adoptable animal.\n*   **/volunteers/{volunteerId}**: Stores volunteer information. Accessible by authorized personnel.\n*   **/contact_form_submissions/{submissionId}**: Stores contact form submissions. Accessible by authorized personnel.\n*   **/success_stories/{storyId}**: Stores success stories. Publicly readable, create/update access is restricted.\n*   **/donations/{donationId}**: Stores donation records. Accessible by authorized personnel.\n\nThis structure supports QAPs by:\n\n*   Segregating data with different access needs into separate collections (e.g., public `adoptable_animals` vs. restricted `contact_form_submissions`).\n*   Avoiding rules-as-filters, ensuring `list` operations are secure."
+  }
+}
