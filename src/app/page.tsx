@@ -58,6 +58,9 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Why Choose Us Section */}
+        <WhyChooseUs />
+
         {/* Stats Counter Section */}
         <StatsCounter />
 
@@ -67,9 +70,6 @@ export default function Home() {
         {/* What We Do Section */}
         <WhatWeDo />
         
-        {/* Why Choose Us Section */}
-        <WhyChooseUs />
-
         {/* Featured Animals Section */}
         <FeaturedAnimals />
 
