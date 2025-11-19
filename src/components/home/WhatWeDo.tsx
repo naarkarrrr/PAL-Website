@@ -15,37 +15,37 @@ const services = [
     icon: LegalHelpIcon,
     title: 'Legal Help',
     description: 'Our legal team, led by experts and supported by police officers and lawyers, fights animal cruelty cases across India.',
-    href: '/legal-help',
+    href: '/what-we-do/legal-help',
   },
   {
     icon: RescueIcon,
     title: 'Rescue & Rehabilitation',
     description: 'We rescue animals from abuse, accidents, and neglect, providing them with urgent medical care and emotional healing.',
-    href: '/rescue-rehab',
+    href: '/what-we-do/rescue-rehab',
   },
   {
     icon: AnimalCrueltyIcon,
     title: 'Animal Cruelty Prevention',
     description: 'We raise awareness, educate communities, and take legal action to prevent animal cruelty.',
-    href: '/animal-cruelty',
+    href: '/what-we-do/animal-cruelty',
   },
   {
     icon: SpayNeuterIcon,
     title: 'Spay & Neuter Program',
     description: 'To control overpopulation humanely, we run free sterilisation drives for stray cats and dogs.',
-    href: '/spay-neuter',
+    href: '/what-we-do/spay-neuter',
   },
     {
     icon: FeedStrayIcon,
     title: 'Feed The Stray',
     description: 'Our feeding program ensures that street animals receive regular, nutritious meals.',
-    href: '/feed-the-stray',
+    href: '/what-we-do/feed-the-stray',
   },
   {
     icon: VaccinationIcon,
     title: 'Vaccination Drive',
     description: 'We conduct annual vaccination drives to protect stray animals from deadly diseases like rabies and parvovirus.',
-    href: '/vaccination-drive',
+    href: '/what-we-do/vaccination-drive',
   },
 ];
 

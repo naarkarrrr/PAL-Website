@@ -1,6 +1,6 @@
 import { PageHeader } from "@/components/shared/PageHeader";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { Target, Eye, Heart, Shield } from "lucide-react";
+import { Target, Eye, Heart, Shield, CheckCircle } from "lucide-react";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import type { Mission, Vision } from "@/lib/types";
 
@@ -97,6 +97,3 @@ export default function MissionVisionPage() {
         </div>
     );
 }
-
-// Added CheckCircle to imports to fix potential missing icon issue.
-import { CheckCircle } from "lucide-react";

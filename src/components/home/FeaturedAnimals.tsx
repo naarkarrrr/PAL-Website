@@ -8,7 +8,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { MotionDiv } from '@/components/shared/MotionDiv';
 import { ArrowRight } from 'lucide-react';
 
-const featuredAnimals = PlaceHolderImages.filter(p => ['1', '2', '3']);
+const featuredAnimals = PlaceHolderImages.filter(p => ['1', '2', '3'].includes(p.id));
 
 export function FeaturedAnimals() {
   return (

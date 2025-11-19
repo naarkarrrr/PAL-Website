@@ -2,8 +2,6 @@ import { PageHeader } from "@/components/shared/PageHeader";
 import { AnimalCard } from "@/components/adoption/AnimalCard";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import type { Animal } from "@/lib/types";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "@/lib/firebase";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
@@ -75,7 +73,7 @@ export default async function AdoptPage() {
                  <Select>
                   <SelectTrigger id="age" className="bg-background">
                     <SelectValue placeholder="Any Age" />
-                  </SelectTrigger>
+                  </Trigger>
                   <SelectContent>
                     <SelectItem value="puppy">Puppy/Kitten</SelectItem>
                     <SelectItem value="young">Young</SelectItem>

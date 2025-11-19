@@ -56,6 +56,7 @@ export type Donation = z.infer<typeof DonationSchema>;
 // Success Story Type
 export interface SuccessStory {
   id: string;
+  slug?: string;
   title: string;
   story: string;
   imageUrl: string;

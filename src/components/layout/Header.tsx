@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Search, Heart } from 'lucide-react';
+import { Menu, Heart } from 'lucide-react';
 import { useState, forwardRef, ElementRef, ComponentPropsWithoutRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -26,7 +26,7 @@ const mainNav: { title: string; href?: string; description?: string, subLinks?: 
         { title: "Our Story", href: "/our-story", description: "Our journey and commitment to animals." },
         { title: "Mission & Vision", href: "/mission-vision", description: "Our goals and guiding principles." },
         { title: "Core Values", href: "/core-values", description: "The values that drive our work." },
-        { title: "Advisory Board Members", href: "/advisory-board", description: "Guiding our mission with expertise." },
+        { title: "Advisory Board", href: "/advisory-board", description: "Guiding our mission with expertise." },
         { title: "Trustees", href: "/trustees", description: "The governing body of our foundation." },
         { title: "Our Team", href: "/team", description: "Meet our dedicated team members." },
       ]
@@ -34,28 +34,28 @@ const mainNav: { title: string; href?: string; description?: string, subLinks?: 
     { 
       title: "What We Do",
       subLinks: [
-        { title: "Legal Help", href: "/legal-help", description: "Legal support against animal cruelty." },
-        { title: "Rescue & Rehab", href: "/rescue-rehab", description: "Emergency rescue and rehabilitation." },
-        { title: "Animal Cruelty", href: "/animal-cruelty", description: "Awareness on laws and reporting." },
-        { title: "Spray & Neuter", href: "/spray-neuter", description: "Controlling overpopulation humanely." },
-        { title: "Feed the Stray", href: "/feed-the-stray", description: "Providing regular, nutritious meals." },
-        { title: "Vaccination Drive", href: "/vaccination-drive", description: "Protecting strays from deadly diseases." },
-        { title: "Adoption & Release", href: "/adoption-and-release", description: "Finding loving forever homes." },
-        { title: "Educate & Train", href: "/educate-and-train", description: "Workshops and awareness programs." },
+        { title: "Legal Help", href: "/what-we-do/legal-help", description: "Legal support against animal cruelty." },
+        { title: "Rescue & Rehab", href: "/what-we-do/rescue-rehab", description: "Emergency rescue and rehabilitation." },
+        { title: "Animal Cruelty", href: "/what-we-do/animal-cruelty", description: "Awareness on laws and reporting." },
+        { title: "Spay & Neuter", href: "/what-we-do/spay-neuter", description: "Controlling overpopulation humanely." },
+        { title: "Feed the Stray", href: "/what-we-do/feed-the-stray", description: "Providing regular, nutritious meals." },
+        { title: "Vaccination Drive", href: "/what-we-do/vaccination-drive", description: "Protecting strays from deadly diseases." },
+        { title: "Adoption & Release", href: "/what-we-do/adoption-release", description: "Finding loving forever homes." },
+        { title: "Educate & Train", href: "/what-we-do/educate-train", description: "Workshops and awareness programs." },
         { title: "Ambulance", href: "/ambulance", description: "24/7 emergency response." },
       ]
     },
-    { title: "Gallery", href: "/gallary" },
+    { title: "Gallery", href: "/gallery" },
     {
       title: "Projects",
       subLinks: [
-        { title: "Water Bowl Project", href: "/water-bowl-project", description: "Hydration initiatives for strays." },
-        { title: "Feeding Drive", href: "/feeding-drive", description: "Sponsor a monthly or one-time feeding drive." },
-        { title: "Color Belt – Save the Life", href: "/color-belt-save-the-life", description: "Making strays more visible at night." },
-        { title: "Vaccination Drive (CSR)", href: "/vaccination-drive-2", description: "Corporate vaccination initiatives." },
+        { title: "Water Bowl Project", href: "/projects/water-bowl", description: "Hydration initiatives for strays." },
+        { title: "Feeding Drive", href: "/projects/feeding-drive", description: "Sponsor a monthly or one-time feeding drive." },
+        { title: "Reflective Collars", href: "/projects/reflective-collars", description: "Making strays more visible at night." },
+        { title: "Vaccination Drives", href: "/projects/vaccination-drives", description: "Corporate vaccination initiatives." },
       ]
     },
-    { title: "Sponsor/Partnership", href: "/sponsor-partnership" },
+    { title: "Sponsor & Partner", href: "/sponsor-partner" },
     { title: "Sterilization", href: "/sterilization" },
     { title: "Donate", href: "/donate" },
 ];
@@ -92,11 +92,11 @@ export function Header() {
                     </NavigationMenuContent>
                   </>
                 ) : (
-                  <NavigationMenuLink asChild active={pathname === item.href}>
-                    <Link href={item.href || '#'} className={navigationMenuTriggerStyle()}>
+                  <Link href={item.href || '#'} legacyBehavior passHref>
+                    <NavigationMenuLink active={pathname === item.href} className={navigationMenuTriggerStyle()}>
                       {item.title}
-                    </Link>
-                  </NavigationMenuLink>
+                    </NavigationMenuLink>
+                  </Link>
                 )}
               </NavigationMenuItem>
             ))}
@@ -104,12 +104,6 @@ export function Header() {
         </NavigationMenu>
 
         <div className="flex items-center gap-4">
-            <div className="hidden md:flex items-center gap-4">
-                <Button variant="ghost" size="icon">
-                    <Search className="h-5 w-5" />
-                </Button>
-            </div>
-
            <Button asChild className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground rounded-full">
             <Link href="/donate">
                 <Heart className="mr-2 h-4 w-4"/>
