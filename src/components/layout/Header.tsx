@@ -50,8 +50,25 @@ const mainNav: {
     ]
   },
   { title: "Adopt", href: "/adopt" },
-  { title: "Sponsor & Partner", href: "/sponsor-partner" },
-  { title: "Contact", href: "/contact" },
+  {
+    title: "How to Help",
+    subLinks: [
+      { title: "Donate", href: "/donate", description: "Support our cause with a donation." },
+      { title: "Volunteer", href: "/volunteer", description: "Join our team and make a difference." },
+      { title: "Sponsor & Partner", href: "/sponsor-partner", description: "Corporate and individual sponsorship." },
+    ],
+  },
+  {
+    title: "Get Involved",
+    subLinks: [
+      { title: "Become Member & Volunteer", href: "/volunteer", description: "Join our team of dedicated volunteers." },
+      { title: "Advocate AWO & Humanright Officer", href: "/advocate", description: "Become an advocate for animal rights." },
+      { title: "Adoption", href: "/adopt", description: "Find your new best friend." },
+      { title: "Sponsor & Partner", href: "/sponsor-partner", description: "Support us through sponsorship." },
+      { title: "Collaboration", href: "/collaboration", description: "Work with us on projects." },
+    ],
+  },
+  { title: "Media", href: "/media" },
 ];
 
 export function Header() {
@@ -89,10 +106,11 @@ export function Header() {
                 ) : (
                   <NavigationMenuLink
                     href={item.href || "#"}
-                    className={navigationMenuTriggerStyle()}
-                    active={pathname === item.href}
+                    asChild
                   >
-                    {item.title}
+                    <Link href={item.href || "#"} className={cn(navigationMenuTriggerStyle(), pathname === item.href && 'bg-accent/50')}>
+                      {item.title}
+                    </Link>
                   </NavigationMenuLink>
                 )}
               </NavigationMenuItem>
