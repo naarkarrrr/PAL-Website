@@ -1,3 +1,4 @@
+
 import { LoginForm } from '@/components/auth/LoginForm';
 import { Logo } from '@/components/shared/Logo';
 
@@ -10,7 +11,7 @@ export default function LoginPage() {
                 <Logo />
             </div>
           <h1 className="text-3xl font-bold font-headline">Admin Panel</h1>
-          <p className="text-muted-foreground">Please sign in to continue</p>
+          <p className="text-muted-foreground">Sign in to continue</p>
         </div>
         <LoginForm />
       </div>
