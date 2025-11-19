@@ -8,7 +8,7 @@ export function Logo({ className }: { className?: string }) {
   return (
     <Link href="/" className={cn("flex items-center gap-2", className)}>
        <Image
-        src={logoImage?.imageUrl || 'https://i.postimg.cc/9Fpmp4gG/pal-logo.png'}
+        src={logoImage?.imageUrl || ''}
         alt={logoImage?.description || 'PAL Foundation Logo'}
         width={200}
         height={50}
