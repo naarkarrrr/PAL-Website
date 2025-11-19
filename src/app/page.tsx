@@ -7,6 +7,7 @@ import { StatsCounter } from '@/components/shared/StatsCounter';
 import { HowYouCanHelp } from '@/components/home/HowYouCanHelp';
 import { FeaturedAnimals } from '@/components/home/FeaturedAnimals';
 import { WhatWeDo } from '@/components/home/WhatWeDo';
+import { WhyChooseUs } from '@/components/home/WhyChooseUs';
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'hero');
 
@@ -62,6 +63,9 @@ export default function Home() {
         {/* What We Do Section */}
         <WhatWeDo />
         
+        {/* Why Choose Us Section */}
+        <WhyChooseUs />
+
         {/* Featured Animals Section */}
         <FeaturedAnimals />
 

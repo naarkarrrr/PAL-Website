@@ -107,6 +107,12 @@
       "description": "A portrait of a smiling, confident person.",
       "imageUrl": "https://images.unsplash.com/photo-1672072963471-cb38bd03fe41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb25maWRlbnQlMjBwZXJzb258ZW58MHx8fHwxNzYzNTM3ODA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "confident person"
+    },
+    {
+      "id": "why_choose_us",
+      "description": "A happy Bernese Mountain Dog looking sideways.",
+      "imageUrl": "https://images.unsplash.com/photo-1559190394-df5a28aab5c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxoYXBweSUyMGRvZ3xlbnwwfHx8fDE3NjM0NDI2MTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "happy dog"
     }
   ]
 }
