@@ -68,7 +68,13 @@ const mainNav: {
       { title: "Collaboration", href: "/collaboration", description: "Work with us on projects." },
     ],
   },
-  { title: "Media", href: "/media" },
+  {
+    title: "Media",
+    subLinks: [
+      { title: "News & Articles", href: "/media", description: "Read our latest news and updates." },
+      { title: "Gallery", href: "/gallery", description: "See our work in action." },
+    ],
+  },
 ];
 
 export function Header() {
