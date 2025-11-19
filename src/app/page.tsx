@@ -14,12 +14,12 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full bg-background overflow-hidden">
+        <section className="w-full bg-primary/30">
           <div className="container mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 items-center gap-12">
             <MotionDiv 
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.8 }}
               className="text-center md:text-left"
             >
               <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
@@ -38,25 +38,22 @@ export default function Home() {
               </div>
             </MotionDiv>
              <MotionDiv 
-                className="relative hidden md:block w-full h-96"
-                initial={{ opacity: 0, scale: 1.1, x: 50 }}
-                animate={{ opacity: 1, scale: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="relative hidden md:flex w-full h-96"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
               >
                <Image
                   src={heroImage?.imageUrl || ''}
                   alt={heroImage?.description || ''}
                   data-ai-hint={heroImage?.imageHint}
                   fill
-                  className="object-cover rounded-3xl shadow-2xl"
+                  className="object-cover rounded-xl shadow-2xl"
                   priority
                 />
             </MotionDiv>
           </div>
         </section>
-
-        {/* Stats Section */}
-        <StatsCounter />
 
         {/* How You Can Help Section */}
         <HowYouCanHelp />

@@ -28,7 +28,7 @@ const services = [
     href: '/volunteer',
     cta: 'Get Involved',
   },
-  {
+   {
     icon: PawPrint,
     title: 'Donate',
     description: 'Your contributions help us provide food, shelter, and essential medical care to animals in need.',
@@ -40,26 +40,22 @@ const services = [
 export function HowYouCanHelp() {
   return (
     <section className="py-16 md:py-24 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-headline">How You Can Help</h2>
-            <p className="mt-4 text-lg text-muted-foreground">
-            Every act of kindness, big or small, contributes to a brighter future for our animals. Your support can change lives.
-            </p>
-        </div>
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">How You Can Help</h2>
+        <p className="max-w-3xl mx-auto text-muted-foreground mb-12 text-lg">
+          Every act of kindness, big or small, contributes to a brighter future for our animals. Your support can change lives.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <MotionDiv 
               key={service.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -8 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
-              <Card className="h-full text-center bg-card shadow-lg rounded-2xl border-t-4 border-primary/50 flex flex-col">
+              <Card className="h-full text-center bg-card shadow-lg rounded-xl border-t-4 border-accent">
                 <CardHeader className="items-center">
-                  <div className="bg-primary/10 p-4 rounded-full">
-                    <service.icon className="w-8 h-8 text-primary" />
+                  <div className="bg-accent/10 p-4 rounded-full">
+                    <service.icon className="w-8 h-8 text-accent" />
                   </div>
                   <CardTitle className="pt-4 font-headline text-2xl">{service.title}</CardTitle>
                 </CardHeader>
@@ -67,7 +63,7 @@ export function HowYouCanHelp() {
                   <p className="text-muted-foreground">{service.description}</p>
                 </CardContent>
                 <CardFooter className="p-4 mt-auto">
-                  <Button asChild variant="ghost" className="w-full text-primary hover:bg-primary/10 hover:text-primary">
+                  <Button asChild variant="link" className="w-full text-accent">
                     <Link href={service.href}>{service.cta}</Link>
                   </Button>
                 </CardFooter>

@@ -11,43 +11,38 @@ const featuredAnimals = PlaceHolderImages.filter(p => ['1', '2', '3']);
 
 export function FeaturedAnimals() {
   return (
-    <section className="py-16 md:py-24 bg-secondary/50">
+    <section className="py-16 md:py-24 bg-primary/30">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline">Pets Waiting for a Home</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            These lovely souls are looking for a forever family. Your new best friend might be just a click away.
-          </p>
-        </div>
+        <h2 className="text-3xl md:text-4xl font-bold font-headline text-center mb-12">Recently Rescued</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredAnimals.map((animal, index) => (
             <MotionDiv 
-              key={animal.id} 
+              key={animal.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="overflow-hidden group rounded-2xl shadow-lg h-full flex flex-col">
-                <div className="relative aspect-[4/3]">
+              <Card className="overflow-hidden group rounded-xl shadow-lg h-full flex flex-col">
+                <div className="relative aspect-square">
                   <Image
                     src={animal.imageUrl}
                     alt={animal.description}
                     data-ai-hint={animal.imageHint}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover transition-transform duration-300 group-hover:scale-110"
                   />
+                   <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
+                    <CardTitle className="text-white font-headline text-2xl">{animal.description}</CardTitle>
+                  </div>
                 </div>
-                <CardHeader>
-                  <CardTitle className="font-headline text-2xl">{animal.description}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <p className="text-muted-foreground line-clamp-2">
+                <CardContent className="p-4 flex-grow">
+                  <p className="text-muted-foreground text-sm">
                     Now safe in our care, on the path to recovery and a new home.
                   </p>
                 </CardContent>
-                <CardFooter className="p-4">
-                  <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                <CardFooter className="p-4 pt-0 mt-auto">
+                  <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                     <Link href={`/adopt/${animal.id}`}>Learn Their Story</Link>
                   </Button>
                 </CardFooter>
@@ -56,7 +51,7 @@ export function FeaturedAnimals() {
           ))}
         </div>
         <div className="text-center mt-12">
-          <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
+          <Button asChild size="lg" variant="outline">
             <Link href="/adopt">Meet More Animals</Link>
           </Button>
         </div>
