@@ -126,8 +126,8 @@ export function Header() {
 
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
-            <NavigationMenuItem>
-              <Link href="/" passHref legacyBehavior>
+             <NavigationMenuItem>
+              <Link href="/" legacyBehavior passHref>
                 <NavigationMenuLink active={pathname === '/'} className={navigationMenuTriggerStyle()}>
                   Home
                 </NavigationMenuLink>
@@ -166,14 +166,14 @@ export function Header() {
               </NavigationMenuContent>
             </NavigationMenuItem>
              <NavigationMenuItem>
-                <Link href="/media" passHref legacyBehavior>
+                <Link href="/media" legacyBehavior passHref>
                     <NavigationMenuLink active={pathname === '/media'} className={navigationMenuTriggerStyle()}>
                     Media
                     </NavigationMenuLink>
                 </Link>
             </NavigationMenuItem>
              <NavigationMenuItem>
-                <Link href="/how-to-help" passHref legacyBehavior>
+                <Link href="/how-to-help" legacyBehavior passHref>
                     <NavigationMenuLink active={pathname === '/how-to-help'} className={navigationMenuTriggerStyle()}>
                     How to Help
                     </NavigationMenuLink>
