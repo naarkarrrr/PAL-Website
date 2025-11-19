@@ -9,6 +9,7 @@ import { FeaturedAnimals } from '@/components/home/FeaturedAnimals';
 import { WhatWeDo } from '@/components/home/WhatWeDo';
 import { WhyChooseUs } from '@/components/home/WhyChooseUs';
 import { SuccessStories } from '@/components/home/SuccessStories';
+import { RotatingText } from '@/components/home/RotatingText';
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'hero');
 
@@ -17,8 +18,9 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full bg-primary/10">
-          <div className="container mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 items-center gap-12">
+        <section className="relative w-full bg-primary/10">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent" />
+          <div className="container mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 items-center gap-12 relative z-10">
             <MotionDiv 
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -55,6 +57,7 @@ export default function Home() {
                   className="object-contain"
                   priority
                 />
+                <RotatingText />
             </MotionDiv>
           </div>
         </section>
