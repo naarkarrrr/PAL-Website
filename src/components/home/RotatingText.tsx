@@ -1,7 +1,10 @@
 
-import { Logo } from '../shared/Logo';
+import Image from 'next/image';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function RotatingText() {
+  const smallLogo = PlaceHolderImages.find(p => p.id === 'small-logo');
+
   return (
     <div className="relative w-40 h-40">
       <div className="absolute inset-0 animate-spin-slow">
@@ -18,7 +21,16 @@ export function RotatingText() {
       </div>
       <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center p-2 shadow-md">
-             <Logo />
+             {smallLogo && (
+                <Image
+                    src={smallLogo.imageUrl}
+                    alt={smallLogo.description}
+                    data-ai-hint={smallLogo.imageHint}
+                    width={60}
+                    height={60}
+                    className="object-contain"
+                />
+             )}
           </div>
       </div>
     </div>
