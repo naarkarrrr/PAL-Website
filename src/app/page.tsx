@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { PawPrint, Heart, Users } from 'lucide-react';
+import { PawPrint, Heart, Users, Ambulance } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { MotionDiv } from '@/components/shared/MotionDiv';
 import { Badge } from '@/components/ui/badge';
@@ -57,14 +57,32 @@ export default function Home() {
           </div>
         </section>
 
-        {/* How You Can Help Section */}
+        {/* Our Services Section */}
         <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">How You Can Help</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">Our Services</h2>
             <p className="max-w-3xl mx-auto text-muted-foreground mb-12 text-lg">
-              Every act of kindness, big or small, contributes to a brighter future for our animals. Your support can change lives.
+              We're committed to providing a lifeline for animals in distress and creating a community of care.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <MotionDiv whileHover={{ y: -8 }} transition={{type: 'spring', stiffness: 300}}>
+                <Card className="h-full text-center bg-card shadow-lg rounded-xl border-t-4 border-accent">
+                  <CardHeader className="items-center">
+                    <div className="bg-accent/10 p-4 rounded-full">
+                      <Ambulance className="w-8 h-8 text-accent" />
+                    </div>
+                    <CardTitle className="pt-4 font-headline text-2xl">Ambulance</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">Emergency rescue for animals in distress. Our team is ready to respond 24/7.</p>
+                  </CardContent>
+                   <CardFooter>
+                      <Button asChild variant="link" className="w-full text-accent">
+                        <Link href="/ambulance">Request Help</Link>
+                      </Button>
+                  </CardFooter>
+                </Card>
+              </MotionDiv>
               <MotionDiv whileHover={{ y: -8 }} transition={{type: 'spring', stiffness: 300}}>
                 <Card className="h-full text-center bg-card shadow-lg rounded-xl border-t-4 border-accent">
                   <CardHeader className="items-center">
@@ -74,29 +92,11 @@ export default function Home() {
                     <CardTitle className="pt-4 font-headline text-2xl">Adopt</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">Give a loving home to a deserving animal. Find your new best friend and change a life forever.</p>
+                    <p className="text-muted-foreground">Give a loving home to a deserving animal. Find your new best friend.</p>
                   </CardContent>
                    <CardFooter>
                       <Button asChild variant="link" className="w-full text-accent">
                         <Link href="/adopt">Find a Pet</Link>
-                      </Button>
-                  </CardFooter>
-                </Card>
-              </MotionDiv>
-              <MotionDiv whileHover={{ y: -8 }} transition={{type: 'spring', stiffness: 300}}>
-                <Card className="h-full text-center bg-card shadow-lg rounded-xl border-t-4 border-accent">
-                  <CardHeader className="items-center">
-                    <div className="bg-accent/10 p-4 rounded-full">
-                      <PawPrint className="w-8 h-8 text-accent" />
-                    </div>
-                    <CardTitle className="pt-4 font-headline text-2xl">Donate</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">Your contributions help us provide food, shelter, and essential medical care to animals in need.</p>
-                  </CardContent>
-                  <CardFooter>
-                      <Button asChild variant="link" className="w-full text-accent">
-                        <Link href="/donate">Support Our Cause</Link>
                       </Button>
                   </CardFooter>
                 </Card>
@@ -110,7 +110,7 @@ export default function Home() {
                     <CardTitle className="pt-4 font-headline text-2xl">Volunteer</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">Join our team of dedicated volunteers and make a hands-on difference in the lives of our animals.</p>
+                    <p className="text-muted-foreground">Join our team and make a hands-on difference in the lives of our animals.</p>
                   </CardContent>
                    <CardFooter>
                       <Button asChild variant="link" className="w-full text-accent">
@@ -119,14 +119,32 @@ export default function Home() {
                   </CardFooter>
                 </Card>
               </MotionDiv>
+              <MotionDiv whileHover={{ y: -8 }} transition={{type: 'spring', stiffness: 300}}>
+                <Card className="h-full text-center bg-card shadow-lg rounded-xl border-t-4 border-accent">
+                  <CardHeader className="items-center">
+                    <div className="bg-accent/10 p-4 rounded-full">
+                      <PawPrint className="w-8 h-8 text-accent" />
+                    </div>
+                    <CardTitle className="pt-4 font-headline text-2xl">Donate</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">Your contributions help us provide food, shelter, and medical care.</p>
+                  </CardContent>
+                  <CardFooter>
+                      <Button asChild variant="link" className="w-full text-accent">
+                        <Link href="/donate">Support Our Cause</Link>
+                      </Button>
+                  </CardFooter>
+                </Card>
+              </MotionDiv>
             </div>
           </div>
         </section>
 
-        {/* Featured Animals Section */}
+        {/* Recently Rescued Section */}
         <section className="py-16 md:py-24 bg-primary/30">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold font-headline text-center mb-12">Pets Waiting for a Home</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-headline text-center mb-12">Recently Rescued</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredAnimals.map((animal) => (
                 <MotionDiv key={animal.id} whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
@@ -144,11 +162,11 @@ export default function Home() {
                         </div>
                     </div>
                     <CardContent className="p-4">
-                       <p className="text-muted-foreground text-sm">A friendly companion looking for a home.</p>
+                       <p className="text-muted-foreground text-sm">Now safe in our care, on the path to recovery and a new home.</p>
                     </CardContent>
                     <CardFooter className="p-4 pt-0">
                       <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                        <Link href={`/adopt/${animal.id}`}>Learn More</Link>
+                        <Link href={`/adopt/${animal.id}`}>Learn Their Story</Link>
                       </Button>
                     </CardFooter>
                   </Card>
@@ -157,7 +175,7 @@ export default function Home() {
             </div>
             <div className="text-center mt-12">
               <Button asChild size="lg" variant="outline">
-                <Link href="/adopt">View All Pets</Link>
+                <Link href="/adopt">Meet More Animals</Link>
               </Button>
             </div>
           </div>
