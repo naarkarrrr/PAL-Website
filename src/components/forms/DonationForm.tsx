@@ -57,7 +57,7 @@ export function DonationForm() {
         key: razorpayKey,
         amount: orderAmount,
         currency: "INR",
-        name: "Kindred Paws",
+        name: "PAL Foundation",
         description: "Donation for Animal Welfare",
         image: "/logo.png", // URL to your logo
         handler: function (response: any) {
@@ -78,7 +78,7 @@ export function DonationForm() {
             contact: ""
         },
         notes: {
-            address: "Kindred Paws Donation"
+            address: "PAL Foundation Donation"
         },
         theme: {
             color: "#D87093" // Muted Rose
@@ -168,7 +168,7 @@ export function DonationForm() {
              <div className="flex justify-center">
                 <QrCode className="h-24 w-24 text-muted-foreground" />
              </div>
-             <p className="text-sm font-mono mt-2 text-muted-foreground">kindredpaws@upi</p>
+             <p className="text-sm font-mono mt-2 text-muted-foreground">palfoundation@upi</p>
           </div>
 
         </form>

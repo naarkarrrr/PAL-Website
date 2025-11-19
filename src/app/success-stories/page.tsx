@@ -42,7 +42,7 @@ export default async function SuccessStoriesPage() {
     <div>
       <PageHeader
         title="Happy Tails & New Beginnings"
-        subtitle="Read the heartwarming stories of animals who found their forever homes through Kindred Paws."
+        subtitle="Read the heartwarming stories of animals who found their forever homes through PAL Foundation."
         imageUrl={headerImage?.imageUrl}
         imageHint={headerImage?.imageHint}
         imageAlt={headerImage?.description}

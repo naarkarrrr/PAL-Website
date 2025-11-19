@@ -8,7 +8,7 @@ export default function VolunteerPage() {
     <div>
       <PageHeader
         title="Join Our Team"
-        subtitle="Your time and skills can make a world of difference. Become a Kindred Paws volunteer today."
+        subtitle="Your time and skills can make a world of difference. Become a PAL Foundation volunteer today."
         imageUrl={headerImage?.imageUrl}
         imageAlt={headerImage?.description}
         imageHint={headerImage?.imageHint}

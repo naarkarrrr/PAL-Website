@@ -6,7 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Kindred Paws",
+  title: "PAL Foundation",
   description: "A sanctuary for animals in need. Adopt, volunteer, or donate to make a difference.",
 };
 

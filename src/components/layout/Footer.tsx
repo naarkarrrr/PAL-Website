@@ -17,7 +17,7 @@ export function Footer() {
           <div className="flex flex-col items-center md:items-start md:col-span-2">
             <Logo />
             <p className="mt-4 text-sm max-w-xs">
-              Kindred Paws is dedicated to rescuing, rehabilitating, and rehoming animals in need.
+              PAL Foundation is dedicated to rescuing, rehabilitating, and rehoming animals in need.
             </p>
              <div className="flex justify-center md:justify-start gap-4 mt-6">
               {socialLinks.map((social) => (
@@ -44,18 +44,16 @@ export function Footer() {
             <h3 className="font-bold font-headline mb-4">Contact Info</h3>
              <ul className="space-y-2 text-sm">
                 <li>123 Animal Lane, Pet City</li>
-                <li>contact@kindredpaws.org</li>
+                <li>contact@pal.foundation</li>
                  <li>(123) 456-7890</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-border mt-8 pt-6 text-center text-xs">
-          <p>&copy; {new Date().getFullYear()} Kindred Paws. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} PAL Foundation. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
   );
 }
-
-    
