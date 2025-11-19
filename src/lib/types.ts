@@ -22,17 +22,26 @@ export type Animal = z.infer<typeof AnimalSchema>;
 
 // Volunteer Schema
 export const VolunteerSchema = z.object({
-  name: z.string().min(2, "Name is required."),
-  email: z.string().email("Invalid email address."),
-  phone: z.string().min(10, "Please enter a valid phone number."),
-  location: z.string().min(3, "Please specify your location."),
-  preferredRole: z.enum(["Rescue Team", "Adoption Team", "Feeding Program", "Ambulance Team", "Administrative Support"]),
-  availability: z.array(z.string()).refine((value) => value.some((item) => item), {
-    message: "You have to select at least one availability option.",
+  name: z.string().min(2, 'Name is required.'),
+  email: z.string().email('Invalid email address.'),
+  phone: z.string().min(10, 'Please enter a valid phone number.'),
+  location: z.string().min(3, 'Please specify your location.'),
+  preferredRole: z.enum([
+    'Rescue Team',
+    'Adoption Team',
+    'Feeding Program',
+    'Ambulance Team',
+    'Administrative Support',
+  ]),
+  availability: z.array(z.string()).refine(value => value.some(item => item), {
+    message: 'You have to select at least one availability option.',
   }),
-  bio: z.string().min(10, "Please tell us a little about yourself.").max(500, "Bio is too long."),
-  agreement: z.boolean().refine((val) => val === true, {
-    message: "You must agree to the terms and conditions.",
+  bio: z
+    .string()
+    .min(10, 'Please tell us a little about yourself.')
+    .max(500, 'Bio is too long.'),
+  agreement: z.boolean().refine(val => val === true, {
+    message: 'You must agree to the terms and conditions.',
   }),
 });
 export type Volunteer = z.infer<typeof VolunteerSchema>;
@@ -62,6 +71,24 @@ export const MembershipSchema = z.object({
   }),
 });
 export type Membership = z.infer<typeof MembershipSchema>;
+
+// Advocate Schema
+export const AdvocateSchema = z.object({
+  fullName: z.string().min(2, "Full name is required."),
+  email: z.string().email("Invalid email address."),
+  phone: z.string().min(10, "Please enter a valid phone number."),
+  location: z.string().min(3, "Please specify your location."),
+  isLawyer: z.enum(["Yes", "No"]),
+  barCouncilNumber: z.string().optional(),
+  areasOfInterest: z.array(z.string()).refine((value) => value.some((item) => item), {
+    message: "You have to select at least one area of interest.",
+  }),
+  statement: z.string().min(20, "Your statement is too short.").max(1000, "Your statement is too long."),
+  agreement: z.boolean().refine((val) => val === true, {
+    message: "You must agree to the terms and conditions.",
+  }),
+});
+export type Advocate = z.infer<typeof AdvocateSchema>;
 
 
 // Contact Schema
