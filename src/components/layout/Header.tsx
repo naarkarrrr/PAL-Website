@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Search, ShoppingBag, Calendar } from 'lucide-react';
-import { useState } from 'react';
+import { useState, forwardRef, ElementRef, ComponentPropsWithoutRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
@@ -16,7 +16,6 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import React from 'react';
 import { Logo } from '../shared/Logo';
 
 
@@ -29,6 +28,8 @@ const mainNav: { title: string; href: string; description?: string, subLinks?: {
         { title: "Our Story", href: "/our-story", description: "Our journey and commitment to animals." },
         { title: "Mission & Vision", href: "/mission-vision", description: "Our goals and guiding principles." },
         { title: "Our Team", href: "/team", description: "Meet our dedicated team members." },
+        { title: "Advisory Board", href: "/advisory-board", description: "Guiding our mission with expertise." },
+        { title: "Trustees", href: "/trustees", description: "The governing body of our foundation." },
         { title: "Success Stories", href: "/success-stories", description: "Happy adoption tales." },
       ]
     },
@@ -36,12 +37,12 @@ const mainNav: { title: string; href: string; description?: string, subLinks?: {
       title: "What We Do", 
       href: "#",
       subLinks: [
-        { title: "Legal Help", href: "/legal-help", description: "Legal support against animal cruelty." },
-        { title: "Rescue & Rehab", href: "/rescue-rehab", description: "Emergency rescue and rehabilitation." },
-        { title: "Spay & Neuter", href: "/spay-neuter", description: "Controlling overpopulation humanely." },
-        { title: "Feed The Stray", href: "/feed-the-stray", description: "Providing regular, nutritious meals." },
-        { title: "Vaccination Drive", href: "/vaccination-drive", description: "Protecting strays from deadly diseases." },
-        { title: "Adoption & Release", href: "/adoption-and-release", description: "Finding loving forever homes." },
+        { title: "Legal Help", href: "/what-we-do/legal-help", description: "Legal support against animal cruelty." },
+        { title: "Rescue & Rehab", href: "/what-we-do/rescue-rehab", description: "Emergency rescue and rehabilitation." },
+        { title: "Spay & Neuter", href: "/what-we-do/spay-neuter", description: "Controlling overpopulation humanely." },
+        { title: "Feed The Stray", href: "/what-we-do/feed-the-stray", description: "Providing regular, nutritious meals." },
+        { title: "Vaccination Drive", href: "/what-we-do/vaccination-drive", description: "Protecting strays from deadly diseases." },
+        { title: "Adoption & Release", href: "/what-we-do/adoption-release", description: "Finding loving forever homes." },
       ]
     },
     { title: "Adopt", href: "/adopt" },
@@ -121,9 +122,9 @@ export function Header() {
   );
 }
 
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
+const ListItem = forwardRef<
+  ElementRef<"a">,
+  ComponentPropsWithoutRef<"a">
 >(({ className, title, children, href, ...props }, ref) => {
   return (
     <li>
