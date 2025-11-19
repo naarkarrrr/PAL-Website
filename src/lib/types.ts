@@ -25,7 +25,7 @@ export const VolunteerSchema = z.object({
   email: z.string().email("Invalid email address."),
   phone: z.string().min(10, "Please enter a valid phone number."),
   location: z.string().min(3, "Please specify your location."),
-  preferredRole: z.enum(["Rescue", "Adoption", "Feeding", "Ambulance", "Admin"]),
+  preferredRole: z.enum(["Rescue Team", "Adoption Team", "Feeding Program", "Ambulance Team", "Administrative Support"]),
   availability: z.array(z.string()).refine((value) => value.some((item) => item), {
     message: "You have to select at least one availability option.",
   }),

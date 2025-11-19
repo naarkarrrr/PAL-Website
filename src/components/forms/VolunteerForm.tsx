@@ -140,11 +140,11 @@ export function VolunteerForm() {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="Rescue">Rescue</SelectItem>
-                    <SelectItem value="Adoption">Adoption</SelectItem>
-                    <SelectItem value="Feeding">Feeding</SelectItem>
-                    <SelectItem value="Ambulance">Ambulance</SelectItem>
-                    <SelectItem value="Admin">Admin</SelectItem>
+                    <SelectItem value="Rescue Team">Rescue Team</SelectItem>
+                    <SelectItem value="Adoption Team">Adoption Team</SelectItem>
+                    <SelectItem value="Feeding Program">Feeding Program</SelectItem>
+                    <SelectItem value="Ambulance Team">Ambulance Team</SelectItem>
+                    <SelectItem value="Administrative Support">Administrative Support</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />

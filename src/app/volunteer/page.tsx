@@ -7,14 +7,14 @@ export default function VolunteerPage() {
   return (
     <div>
       <PageHeader
-        title="Volunteer With Us"
-        subtitle="Your time and skills can make a world of difference. Become a PAL Foundation volunteer and help animals in need."
+        title="BECOME A MEMBER & VOLUNTEER"
+        subtitle="Be the change you want to see. Join our team to make a difference in the lives of animals."
         imageUrl={headerImage?.imageUrl}
         imageAlt={headerImage?.description}
         imageHint={headerImage?.imageHint}
       />
       <div className="container mx-auto max-w-2xl px-4 py-16">
-        <h2 className="text-2xl font-bold text-center mb-4 font-headline">Volunteer Application</h2>
+        <h2 className="text-2xl font-bold text-center mb-4 font-headline">Volunteer Application Form</h2>
         <p className="text-center text-muted-foreground mb-8">
           We're excited to have you on board! Please fill out the form below, and we'll be in touch soon.
         </p>
