@@ -40,16 +40,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
     } catch (error: any) {
+      // If user not found, try to create a new user.
       if (error.code === 'auth/user-not-found' || error.code === 'auth/invalid-credential') {
-        // If user not found, try to create a new user
-        try {
-          await createUserWithEmailAndPassword(auth, email, password);
-        } catch (creationError) {
-          console.error('User creation failed', creationError);
-          throw creationError;
-        }
+        await createUserWithEmailAndPassword(auth, email, password);
       } else {
-        console.error('Sign-in failed', error);
+        // For all other errors, re-throw them to be handled by the form.
         throw error;
       }
     }

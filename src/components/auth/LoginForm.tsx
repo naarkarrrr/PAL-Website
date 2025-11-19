@@ -36,6 +36,7 @@ export function LoginForm() {
     setIsSubmitting(true);
     try {
       await signIn(data);
+      // The redirection will be handled by the AuthProvider's onAuthStateChanged
     } catch (error: any) {
         let errorMessage = 'An unexpected error occurred. Please try again.';
         if (error.code) {
@@ -50,6 +51,9 @@ export function LoginForm() {
                 case 'auth/weak-password':
                     errorMessage = 'The password is too weak. It must be at least 6 characters long.';
                     break;
+                case 'auth/operation-not-allowed':
+                    errorMessage = 'Email/password sign-in is not enabled for this project. Please contact support.';
+                    break;
                 default:
                     errorMessage = error.message;
                     break;
@@ -60,7 +64,8 @@ export function LoginForm() {
         title: 'Authentication Failed',
         description: errorMessage,
       });
-      setIsSubmitting(false); // only set to false on error
+    } finally {
+        setIsSubmitting(false);
     }
   }
 
