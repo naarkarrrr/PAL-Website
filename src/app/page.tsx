@@ -18,8 +18,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative w-full bg-primary/10">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent" />
+        <section className="relative w-full bg-primary/10 overflow-hidden">
           <div className="container mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 items-center gap-12 relative z-10">
             <MotionDiv 
               initial={{ opacity: 0, x: -50 }}
@@ -43,21 +42,24 @@ export default function Home() {
               </div>
             </MotionDiv>
              <MotionDiv 
-                className="relative hidden md:flex w-full h-96"
+                className="relative hidden md:flex justify-center items-center w-full h-[500px]"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
+               <div className="absolute bg-pink-200 rounded-full w-96 h-96 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                <Image
                   src={heroImage?.imageUrl || ''}
                   alt={heroImage?.description || ''}
                   data-ai-hint={heroImage?.imageHint}
                   width={500}
                   height={500}
-                  className="object-contain"
+                  className="object-contain z-10"
                   priority
                 />
-                <RotatingText />
+                <div className="absolute top-20 right-0 z-20">
+                    <RotatingText />
+                </div>
             </MotionDiv>
           </div>
         </section>

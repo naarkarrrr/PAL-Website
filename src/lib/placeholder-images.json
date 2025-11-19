@@ -8,9 +8,9 @@
     },
     {
       "id": "hero",
-      "description": "A cutout image of a happy dog.",
-      "imageUrl": "https://i.postimg.cc/5ycnzVjz/IMG_20250423_WA0168_removebg_preview.png",
-      "imageHint": "happy cat cutout"
+      "description": "A woman in a pink sweater holding a white puppy.",
+      "imageUrl": "https://storage.googleapis.com/aifire.dev/PAL-assets/hero-person-dog.png",
+      "imageHint": "person puppy"
     },
     {
       "id": "1",
