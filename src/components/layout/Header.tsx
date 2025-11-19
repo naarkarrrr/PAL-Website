@@ -2,11 +2,10 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Heart } from 'lucide-react';
+import { Menu, X, Heart, PawPrint } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Logo } from '@/components/shared/Logo';
 import { cn } from '@/lib/utils';
 import {
   NavigationMenu,
@@ -112,6 +111,16 @@ const getInvolvedComponents: { title: string; href: string; description: string 
 ]
 
 
+function Logo({ className }: { className?: string }) {
+  return (
+    <Link href="/" className={cn("flex items-center gap-2", className)}>
+      <PawPrint className="h-6 w-6 text-accent" />
+      <span className="text-xl font-bold font-headline">Kindred Paws</span>
+    </Link>
+  );
+}
+
+
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -124,7 +133,7 @@ export function Header() {
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="/" passHref>
+              <Link href="/" legacyBehavior passHref>
                 <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/' ? 'text-primary' : 'text-foreground')}>
                   Home
                 </NavigationMenuLink>
@@ -163,14 +172,14 @@ export function Header() {
               </NavigationMenuContent>
             </NavigationMenuItem>
              <NavigationMenuItem>
-                <Link href="/media" passHref>
+                <Link href="/media" legacyBehavior passHref>
                     <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/media' ? 'text-primary' : 'text-foreground')}>
                     Media
                     </NavigationMenuLink>
                 </Link>
             </NavigationMenuItem>
              <NavigationMenuItem>
-                <Link href="/how-to-help" passHref>
+                <Link href="/how-to-help" legacyBehavior passHref>
                     <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/how-to-help' ? 'text-primary' : 'text-foreground')}>
                     How to Help
                     </NavigationMenuLink>
