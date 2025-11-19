@@ -4,6 +4,7 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import type { SuccessStory } from "@/lib/types";
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MotionDiv } from '@/components/shared/MotionDiv';
+import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
 
 async function getSuccessStories(): Promise<SuccessStory[]> {
   // Mock data
@@ -35,13 +36,26 @@ async function getSuccessStories(): Promise<SuccessStory[]> {
 
 export default async function SuccessStoriesPage() {
   const stories = await getSuccessStories();
+  const headerImage = PlaceHolderImages.find(p => p.id === 'story1');
 
   return (
     <div>
       <PageHeader
         title="Happy Tails & New Beginnings"
         subtitle="Read the heartwarming stories of animals who found their forever homes through Kindred Paws."
+        imageUrl={headerImage?.imageUrl}
+        imageHint={headerImage?.imageHint}
+        imageAlt={headerImage?.description}
       />
+       <div className="container mx-auto px-4 py-4">
+          <Breadcrumbs
+              segments={[
+                  { title: 'Home', href: '/' },
+                  { title: 'Who We Are', href: '/our-story' },
+                  { title: 'Success Stories', href: '/success-stories' },
+              ]}
+          />
+      </div>
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {stories.map((story, index) => (
@@ -51,7 +65,7 @@ export default async function SuccessStoriesPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full overflow-hidden">
+              <Card className="h-full overflow-hidden shadow-lg border hover:shadow-xl transition-shadow">
                 <div className="relative w-full h-56">
                   <Image
                     src={story.imageUrl}

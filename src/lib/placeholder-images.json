@@ -51,7 +51,7 @@
     {
       "id": "story2",
       "description": "An elderly person smiling while holding a cat.",
-      "imageUrl": "https://images.unsplash.com/photo-1706170324680-b502c50981e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZXJzb24lMjBjYXR8ZW58MHx8fHwxNzYzNDM2NTk0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1706170324680-b502c50981e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZXJzb24lMjBjYXQ8ZW58MHx8fHwxNzYzNDM2NTk0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "person cat"
     },
     {
@@ -83,6 +83,30 @@
       "description": "A collection of pet toys and food.",
       "imageUrl": "https://images.unsplash.com/photo-1591946614720-90a587da4a36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwZXQlMjBzdXBwbGllc3xlbnwwfHx8fDE3NjM0ODQwMDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "pet supplies"
+    },
+    {
+      "id": "about_header",
+      "description": "A group of diverse volunteers smiling and working together.",
+      "imageUrl": "https://images.unsplash.com/photo-1743793174491-bcbdf1882ad5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkaXZlcnNlJTIwdm9sdW50ZWVyc3xlbnwwfHx8fDE3NjM1Mzc4MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "diverse volunteers"
+    },
+    {
+      "id": "mission_header",
+      "description": "A path leading towards a bright horizon, symbolizing hope and future.",
+      "imageUrl": "https://images.unsplash.com/photo-1588880956285-5cd24e4ad1f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxob3BlZnVsJTIwcGF0aHxlbnwwfHx8fDE3NjM1Mzc4MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hopeful path"
+    },
+    {
+      "id": "team_header",
+      "description": "A group of people working collaboratively in a modern office.",
+      "imageUrl": "https://images.unsplash.com/photo-1748256622734-92241ae7b43f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29sbGFib3JhdGl2ZSUyMHRlYW18ZW58MHx8fHwxNzYzNTM3ODA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "collaborative team"
+    },
+    {
+      "id": "founder",
+      "description": "A portrait of a smiling, confident person.",
+      "imageUrl": "https://images.unsplash.com/photo-1672072963471-cb38bd03fe41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb25maWRlbnQlMjBwZXJzb258ZW58MHx8fHwxNzYzNTM3ODA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "confident person"
     }
   ]
 }

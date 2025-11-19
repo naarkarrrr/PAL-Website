@@ -1,4 +1,6 @@
 import { z } from 'zod';
+import type { LucideIcon } from 'lucide-react';
+
 
 // Animal Schema
 export const AnimalSchema = z.object({
@@ -58,4 +60,32 @@ export interface SuccessStory {
   story: string;
   imageUrl: string;
   imageHint: string;
+}
+
+// Mission Type
+export interface Mission {
+    title: string;
+    description: string;
+    points: string[];
+}
+
+// Vision Type
+export interface Vision {
+    title: string;
+    description: string;
+    cards: {
+        icon: LucideIcon;
+        title: string;
+        text: string;
+    }[];
+}
+
+// Story Type
+export interface Story {
+    title: string;
+    founderMessage: string;
+    timeline: {
+        year: number;
+        event: string;
+    }[];
 }

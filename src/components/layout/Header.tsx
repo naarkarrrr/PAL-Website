@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Heart } from 'lucide-react';
+import { Menu, X, PawPrint } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -21,16 +21,19 @@ import React from 'react';
 
 const whoWeAreComponents: { title: string; href: string; description: string }[] = [
   {
-    title: "About PAL",
-    href: "/about",
-    description:
-      "Learn more about our mission, vision, and the team behind PAL.",
+    title: "Our Story",
+    href: "/our-story",
+    description: "Learn about our journey, mission, and the people behind our cause.",
+  },
+  {
+    title: "Mission & Vision",
+    href: "/mission-vision",
+    description: "The driving force and long-term goals of the PAL Foundation.",
   },
   {
     title: "Our Team",
     href: "/team",
-    description:
-      "Meet the dedicated individuals who make our work possible.",
+    description: "Meet the dedicated individuals who make our work possible.",
   },
   {
     title: "Success Stories",
@@ -113,11 +116,8 @@ const getInvolvedComponents: { title: string; href: string; description: string 
 function Logo({ className }: { className?: string }) {
     return (
         <Link href="/" className={cn("flex items-center gap-2 text-xl font-bold font-headline", className)}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className="h-8 w-8">
-                <path fill="#D87093" d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,109.66-88,88a8,8,0,0,1-11.32,0l-44-44a8,8,0,1,1,11.32-11.32L92,200.69l82.34-82.35a8,8,0,0,1,11.32,11.32Z" />
-                <path fill="#E6E6FA" d="m212.24,80.24l-112,112a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,176.69,200.92,69a8,8,0,1,1,11.32,11.32Z" />
-            </svg>
-            Pure Animal Lovers
+             <PawPrint className="h-8 w-8 text-accent" />
+            Kindred Paws
         </Link>
     );
 }
@@ -208,7 +208,6 @@ export function Header() {
         <div className="flex items-center gap-2">
            <Button asChild className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
             <Link href="/donate">
-                <Heart className="mr-2 h-4 w-4" />
                 Donate
             </Link>
           </Button>
@@ -261,7 +260,6 @@ export function Header() {
                 <div className="p-4 border-t mt-auto">
                    <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
                      <Link href="/donate" onClick={() => setIsMobileMenuOpen(false)}>
-                        <Heart className="mr-2 h-4 w-4" />
                         Donate
                     </Link>
                   </Button>
