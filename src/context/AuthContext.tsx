@@ -25,10 +25,16 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
       setLoading(false);
+      if (user) {
+        // If user is detected, ensure they are on the dashboard
+        if (window.location.pathname.startsWith('/admin/login')) {
+           router.push('/admin/dashboard');
+        }
+      }
     });
 
     return () => unsubscribe();
-  }, [auth]);
+  }, [auth, router]);
 
   const signIn = async ({ email, password }: LoginCredentials) => {
     try {
@@ -46,8 +52,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         console.error('Sign-in failed', error);
         throw error;
       }
-    } finally {
-        router.push('/admin/dashboard');
     }
   };
 

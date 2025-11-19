@@ -60,8 +60,7 @@ export function LoginForm() {
         title: 'Authentication Failed',
         description: errorMessage,
       });
-    } finally {
-        setIsSubmitting(false);
+      setIsSubmitting(false); // only set to false on error
     }
   }
 
@@ -98,7 +97,7 @@ export function LoginForm() {
                   className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7 text-muted-foreground"
                   onClick={() => setShowPassword(!showPassword)}
                 >
-                  {showPassword ? <EyeOff /> : <Eye />}
+                  {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                   <span className="sr-only">{showPassword ? 'Hide password' : 'Show password'}</span>
                 </Button>
               </div>
