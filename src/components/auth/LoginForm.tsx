@@ -33,8 +33,8 @@ export function LoginForm() {
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
-      email: 'admin@pal.foundation',
-      password: 'password123',
+      email: '',
+      password: '',
     },
   });
 
