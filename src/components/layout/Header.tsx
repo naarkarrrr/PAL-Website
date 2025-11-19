@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, PawPrint } from 'lucide-react';
+import { Menu, X, PawPrint, Heart } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -112,16 +112,15 @@ const getInvolvedComponents: { title: string; href: string; description: string 
 
 function Logo({ className }: { className?: string }) {
     return (
-      <Link href="/" className={cn("flex items-center gap-2", className)}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-            <path fill="#D87093" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2.29 12.29L8.29 13.5l-1.42 1.42L9.71 18l4.24-4.24-1.41-1.41L9.71 14.17z" />
-            <path fill="#E6E6FA" d="M9.71 14.17l-1.42 1.42L12 18.41l5.66-5.66-1.41-1.41L12 15.59z" />
-        </svg>
-        <span className="text-xl font-bold font-headline">Kindred Paws</span>
-      </Link>
+        <Link href="/" className={cn("flex items-center gap-2 text-xl font-bold font-headline", className)}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className="h-8 w-8">
+                <path fill="#D87093" d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,109.66-88,88a8,8,0,0,1-11.32,0l-44-44a8,8,0,1,1,11.32-11.32L92,200.69l82.34-82.35a8,8,0,0,1,11.32,11.32Z" />
+                <path fill="#E6E6FA" d="m212.24,80.24l-112,112a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,176.69,200.92,69a8,8,0,1,1,11.32,11.32Z" />
+            </svg>
+            Pure Animal Lovers
+        </Link>
     );
-  }
-
+}
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -135,8 +134,8 @@ export function Header() {
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="/" passHref>
-                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/' ? 'text-primary' : 'text-foreground')}>
+              <Link href="/" legacyBehavior passHref>
+                <NavigationMenuLink active={pathname === '/'} className={navigationMenuTriggerStyle()}>
                   Home
                 </NavigationMenuLink>
               </Link>
@@ -174,15 +173,15 @@ export function Header() {
               </NavigationMenuContent>
             </NavigationMenuItem>
              <NavigationMenuItem>
-                <Link href="/media" passHref>
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/media' ? 'text-primary' : 'text-foreground')}>
+                <Link href="/media" legacyBehavior passHref>
+                    <NavigationMenuLink active={pathname === '/media'} className={navigationMenuTriggerStyle()}>
                     Media
                     </NavigationMenuLink>
                 </Link>
             </NavigationMenuItem>
              <NavigationMenuItem>
-                <Link href="/how-to-help" passHref>
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/how-to-help' ? 'text-primary' : 'text-foreground')}>
+                <Link href="/how-to-help" legacyBehavior passHref>
+                    <NavigationMenuLink active={pathname === '/how-to-help'} className={navigationMenuTriggerStyle()}>
                     How to Help
                     </NavigationMenuLink>
                 </Link>
@@ -209,7 +208,7 @@ export function Header() {
         <div className="flex items-center gap-2">
            <Button asChild className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
             <Link href="/donate">
-                <PawPrint className="mr-2 h-4 w-4" />
+                <Heart className="mr-2 h-4 w-4" />
                 Donate
             </Link>
           </Button>
@@ -229,24 +228,40 @@ export function Header() {
                      <X className="h-6 w-6" />
                    </Button>
                 </div>
-                <nav className="flex-grow p-4">
+                <nav className="flex-grow p-4 overflow-y-auto">
                   <ul className="space-y-4">
                     <li><Link href="/" className="block text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
-                    <li><h3 className="text-lg font-medium">Who We Are</h3></li>
-                    {whoWeAreComponents.map(c => <li key={c.href}><Link href={c.href} className="block text-md font-medium text-muted-foreground pl-4" onClick={() => setIsMobileMenuOpen(false)}>{c.title}</Link></li>)}
-                    <li><h3 className="text-lg font-medium">What We Do</h3></li>
-                     {whatWeDoComponents.map(c => <li key={c.href}><Link href={c.href} className="block text-md font-medium text-muted-foreground pl-4" onClick={() => setIsMobileMenuOpen(false)}>{c.title}</Link></li>)}
+                    
+                    <li className="space-y-2">
+                        <h3 className="text-lg font-medium">Who We Are</h3>
+                        <ul className="pl-4 space-y-2">
+                            {whoWeAreComponents.map(c => <li key={c.href}><Link href={c.href} className="block text-md font-medium text-muted-foreground" onClick={() => setIsMobileMenuOpen(false)}>{c.title}</Link></li>)}
+                        </ul>
+                    </li>
+
+                    <li className="space-y-2">
+                        <h3 className="text-lg font-medium">What We Do</h3>
+                         <ul className="pl-4 space-y-2">
+                            {whatWeDoComponents.map(c => <li key={c.href}><Link href={c.href} className="block text-md font-medium text-muted-foreground" onClick={() => setIsMobileMenuOpen(false)}>{c.title}</Link></li>)}
+                        </ul>
+                    </li>
+
                     <li><Link href="/media" className="block text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>Media</Link></li>
                     <li><Link href="/how-to-help" className="block text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>How to Help</Link></li>
-                     <li><h3 className="text-lg font-medium">Get Involved</h3></li>
-                    {getInvolvedComponents.map(c => <li key={c.href}><Link href={c.href} className="block text-md font-medium text-muted-foreground pl-4" onClick={() => setIsMobileMenuOpen(false)}>{c.title}</Link></li>)}
+                     
+                     <li className="space-y-2">
+                        <h3 className="text-lg font-medium">Get Involved</h3>
+                        <ul className="pl-4 space-y-2">
+                            {getInvolvedComponents.map(c => <li key={c.href}><Link href={c.href} className="block text-md font-medium text-muted-foreground" onClick={() => setIsMobileMenuOpen(false)}>{c.title}</Link></li>)}
+                        </ul>
+                    </li>
 
                   </ul>
                 </nav>
                 <div className="p-4 border-t mt-auto">
                    <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
                      <Link href="/donate" onClick={() => setIsMobileMenuOpen(false)}>
-                        <PawPrint className="mr-2 h-4 w-4" />
+                        <Heart className="mr-2 h-4 w-4" />
                         Donate
                     </Link>
                   </Button>
