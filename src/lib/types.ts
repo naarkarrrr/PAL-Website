@@ -9,7 +9,7 @@ export const AnimalSchema = z.object({
   species: z.string().min(3, "Species is required."),
   breed: z.string().min(3, "Breed is required."),
   age: z.string().min(1, "Age is required."),
-  gender: z.enum(["Male", "Female"]),
+  gender: z.enum(["Male", "Female"]).optional(),
   personality: z.string().min(10, "Personality description is too short."),
   description: z.string().min(20, "Please provide a detailed description."),
   medicalNeeds: z.string().optional(),
