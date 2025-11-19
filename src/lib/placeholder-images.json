@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero",
-      "description": "A cutout image of a happy dog.",
-      "imageUrl": "https://i.postimg.cc/5ycnzVjz/IMG-20250423-WA0168-removebg-preview.png",
-      "imageHint": "happy cat cutout"
+      "description": "A cutout image of the PAL foundation logo",
+      "imageUrl": "https://i.postimg.cc/VL1qK02W/pal-logo-transparent.png",
+      "imageHint": "pal foundation logo"
     },
     {
       "id": "1",
@@ -105,7 +105,7 @@
     {
       "id": "founder",
       "description": "A portrait of a confident person.",
-      "imageUrl": "https://images.unsplash.com/photo-1672072963471-cb38bd03fe41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb25maWRlbnQlMjBwZXJzb258ZW58MHx8fHwxNzYzNTM3ODA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1672072963471-cb38bd03fe41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb25maWRlbnQlMjBwZXJzb258ZW58MHx8fHwxNzYzNTM3ODA3fDA&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "confident person"
     },
     {

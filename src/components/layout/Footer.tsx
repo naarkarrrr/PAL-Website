@@ -45,7 +45,7 @@ export function Footer() {
               We are a non-profit organization dedicated to rescuing, rehabilitating, and rehoming animals in need.
             </p>
              <div className="mt-6">
-                <h4 className="font-semibold mb-2">Follow Us On:</h4>
+                <h4 className="font-semibold mb-2 text-white">Follow Us On:</h4>
                 <div className="flex justify-center md:justify-start gap-4">
                 {socialLinks.map((social) => (
                     <Link key={social['aria-label']} href={social.href} aria-label={social['aria-label']} className="hover:text-accent">
@@ -58,7 +58,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-bold font-headline mb-4 relative inline-block">
+            <h3 className="font-bold font-headline text-white mb-4 relative inline-block">
                 Quick Links
                 <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-accent"></span>
             </h3>
@@ -71,7 +71,7 @@ export function Footer() {
 
            {/* Support Links */}
           <div>
-            <h3 className="font-bold font-headline mb-4 relative inline-block">
+            <h3 className="font-bold font-headline text-white mb-4 relative inline-block">
                 Support
                  <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-accent"></span>
             </h3>
@@ -84,7 +84,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-bold font-headline mb-4 relative inline-block">
+            <h3 className="font-bold font-headline text-white mb-4 relative inline-block">
                 Contact
                  <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-accent"></span>
             </h3>
