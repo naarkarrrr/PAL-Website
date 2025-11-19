@@ -8,6 +8,7 @@ import { HowYouCanHelp } from '@/components/home/HowYouCanHelp';
 import { FeaturedAnimals } from '@/components/home/FeaturedAnimals';
 import { WhatWeDo } from '@/components/home/WhatWeDo';
 import { WhyChooseUs } from '@/components/home/WhyChooseUs';
+import { SuccessStories } from '@/components/home/SuccessStories';
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'hero');
 
@@ -73,41 +74,8 @@ export default function Home() {
         <FeaturedAnimals />
 
         {/* Success Story Section */}
-        <section className="py-16 md:py-24 bg-card">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <MotionDiv 
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.7 }}
-                className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl"
-              >
-                <Image
-                  src={PlaceHolderImages.find(p => p.id === 'story1')?.imageUrl || ''}
-                  alt={PlaceHolderImages.find(p => p.id === 'story1')?.description || ''}
-                  data-ai-hint={PlaceHolderImages.find(p => p.id === 'story1')?.imageHint || ''}
-                  fill
-                  className="object-cover"
-                />
-              </MotionDiv>
-              <MotionDiv 
-                initial={{ opacity: 0, x: 50 }} 
-                whileInView={{ opacity: 1, x: 0 }} 
-                viewport={{ once: true, amount: 0.5 }} 
-                transition={{ duration: 0.7, delay: 0.2 }}
-              >
-                <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">A Happy Tail to Tell</h2>
-                <p className="text-lg text-muted-foreground mb-6">
-                  Read about Charlie's journey from a shy stray to a cherished family member. Success stories like this are made possible by your support.
-                </p>
-                <Button asChild size="lg">
-                  <Link href="/success-stories">More Success Stories</Link>
-                </Button>
-              </MotionDiv>
-            </div>
-          </div>
-        </section>
+        <SuccessStories />
+
       </main>
     </div>
   );
