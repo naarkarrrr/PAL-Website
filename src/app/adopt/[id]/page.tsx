@@ -33,17 +33,8 @@ async function getAnimalById(id: string): Promise<Animal | null> {
   };
 }
 
-export default function AnimalDetailPage({ params }: { params: { id: string } }) {
-  const [animal, setAnimal] = useState<Animal | null>(null);
-
-  useEffect(() => {
-    async function fetchAnimal() {
-      const fetchedAnimal = await getAnimalById(params.id);
-      setAnimal(fetchedAnimal);
-    }
-    fetchAnimal();
-  }, [params.id]);
-
+export default async function AnimalDetailPage({ params }: { params: { id: string } }) {
+  const animal = await getAnimalById(params.id);
 
   if (!animal) {
     return <div className="text-center py-20">Animal not found.</div>;

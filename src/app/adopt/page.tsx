@@ -38,16 +38,8 @@ async function getAnimals(): Promise<Animal[]> {
 }
 
 
-export default function AdoptPage() {
-  const [animals, setAnimals] = useState<Animal[]>([]);
-
-  useEffect(() => {
-    async function fetchAnimals() {
-      const fetchedAnimals = await getAnimals();
-      setAnimals(fetchedAnimals);
-    }
-    fetchAnimals();
-  }, []);
+export default async function AdoptPage() {
+  const animals = await getAnimals();
 
   return (
     <div>
