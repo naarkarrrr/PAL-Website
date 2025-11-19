@@ -54,7 +54,7 @@ export default function Home() {
                   data-ai-hint={heroImage?.imageHint}
                   width={500}
                   height={500}
-                  className="object-contain z-10"
+                  className="object-contain z-10 drop-shadow-xl"
                   priority
                 />
                 <div className="absolute top-20 right-0 z-20">
