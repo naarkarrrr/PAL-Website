@@ -21,43 +21,32 @@ import { Logo } from '../shared/Logo';
 const mainNav: { title: string; href?: string; description?: string, subLinks?: { title: string; href: string; description: string }[] }[] = [
     { title: "Home", href: "/" },
     { 
-      title: "About Us",
+      title: "Who We Are",
       subLinks: [
         { title: "Our Story", href: "/our-story", description: "Our journey and commitment to animals." },
         { title: "Mission & Vision", href: "/mission-vision", description: "Our goals and guiding principles." },
-        { title: "Core Values", href: "/core-values", description: "The values that drive our work." },
+        { title: "Our Team", href: "/team", description: "Meet our dedicated team members." },
         { title: "Advisory Board", href: "/advisory-board", description: "Guiding our mission with expertise." },
         { title: "Trustees", href: "/trustees", description: "The governing body of our foundation." },
-        { title: "Our Team", href: "/team", description: "Meet our dedicated team members." },
+        { title: "Success Stories", href: "/success-stories", description: "Read our happy adoption tales." },
       ]
     },
     { 
       title: "What We Do",
       subLinks: [
-        { title: "Legal Help", href: "/what-we-do/legal-help", description: "Legal support against animal cruelty." },
         { title: "Rescue & Rehab", href: "/what-we-do/rescue-rehab", description: "Emergency rescue and rehabilitation." },
-        { title: "Animal Cruelty", href: "/what-we-do/animal-cruelty", description: "Awareness on laws and reporting." },
+        { title: "Adoption & Release", href: "/what-we-do/adoption-release", description: "Finding loving forever homes." },
         { title: "Spay & Neuter", href: "/what-we-do/spay-neuter", description: "Controlling overpopulation humanely." },
+        { title: "Legal Help", href: "/what-we-do/legal-help", description: "Legal support against animal cruelty." },
         { title: "Feed the Stray", href: "/what-we-do/feed-the-stray", description: "Providing regular, nutritious meals." },
         { title: "Vaccination Drive", href: "/what-we-do/vaccination-drive", description: "Protecting strays from deadly diseases." },
-        { title: "Adoption & Release", href: "/what-we-do/adoption-release", description: "Finding loving forever homes." },
         { title: "Educate & Train", href: "/what-we-do/educate-train", description: "Workshops and awareness programs." },
-        { title: "Ambulance", href: "/ambulance", description: "24/7 emergency response." },
+        { title: "Animal Cruelty", href: "/what-we-do/animal-cruelty", description: "Awareness on laws and reporting." },
       ]
     },
-    { title: "Gallery", href: "/gallery" },
-    {
-      title: "Projects",
-      subLinks: [
-        { title: "Water Bowl Project", href: "/projects/water-bowl", description: "Hydration initiatives for strays." },
-        { title: "Feeding Drive", href: "/projects/feeding-drive", description: "Sponsor a monthly or one-time feeding drive." },
-        { title: "Reflective Collars", href: "/projects/reflective-collars", description: "Making strays more visible at night." },
-        { title: "Vaccination Drives", href: "/projects/vaccination-drives", description: "Corporate vaccination initiatives." },
-      ]
-    },
+    { title: "Adopt", href: "/adopt" },
     { title: "Sponsor & Partner", href: "/sponsor-partner" },
-    { title: "Sterilization", href: "/sterilization" },
-    { title: "Donate", href: "/donate" },
+    { title: "Contact", href: "/contact" },
 ];
 
 
@@ -92,7 +81,7 @@ export function Header() {
                     </NavigationMenuContent>
                   </>
                 ) : (
-                  <Link href={item.href || '#'} legacyBehavior passHref>
+                  <Link href={item.href || '#'} passHref legacyBehavior>
                     <NavigationMenuLink active={pathname === item.href} className={navigationMenuTriggerStyle()}>
                       {item.title}
                     </NavigationMenuLink>
@@ -149,12 +138,11 @@ export function Header() {
 const ListItem = forwardRef<
   ElementRef<"a">,
   ComponentPropsWithoutRef<"a">
->(({ className, title, children, href, ...props }, ref) => {
+>(({ className, title, children, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
         <Link
-          href={href!}
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
