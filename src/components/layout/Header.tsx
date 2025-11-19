@@ -81,11 +81,14 @@ export function Header() {
                     </NavigationMenuContent>
                   </>
                 ) : (
-                  <Link href={item.href || '#'} passHref>
-                    <NavigationMenuLink active={pathname === item.href} className={navigationMenuTriggerStyle()}>
-                      {item.title}
-                    </NavigationMenuLink>
-                  </Link>
+                  <NavigationMenuLink
+                    href={item.href || "#"}
+                    active={pathname === item.href}
+                    className={navigationMenuTriggerStyle()}
+                  >
+                    {item.title}
+                  </NavigationMenuLink>
+
                 )}
               </NavigationMenuItem>
             ))}
@@ -157,20 +160,19 @@ const ListItem = forwardRef<
   return (
     <li>
       <NavigationMenuLink asChild>
-        <Link
-          ref={ref}
-          href={props.href || "#"}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </Link>
+      <NavigationMenuLink
+        href={props.href}
+        className={cn(
+          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+          className
+        )}
+      >
+        <div className="text-sm font-medium leading-none">{title}</div>
+        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          {children}
+        </p>
+      </NavigationMenuLink>
+
       </NavigationMenuLink>
     </li>
   )
