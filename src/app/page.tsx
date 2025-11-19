@@ -47,7 +47,7 @@ export default function Home() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-               <div className="absolute bg-pink-200 rounded-full w-96 h-96 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+               <div className="absolute bg-destructive/80 rounded-full w-[450px] h-[450px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                <Image
                   src={heroImage?.imageUrl || ''}
                   alt={heroImage?.description || ''}
