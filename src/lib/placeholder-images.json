@@ -179,6 +179,72 @@
       "description": "A vet bandaging a dog's paw",
       "imageUrl": "https://images.unsplash.com/photo-1549483321-435752498505?q=80&w=1770&auto=format&fit=crop",
       "imageHint": "vet bandage"
+    },
+    {
+      "id": "water_bowl_header",
+      "description": "A dog drinking water from a bowl on a hot day",
+      "imageUrl": "https://images.unsplash.com/photo-1662279057897-446f8960f84b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkb2clMjBkcmlua2luZ3xlbnwwfHx8fDE3NjM1NzY4NTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dog drinking"
+    },
+    {
+      "id": "water_bowl_content1",
+      "description": "A row of water bowls for stray animals",
+      "imageUrl": "https://images.unsplash.com/photo-1570299341458-803af2f4a83b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3YXRlciUyMGJvd2xzfGVufDB8fHx8MTc2MzU3Njg1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "water bowls"
+    },
+    {
+      "id": "water_bowl_content2",
+      "description": "A person refilling a water bowl",
+      "imageUrl": "https://images.unsplash.com/photo-1635456825450-af2a330d1c6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxyZWZpbGxpbmclMjBib3dsfGVufDB8fHx8MTc2MzU3Njg1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "refilling bowl"
+    },
+    {
+      "id": "feeding_drive_header",
+      "description": "A volunteer feeding a group of stray dogs",
+      "imageUrl": "https://images.unsplash.com/photo-1638241906516-32462a8e35bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx2b2x1bnRlZXIlMjBmZWVkaW5nfGVufDB8fHx8MTc2MzU3Njg1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "volunteer feeding"
+    },
+    {
+      "id": "feeding_drive_content1",
+      "description": "Close-up of dog food in a bowl",
+      "imageUrl": "https://images.unsplash.com/photo-1682536192307-c25211b1d4ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkb2clMjBmb29kfGVufDB8fHx8MTc2MzQ4OTQ0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dog food"
+    },
+    {
+      "id": "vaccination_header",
+      "description": "A veterinarian giving a vaccine to a puppy",
+      "imageUrl": "https://images.unsplash.com/photo-1643213641079-1e60ef170910?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx2ZXQlMjBwdXBweXxlbnwwfHx8fDE3NjM1NzY4NTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "vet puppy"
+    },
+    {
+      "id": "vaccination_content1",
+      "description": "A healthy, happy dog wearing a 'vaccinated' tag",
+      "imageUrl": "https://images.unsplash.com/photo-1719464454959-9cf304ef4774?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkb2clMjB2YWNjaW5hdGVkfGVufDB8fHx8MTc2MzU3Njg1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dog vaccinated"
+    },
+    {
+      "id": "collar_belt_header",
+      "description": "A dog with a reflective collar at night",
+      "imageUrl": "https://images.unsplash.com/photo-1585505771896-3ca607d71bf8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkb2clMjByZWZsZWN0aXZlfGVufDB8fHx8MTc2MzU3Njg1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dog reflective"
+    },
+    {
+      "id": "collar_belt_content1",
+      "description": "A hand holding a reflective collar",
+      "imageUrl": "https://images.unsplash.com/photo-1760545183227-ade8e61afd1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxyZWZsZWN0aXZlJTIwY29sbGFyfGVufDB8fHx8MTc2MzU3Njg1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "reflective collar"
+    },
+    {
+      "id": "sterilization_header",
+      "description": "A veterinarian in a surgery room",
+      "imageUrl": "https://images.unsplash.com/photo-1725859189289-a48cca8ad6af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx2ZXQlMjBzdXJnZXJ5fGVufDB8fHx8MTc2MzU3Njg1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "vet surgery"
+    },
+    {
+      "id": "sterilization_content1",
+      "description": "A sleeping dog post-surgery",
+      "imageUrl": "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkb2clMjByZWNvdmVyeXxlbnwwfHx8fDE3NjM1NzY4NTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dog recovery"
     }
   ]
 }

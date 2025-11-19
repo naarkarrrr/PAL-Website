@@ -56,6 +56,11 @@ const mainNav: {
       { title: "Donate", href: "/donate", description: "Support our cause with a donation." },
       { title: "Volunteer", href: "/volunteer", description: "Join our team and make a difference." },
       { title: "Sponsor & Partner", href: "/sponsor-partner", description: "Corporate and individual sponsorship." },
+      { title: "Water Bowl Project", href: "/how-to-help/water-bowl-project", description: "Quench the thirst of stray animals." },
+      { title: "Feeding Drive", href: "/how-to-help/feeding-drive", description: "Help us feed hungry strays." },
+      { title: "Vaccination Drive", href: "/how-to-help/vaccination-drive", description: "Protect animals from diseases." },
+      { title: "Collar Belt to Save Life", href: "/how-to-help/color-belt-save-life", description: "Help prevent night-time accidents." },
+      { title: "Sterilization", href: "/how-to-help/sterilization", description: "Support humane population control." },
     ],
   },
   {
