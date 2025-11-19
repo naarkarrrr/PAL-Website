@@ -2,58 +2,173 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, Heart, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Logo } from '@/components/shared/Logo';
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu"
+import React from 'react';
 
-const navLinks = [
-  { href: '/adopt', label: 'Adopt' },
-  { href: '/success-stories', label: 'Success Stories' },
-  { href: '/volunteer', label: 'Volunteer' },
-  { href: '/ambulance', label: 'Ambulance' },
-  { href: '/contact', label: 'Contact' },
-];
+
+const whoWeAreComponents: { title: string; href: string; description: string }[] = [
+  {
+    title: "About PAL",
+    href: "/about",
+    description:
+      "Learn more about our mission, vision, and the team behind PAL.",
+  },
+  {
+    title: "Our Team",
+    href: "/team",
+    description:
+      "Meet the dedicated individuals who make our work possible.",
+  },
+  {
+    title: "Success Stories",
+    href: "/success-stories",
+    description: "Read heartwarming stories of animals who found their forever homes.",
+  },
+]
+
+const whatWeDoComponents: { title: string; href: string; description: string }[] = [
+    {
+        title: "Ambulance Service",
+        href: "/ambulance",
+        description: "Emergency rescue for animals in distress. Our team is ready to respond 24/7.",
+    },
+    {
+        title: "Rescue & Rehabilitation",
+        href: "/rescue-rehabilitation",
+        description: "Providing a safe haven and care for animals to recover and thrive.",
+    },
+]
+
+const getInvolvedComponents: { title: string; href: string; description: string }[] = [
+    {
+        title: "Become Member & Volunteer",
+        href: "/volunteer",
+        description: "Join our team and make a hands-on difference in the lives of animals.",
+    },
+    {
+        title: "Advocate AWO & Humanright Officer",
+        href: "/advocate",
+        description: "Become an advocate for animal welfare and rights in your community.",
+    },
+    {
+        title: "Adoption",
+        href: "/adopt",
+        description: "Give a loving home to a deserving animal. Find your new best friend.",
+    },
+    {
+        title: "Sponsor & Partner",
+        href: "/sponsor-partner",
+        description: "Support our cause through sponsorship or corporate partnership.",
+    },
+    {
+        title: "Collaboration",
+        href: "/collaboration",
+        description: "Work with us on projects and initiatives to further animal welfare.",
+    }
+]
+
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/90 backdrop-blur-sm">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-sm">
       <div className="container flex h-20 items-center justify-between">
         <Logo />
 
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                'relative transition-colors hover:text-primary',
-                pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href)) 
-                    ? 'text-foreground' 
-                    : 'text-muted-foreground'
-              )}
-            >
-              {link.label}
-              {(pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href))) && (
-                 <motion.div
-                    className="absolute bottom-[-6px] left-0 right-0 h-0.5 bg-primary rounded-full"
-                    layoutId="underline"
-                 />
-              )}
-            </Link>
-          ))}
-        </nav>
+        <NavigationMenu className="hidden md:flex">
+          <NavigationMenuList>
+            <NavigationMenuItem>
+                <Link href="/" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/' ? 'text-primary' : 'text-foreground')}>
+                    Home
+                    </NavigationMenuLink>
+                </Link>
+            </NavigationMenuItem>
+             <NavigationMenuItem>
+              <NavigationMenuTrigger>Who We are</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                  {whoWeAreComponents.map((component) => (
+                    <ListItem
+                      key={component.title}
+                      title={component.title}
+                      href={component.href}
+                    >
+                      {component.description}
+                    </ListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+             <NavigationMenuItem>
+              <NavigationMenuTrigger>What We Do</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                  {whatWeDoComponents.map((component) => (
+                    <ListItem
+                      key={component.title}
+                      title={component.title}
+                      href={component.href}
+                    >
+                      {component.description}
+                    </ListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+             <NavigationMenuItem>
+                <Link href="/media" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/media' ? 'text-primary' : 'text-foreground')}>
+                    Media
+                    </NavigationMenuLink>
+                </Link>
+            </NavigationMenuItem>
+             <NavigationMenuItem>
+                <Link href="/how-to-help" legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === '/how-to-help' ? 'text-primary' : 'text-foreground')}>
+                    How to Help
+                    </NavigationMenuLink>
+                </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Get Involved</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                  {getInvolvedComponents.map((component) => (
+                    <ListItem
+                      key={component.title}
+                      title={component.title}
+                      href={component.href}
+                    >
+                      {component.description}
+                    </ListItem>
+                  ))}
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
 
         <div className="flex items-center gap-2">
-          <Button asChild className="hidden md:flex bg-primary text-primary-foreground hover:bg-primary/90">
+          <Button asChild className="hidden md:flex" variant="default">
             <Link href="/donate">
-              <Heart className="mr-2 h-4 w-4" /> Donate
+              Donate
             </Link>
           </Button>
 
@@ -74,26 +189,22 @@ export function Header() {
                 </div>
                 <nav className="flex-grow p-4">
                   <ul className="space-y-4">
-                    {navLinks.map((link) => (
-                      <li key={link.href}>
-                        <Link
-                          href={link.href}
-                          className={cn(
-                            'block text-lg font-medium transition-colors hover:text-primary',
-                             pathname === link.href ? 'text-primary' : 'text-foreground'
-                          )}
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          {link.label}
-                        </Link>
-                      </li>
-                    ))}
+                    <li><Link href="/" className="block text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
+                    <li><h3 className="text-lg font-medium">Who We Are</h3></li>
+                    {whoWeAreComponents.map(c => <li key={c.href}><Link href={c.href} className="block text-md font-medium text-muted-foreground pl-4" onClick={() => setIsMobileMenuOpen(false)}>{c.title}</Link></li>)}
+                    <li><h3 className="text-lg font-medium">What We Do</h3></li>
+                     {whatWeDoComponents.map(c => <li key={c.href}><Link href={c.href} className="block text-md font-medium text-muted-foreground pl-4" onClick={() => setIsMobileMenuOpen(false)}>{c.title}</Link></li>)}
+                    <li><Link href="/media" className="block text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>Media</Link></li>
+                    <li><Link href="/how-to-help" className="block text-lg font-medium" onClick={() => setIsMobileMenuOpen(false)}>How to Help</Link></li>
+                     <li><h3 className="text-lg font-medium">Get Involved</h3></li>
+                    {getInvolvedComponents.map(c => <li key={c.href}><Link href={c.href} className="block text-md font-medium text-muted-foreground pl-4" onClick={() => setIsMobileMenuOpen(false)}>{c.title}</Link></li>)}
+
                   </ul>
                 </nav>
                 <div className="p-4 border-t mt-auto">
-                  <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                  <Button asChild className="w-full">
                     <Link href="/donate" onClick={() => setIsMobileMenuOpen(false)}>
-                      <Heart className="mr-2 h-4 w-4" /> Donate
+                      Donate
                     </Link>
                   </Button>
                 </div>
@@ -105,3 +216,29 @@ export function Header() {
     </header>
   );
 }
+
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  )
+})
+ListItem.displayName = "ListItem"
