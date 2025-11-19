@@ -25,27 +25,33 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex h-20 items-center justify-between">
         <Logo />
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                'transition-colors hover:text-foreground/80',
-                pathname === link.href ? 'text-foreground' : 'text-foreground/60'
+                'relative transition-colors hover:text-foreground',
+                pathname === link.href ? 'text-foreground font-semibold' : 'text-muted-foreground'
               )}
             >
               {link.label}
+              {pathname === link.href && (
+                 <motion.div
+                    className="absolute bottom-[-4px] left-0 right-0 h-0.5 bg-accent"
+                    layoutId="underline"
+                 />
+              )}
             </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-4">
-          <Button asChild className="hidden md:flex bg-accent text-accent-foreground hover:bg-accent/90">
+          <Button asChild className="hidden md:flex">
             <Link href="/donate">
               <PawPrint className="mr-2 h-4 w-4" /> Donate
             </Link>
@@ -71,7 +77,7 @@ export function Header() {
                         <Link
                           href={link.href}
                           className={cn(
-                            'block text-lg font-medium transition-colors hover:text-foreground/80',
+                            'block text-lg font-medium transition-colors hover:text-foreground',
                              pathname === link.href ? 'text-accent' : 'text-foreground'
                           )}
                           onClick={() => setIsMobileMenuOpen(false)}
@@ -83,7 +89,7 @@ export function Header() {
                   </ul>
                 </nav>
                 <div className="p-4 border-t">
-                  <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                  <Button asChild className="w-full">
                     <Link href="/donate" onClick={() => setIsMobileMenuOpen(false)}>
                       <PawPrint className="mr-2 h-4 w-4" /> Donate
                     </Link>

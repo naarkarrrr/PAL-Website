@@ -4,11 +4,19 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import type { Animal } from "@/lib/types";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Search } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
-// In a real app, you might add error handling and loading states.
+
 async function getAnimals(): Promise<Animal[]> {
-  // This is a placeholder for fetching real data from Firestore.
-  // We'll use the placeholder images and mock some data.
   const mockAnimals: Animal[] = PlaceHolderImages
     .filter(p => ['1', '2', '3', '4', '5', '6'].includes(p.id))
     .map(p => ({
@@ -26,19 +34,6 @@ async function getAnimals(): Promise<Animal[]> {
       imageHint: p.imageHint
     }));
   
-  // Example of fetching from Firestore (commented out for scaffolding)
-  /*
-  try {
-    const animalsCol = collection(db, 'animals');
-    const animalSnapshot = await getDocs(animalsCol);
-    const animalList = animalSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Animal));
-    return animalList;
-  } catch (error) {
-    console.error("Error fetching animals: ", error);
-    return mockAnimals; // Fallback to mock data on error
-  }
-  */
-
   return mockAnimals;
 }
 
@@ -53,6 +48,60 @@ export default async function AdoptPage() {
         subtitle="Browse our loving animals who are waiting for a forever home."
       />
       <div className="container mx-auto px-4 py-16">
+        <div className="bg-background shadow-md rounded-lg p-6 mb-12 sticky top-20 z-10">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 items-end">
+            <div className="sm:col-span-2 md:col-span-4 lg:col-span-1">
+              <label htmlFor="search" className="block text-sm font-medium text-foreground mb-1">Search</label>
+              <div className="relative">
+                 <Input id="search" placeholder="Search by name, breed..." className="pl-10" />
+                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              </div>
+            </div>
+             <div>
+              <label htmlFor="type" className="block text-sm font-medium text-foreground mb-1">Type</label>
+                <Select>
+                  <SelectTrigger id="type">
+                    <SelectValue placeholder="Any Type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="dog">Dog</SelectItem>
+                    <SelectItem value="cat">Cat</SelectItem>
+                    <SelectItem value="other">Other</SelectItem>
+                  </SelectContent>
+                </Select>
+            </div>
+             <div>
+               <label htmlFor="age" className="block text-sm font-medium text-foreground mb-1">Age</label>
+                 <Select>
+                  <SelectTrigger id="age">
+                    <SelectValue placeholder="Any Age" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="puppy">Puppy/Kitten</SelectItem>
+                    <SelectItem value="young">Young</SelectItem>
+                    <SelectItem value="adult">Adult</SelectItem>
+                     <SelectItem value="senior">Senior</SelectItem>
+                  </SelectContent>
+                </Select>
+            </div>
+             <div>
+                <label htmlFor="gender" className="block text-sm font-medium text-foreground mb-1">Gender</label>
+                 <Select>
+                  <SelectTrigger id="gender">
+                    <SelectValue placeholder="Any Gender" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="male">Male</SelectItem>
+                    <SelectItem value="female">Female</SelectItem>
+                  </SelectContent>
+                </Select>
+            </div>
+            <Button className="w-full">
+              Search
+            </Button>
+          </div>
+        </div>
+
         {animals.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {animals.map((animal) => (

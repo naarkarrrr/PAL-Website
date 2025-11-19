@@ -2,11 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { PawPrint, Heart, Users, Ambulance } from 'lucide-react';
+import { PawPrint, Heart, Users, Search } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { MotionDiv } from '@/components/shared/MotionDiv';
 
-// Mock data - in a real app, this would come from a database
 const featuredAnimals = PlaceHolderImages.filter(p => ['1', '2', '3'].includes(p.id));
 const successStory = PlaceHolderImages.find(p => p.id === 'story1');
 
@@ -15,109 +14,92 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative w-full h-[60vh] md:h-[80vh] flex items-center justify-center text-center text-white">
-          <Image
-            src={PlaceHolderImages.find(p => p.id === 'hero')?.imageUrl || ''}
-            alt={PlaceHolderImages.find(p => p.id === 'hero')?.description || ''}
-            data-ai-hint={PlaceHolderImages.find(p => p.id === 'hero')?.imageHint}
-            fill
-            className="object-cover -z-10"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/50 -z-10" />
-          <MotionDiv
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl p-4"
-          >
-            <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight text-shadow-lg">
-              Welcome to Kindred Paws
-            </h1>
-            <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto">
-              A sanctuary for animals in need. Your journey to make a difference starts here.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link href="/adopt">Adopt a Friend</Link>
-              </Button>
-              <Button asChild size="lg" variant="secondary">
-                <Link href="/donate">Donate Now</Link>
-              </Button>
-            </div>
-          </MotionDiv>
+        <section className="relative w-full h-[70vh] md:h-[90vh]">
+          <div className="container mx-auto px-4 h-full grid md:grid-cols-2 items-center gap-8">
+            <MotionDiv 
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center md:text-left"
+            >
+              <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
+                Find Your <span className="text-accent">Forever</span> Friend
+              </h1>
+              <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto md:mx-0 text-muted-foreground">
+                We connect loving families with animals in need. Start your adoption journey today and make a difference.
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                <Button asChild size="lg">
+                  <Link href="/adopt">Find a Pet <PawPrint className="ml-2" /></Link>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <Link href="/volunteer">Get Involved</Link>
+                </Button>
+              </div>
+            </MotionDiv>
+             <MotionDiv 
+                className="relative hidden md:block w-full h-full"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+               <Image
+                  src={PlaceHolderImages.find(p => p.id === 'hero')?.imageUrl || ''}
+                  alt={PlaceHolderImages.find(p => p.id === 'hero')?.description || ''}
+                  data-ai-hint={PlaceHolderImages.find(p => p.id === 'hero')?.imageHint}
+                  fill
+                  className="object-contain"
+                  priority
+                />
+            </MotionDiv>
+          </div>
         </section>
 
         {/* How You Can Help Section */}
-        <section className="py-16 md:py-24 bg-primary">
+        <section className="py-16 md:py-24 bg-secondary">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary-foreground mb-4">How You Can Help</h2>
-            <p className="max-w-2xl mx-auto text-primary-foreground/80 mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">How You Can Help</h2>
+            <p className="max-w-2xl mx-auto text-muted-foreground mb-12">
               Every act of kindness, big or small, contributes to a brighter future for our animals.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <MotionDiv whileHover={{ y: -5 }}>
-                <Card className="h-full text-left bg-background">
-                  <CardHeader>
-                    <Heart className="w-10 h-10 mb-4 text-accent" />
-                    <CardTitle>Adopt</CardTitle>
+                <Card className="h-full text-center bg-background shadow-lg">
+                  <CardHeader className="items-center">
+                    <div className="bg-accent/10 p-4 rounded-full">
+                      <Heart className="w-8 h-8 text-accent" />
+                    </div>
+                    <CardTitle className="pt-4">Adopt</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p>Give a loving home to a deserving animal. Find your new best friend.</p>
+                    <p>Give a loving home to a deserving animal. Find your new best friend and change a life forever.</p>
                   </CardContent>
-                  <CardFooter>
-                    <Button asChild variant="link" className="p-0 text-accent">
-                      <Link href="/adopt">See Adoptable Pets</Link>
-                    </Button>
-                  </CardFooter>
                 </Card>
               </MotionDiv>
               <MotionDiv whileHover={{ y: -5 }}>
-                <Card className="h-full text-left bg-background">
-                  <CardHeader>
-                    <PawPrint className="w-10 h-10 mb-4 text-accent" />
-                    <CardTitle>Donate</CardTitle>
+                <Card className="h-full text-center bg-background shadow-lg">
+                  <CardHeader className="items-center">
+                    <div className="bg-accent/10 p-4 rounded-full">
+                      <PawPrint className="w-8 h-8 text-accent" />
+                    </div>
+                    <CardTitle className="pt-4">Donate</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p>Your contributions help us provide food, shelter, and medical care.</p>
+                    <p>Your contributions help us provide food, shelter, and essential medical care to animals in need.</p>
                   </CardContent>
-                  <CardFooter>
-                    <Button asChild variant="link" className="p-0 text-accent">
-                      <Link href="/donate">Support Our Cause</Link>
-                    </Button>
-                  </CardFooter>
                 </Card>
               </MotionDiv>
               <MotionDiv whileHover={{ y: -5 }}>
-                <Card className="h-full text-left bg-background">
-                  <CardHeader>
-                    <Users className="w-10 h-10 mb-4 text-accent" />
-                    <CardTitle>Volunteer</CardTitle>
+                <Card className="h-full text-center bg-background shadow-lg">
+                  <CardHeader className="items-center">
+                    <div className="bg-accent/10 p-4 rounded-full">
+                      <Users className="w-8 h-8 text-accent" />
+                    </div>
+                    <CardTitle className="pt-4">Volunteer</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p>Join our team of dedicated volunteers and make a hands-on difference.</p>
+                    <p>Join our team of dedicated volunteers and make a hands-on difference in the lives of our animals.</p>
                   </CardContent>
-                   <CardFooter>
-                    <Button asChild variant="link" className="p-0 text-accent">
-                      <Link href="/volunteer">Join Our Team</Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </MotionDiv>
-              <MotionDiv whileHover={{ y: -5 }}>
-                <Card className="h-full text-left bg-background">
-                  <CardHeader>
-                    <Ambulance className="w-10 h-10 mb-4 text-accent" />
-                    <CardTitle>Rescue</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p>Found an animal in distress? Request our ambulance service.</p>
-                  </CardContent>
-                  <CardFooter>
-                    <Button asChild variant="link" className="p-0 text-accent">
-                      <Link href="/ambulance">Request Help</Link>
-                    </Button>
-                  </CardFooter>
                 </Card>
               </MotionDiv>
             </div>
@@ -127,25 +109,26 @@ export default function Home() {
         {/* Featured Animals Section */}
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold font-headline text-center mb-12">Meet Some of Our Friends</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-headline text-center mb-12">Pets Waiting for a Home</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredAnimals.map((animal) => (
                 <MotionDiv key={animal.id} whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
-                  <Card className="overflow-hidden">
-                    <Image
-                      src={animal.imageUrl}
-                      alt={animal.description}
-                      data-ai-hint={animal.imageHint}
-                      width={400}
-                      height={300}
-                      className="w-full h-48 object-cover"
-                    />
+                  <Card className="overflow-hidden group">
+                    <div className="relative aspect-square">
+                      <Image
+                        src={animal.imageUrl}
+                        alt={animal.description}
+                        data-ai-hint={animal.imageHint}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                    </div>
                     <CardHeader>
                       <CardTitle>{animal.description}</CardTitle>
                       <CardDescription>A friendly companion looking for a home.</CardDescription>
                     </CardHeader>
                     <CardFooter>
-                      <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                      <Button asChild className="w-full">
                         <Link href={`/adopt/${animal.id}`}>Learn More</Link>
                       </Button>
                     </CardFooter>
@@ -154,7 +137,7 @@ export default function Home() {
               ))}
             </div>
             <div className="text-center mt-12">
-              <Button asChild size="lg" variant="secondary">
+              <Button asChild size="lg" variant="outline">
                 <Link href="/adopt">View All Pets</Link>
               </Button>
             </div>
@@ -163,7 +146,7 @@ export default function Home() {
         
         {/* Success Story Section */}
         {successStory && (
-          <section className="py-16 md:py-24 bg-primary">
+          <section className="py-16 md:py-24 bg-secondary">
             <div className="container mx-auto px-4">
               <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                 <MotionDiv initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.7 }}>
@@ -177,11 +160,11 @@ export default function Home() {
                   />
                 </MotionDiv>
                 <MotionDiv initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.7 }}>
-                  <h2 className="text-3xl md:text-4xl font-bold font-headline text-primary-foreground mb-4">A Happy Tail</h2>
-                  <p className="text-lg text-primary-foreground/80 mb-6">
+                  <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">A Happy Tail to Tell</h2>
+                  <p className="text-lg text-muted-foreground mb-6">
                     Read about Charlie's journey from a shy stray to a cherished family member. Success stories like this are made possible by your support.
                   </p>
-                  <Button asChild size="lg" variant="secondary">
+                  <Button asChild size="lg">
                     <Link href="/success-stories">More Success Stories</Link>
                   </Button>
                 </MotionDiv>

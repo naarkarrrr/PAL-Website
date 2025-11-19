@@ -11,14 +11,21 @@ const socialLinks = [
 export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
           {/* Logo and About */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center md:items-start md:col-span-2">
             <Logo className="text-primary-foreground" />
             <p className="mt-4 text-sm text-primary-foreground/70 max-w-xs">
               Kindred Paws is dedicated to rescuing, rehabilitating, and rehoming animals in need.
             </p>
+             <div className="flex justify-center md:justify-start gap-4 mt-6">
+              {socialLinks.map((social) => (
+                <a key={social['aria-label']} href={social.href} aria-label={social['aria-label']} className="text-primary-foreground/70 hover:text-primary-foreground">
+                  <social.icon className="h-6 w-6" />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -32,18 +39,14 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Social and Contact */}
+          {/* Contact */}
           <div>
-            <h3 className="font-bold font-headline mb-4">Connect With Us</h3>
-            <div className="flex justify-center md:justify-start gap-4 mb-4">
-              {socialLinks.map((social) => (
-                <a key={social['aria-label']} href={social.href} aria-label={social['aria-label']} className="text-primary-foreground/70 hover:text-primary-foreground">
-                  <social.icon className="h-6 w-6" />
-                </a>
-              ))}
-            </div>
-            <p className="text-sm text-primary-foreground/70">123 Animal Lane, Pet City</p>
-            <p className="text-sm text-primary-foreground/70">contact@kindredpaws.org</p>
+            <h3 className="font-bold font-headline mb-4">Contact Info</h3>
+             <ul className="space-y-2 text-sm text-primary-foreground/70">
+                <li>123 Animal Lane, Pet City</li>
+                <li>contact@kindredpaws.org</li>
+                 <li>(123) 456-7890</li>
+            </ul>
           </div>
         </div>
 

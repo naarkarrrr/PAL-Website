@@ -11,7 +11,7 @@ type PageHeaderProps = {
 
 export function PageHeader({ title, subtitle, imageUrl, imageAlt, imageHint }: PageHeaderProps) {
   return (
-    <section className="relative w-full py-20 md:py-32 flex items-center justify-center text-center text-white bg-primary">
+    <section className="relative w-full py-20 md:py-32 flex items-center justify-center text-center text-primary-foreground bg-primary">
       {imageUrl && (
         <>
           <Image
@@ -34,7 +34,7 @@ export function PageHeader({ title, subtitle, imageUrl, imageAlt, imageHint }: P
         <h1 className="text-4xl md:text-5xl font-bold font-headline tracking-tight text-shadow-lg">
           {title}
         </h1>
-        <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto">
+        <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-primary-foreground/80">
           {subtitle}
         </p>
       </MotionDiv>
