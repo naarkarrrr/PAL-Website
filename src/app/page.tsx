@@ -51,7 +51,7 @@ export default function Home() {
                   alt={heroImage?.description || ''}
                   data-ai-hint={heroImage?.imageHint}
                   fill
-                  className="object-cover rounded-xl shadow-2xl"
+                  className="object-contain"
                   priority
                 />
             </MotionDiv>

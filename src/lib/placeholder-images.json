@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero",
-      "description": "A person gently petting a happy dog in a sunny field.",
-      "imageUrl": "https://images.unsplash.com/photo-1537204696486-967f1b7198c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxoYXBweSUyMGRvZ3xlbnwwfHx8fDE3NjM0NDI2MTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "happy dog"
+      "description": "A cutout image of a happy dog.",
+      "imageUrl": "https://storage.googleapis.com/aifire.dev/generations/1a9a8341-36b1-4147-9252-258602690e80.png",
+      "imageHint": "happy dog cutout"
     },
     {
       "id": "1",
