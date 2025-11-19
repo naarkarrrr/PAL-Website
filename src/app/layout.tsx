@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import Script from "next/script";
+import { CallToAction } from "@/components/shared/CallToAction";
 
 export const metadata: Metadata = {
   title: "PAL Foundation | Animal Rescue, Adoption & Welfare",
@@ -27,6 +28,7 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">{children}</main>
+          <CallToAction />
           <Footer />
         </div>
         <Toaster />
