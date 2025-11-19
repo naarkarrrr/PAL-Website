@@ -15,13 +15,14 @@ import { Button } from '@/components/ui/button';
 import { LoginSchema, type LoginCredentials } from '@/lib/types';
 import { useAuth } from '@/context/AuthContext';
 import { useState } from 'react';
-import { Loader2 } from 'lucide-react';
+import { Loader2, Eye, EyeOff } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 export function LoginForm() {
   const { signIn } = useAuth();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const form = useForm<LoginCredentials>({
     resolver: zodResolver(LoginSchema),
@@ -59,7 +60,8 @@ export function LoginForm() {
         title: 'Authentication Failed',
         description: errorMessage,
       });
-      setIsSubmitting(false);
+    } finally {
+        setIsSubmitting(false);
     }
   }
 
@@ -85,9 +87,21 @@ export function LoginForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Password</FormLabel>
-              <FormControl>
-                <Input placeholder="••••••••" type="password" {...field} />
-              </FormControl>
+              <div className="relative">
+                <FormControl>
+                  <Input placeholder="••••••••" type={showPassword ? 'text' : 'password'} {...field} />
+                </FormControl>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  className="absolute right-1 top-1/2 -translate-y-1/2 h-7 w-7 text-muted-foreground"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <EyeOff /> : <Eye />}
+                  <span className="sr-only">{showPassword ? 'Hide password' : 'Show password'}</span>
+                </Button>
+              </div>
               <FormMessage />
             </FormItem>
           )}
