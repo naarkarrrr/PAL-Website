@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Heart, Menu, PawPrint, X } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -42,14 +42,44 @@ const whoWeAreComponents: { title: string; href: string; description: string }[]
 
 const whatWeDoComponents: { title: string; href: string; description: string }[] = [
     {
-        title: "Ambulance Service",
+        title: "Ambulance",
         href: "/ambulance",
-        description: "Emergency rescue for animals in distress. Our team is ready to respond 24/7.",
+        description: "24/7 ambulance outreach for animals in distress.",
     },
     {
-        title: "Rescue & Rehabilitation",
-        href: "/rescue-rehabilitation",
-        description: "Providing a safe haven and care for animals to recover and thrive.",
+        title: "Legal Help",
+        href: "/what-we-do/legal-help",
+        description: "Free/low-cost legal guidance for animal cruelty cases.",
+    },
+    {
+        title: "Animal Cruelty",
+        href: "/what-we-do/animal-cruelty",
+        description: "Awareness on laws and how to report cruelty.",
+    },
+    {
+        title: "Spay & Neuter",
+        href: "/what-we-do/spay-neuter",
+        description: "Community dog management through the ABC program.",
+    },
+    {
+        title: "Feed the Stray",
+        href: "/what-we-do/feed-the-stray",
+        description: "Daily and weekly feeding drives for stray animals.",
+    },
+    {
+        title: "Vaccination Drive",
+        href: "/what-we-do/vaccination-drive",
+        description: "Anti-rabies and health vaccination programs.",
+    },
+    {
+        title: "Adoption & Release",
+        href: "/what-we-do/adoption-release",
+        description: "Find loving homes for rescued animals.",
+    },
+    {
+        title: "Educate & Train",
+        href: "/what-we-do/educate-train",
+        description: "Workshops and awareness programs for all ages.",
     },
 ]
 
@@ -166,9 +196,10 @@ export function Header() {
         </NavigationMenu>
 
         <div className="flex items-center gap-2">
-          <Button asChild className="hidden md:flex" variant="default">
+           <Button asChild className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
             <Link href="/donate">
-              Donate
+                <Heart className="mr-2 h-4 w-4" />
+                Donate
             </Link>
           </Button>
 
@@ -202,9 +233,10 @@ export function Header() {
                   </ul>
                 </nav>
                 <div className="p-4 border-t mt-auto">
-                  <Button asChild className="w-full">
-                    <Link href="/donate" onClick={() => setIsMobileMenuOpen(false)}>
-                      Donate
+                   <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-full">
+                     <Link href="/donate" onClick={() => setIsMobileMenuOpen(false)}>
+                        <Heart className="mr-2 h-4 w-4" />
+                        Donate
                     </Link>
                   </Button>
                 </div>
