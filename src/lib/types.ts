@@ -53,7 +53,7 @@ export const MembershipSchema = z.object({
   areaPincode: z.string().optional(),
   whatsappGroup: z.enum(['Group 1', 'Group 2', 'Not a Member']),
   communityAnimalsCount: z.preprocess(
-    (val) => (val === '' ? undefined : Number(val)),
+    (val) => (val === '' ? 0 : Number(val)),
     z.number().int().nonnegative().optional()
   ),
   whatsappNumber: z.string().optional(),
@@ -114,6 +114,32 @@ export const DonationSchema = z.object({
     amount: z.number().min(1, "Donation amount must be at least ₹1."),
 });
 export type Donation = z.infer<typeof DonationSchema>;
+
+// Collaboration Schema
+export const CollaborationSchema = z.object({
+  name: z.string().min(2, "Name or Organization Name is required."),
+  contactPerson: z.string().min(2, "Contact person's name is required."),
+  email: z.string().email("A valid email is required."),
+  phone: z.string().min(10, "A valid phone number is required."),
+  proposal: z.string().min(20, "Please provide a detailed proposal.").max(2000, "Proposal is too long."),
+  website: z.string().url("Please enter a valid URL.").optional().or(z.literal('')),
+});
+export type Collaboration = z.infer<typeof CollaborationSchema>;
+
+
+// Sponsor/Partner Schema
+export const SponsorSchema = z.object({
+  companyName: z.string().min(2, "Company name is required."),
+  contactPerson: z.string().min(2, "Contact person's name is required."),
+  jobTitle: z.string().min(2, "Job title is required."),
+  email: z.string().email("A valid work email is required."),
+  phone: z.string().min(10, "A valid phone number is required."),
+  website: z.string().url("Please enter a valid company website URL."),
+  sponsorshipLevel: z.enum(['Platinum', 'Gold', 'Silver', 'Friend of PAL', 'Other']),
+  message: z.string().min(10, "Your message is too short.").max(1000, "Your message is too long."),
+});
+export type Sponsor = z.infer<typeof SponsorSchema>;
+
 
 // Success Story Type
 export interface SuccessStory {
