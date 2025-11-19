@@ -127,7 +127,7 @@ export function Header() {
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href="/" legacyBehavior passHref>
+              <Link href="/" passHref>
                 <NavigationMenuLink active={pathname === '/'} className={navigationMenuTriggerStyle()}>
                   Home
                 </NavigationMenuLink>
@@ -166,14 +166,14 @@ export function Header() {
               </NavigationMenuContent>
             </NavigationMenuItem>
              <NavigationMenuItem>
-                <Link href="/media" legacyBehavior passHref>
+                <Link href="/media" passHref>
                     <NavigationMenuLink active={pathname === '/media'} className={navigationMenuTriggerStyle()}>
                     Media
                     </NavigationMenuLink>
                 </Link>
             </NavigationMenuItem>
              <NavigationMenuItem>
-                <Link href="/how-to-help" legacyBehavior passHref>
+                <Link href="/how-to-help" passHref>
                     <NavigationMenuLink active={pathname === '/how-to-help'} className={navigationMenuTriggerStyle()}>
                     How to Help
                     </NavigationMenuLink>
@@ -273,9 +273,9 @@ const ListItem = React.forwardRef<
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
+        <Link
+          href={href!}
           ref={ref}
-          href={href}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
@@ -286,9 +286,11 @@ const ListItem = React.forwardRef<
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   )
 })
 ListItem.displayName = "ListItem"
+
+    
