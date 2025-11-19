@@ -153,14 +153,11 @@ export function Header() {
   );
 }
 
-const ListItem = forwardRef<
-  ElementRef<"a">,
-  ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+function ListItem({ className, title, children, href }: any) {
   return (
     <li>
       <NavigationMenuLink
-        href={props.href}
+        href={href}
         className={cn(
           "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
           className
@@ -171,8 +168,7 @@ const ListItem = forwardRef<
           {children}
         </p>
       </NavigationMenuLink>
-
     </li>
   );
-});
-ListItem.displayName = "ListItem"
+}
+
