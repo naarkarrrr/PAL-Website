@@ -50,7 +50,8 @@ export default function Home() {
                   src={heroImage?.imageUrl || ''}
                   alt={heroImage?.description || ''}
                   data-ai-hint={heroImage?.imageHint}
-                  fill
+                  width={500}
+                  height={500}
                   className="object-contain"
                   priority
                 />

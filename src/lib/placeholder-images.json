@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero",
-      "description": "hero image",
+      "description": "A cutout image of a happy dog.",
       "imageUrl": "https://i.postimg.cc/5ycnzVjz/IMG_20250423_WA0168_removebg_preview.png",
-      "imageHint": "hero image"
+      "imageHint": "happy dog cutout"
     },
     {
       "id": "1",

@@ -31,7 +31,7 @@ export function PageHeader({ title, subtitle, imageUrl, imageAlt, imageHint }: P
         transition={{ duration: 0.8 }}
         className="max-w-4xl p-4"
       >
-        <h1 className="text-4xl md:text-5xl font-bold font-headline tracking-tight text-shadow-lg">
+        <h1 className="text-4xl md:text-5xl font-bold font-headline tracking-tight">
           {title}
         </h1>
         <p className="mt-4 text-lg md:text-xl max-w-2xl mx-auto text-primary-foreground/80">
