@@ -3,9 +3,6 @@ import { Check } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { MotionDiv } from '../shared/MotionDiv';
 import { PawPrint } from 'lucide-react';
-import { CrownIcon } from '../icons/Crown';
-import { BoneIcon } from '../icons/Bone';
-import { FoodBowlIcon } from '../icons/FoodBowl';
 
 const features = [
   {
@@ -49,9 +46,6 @@ export function WhyChooseUs() {
                 fill
                 className="object-contain p-8"
               />
-              <CrownIcon className="absolute -top-4 left-1/4 w-20 h-20 text-primary -rotate-12" />
-              <BoneIcon className="absolute bottom-1/4 -left-4 w-20 h-20 text-primary rotate-12" />
-              <FoodBowlIcon className="absolute bottom-8 right-0 w-24 h-24 text-primary" />
             </div>
           </MotionDiv>
           <MotionDiv
