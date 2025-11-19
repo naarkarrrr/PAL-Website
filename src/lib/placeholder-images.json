@@ -1,6 +1,12 @@
 {
   "placeholderImages": [
     {
+      "id": "logo",
+      "description": "PAL Foundation Logo",
+      "imageUrl": "https://i.postimg.cc/9Fpmp4gG/pal-logo.png",
+      "imageHint": "PAL logo"
+    },
+    {
       "id": "hero",
       "description": "A cutout image of a happy dog.",
       "imageUrl": "https://i.postimg.cc/5ycnzVjz/IMG_20250423_WA0168_removebg_preview.png",
