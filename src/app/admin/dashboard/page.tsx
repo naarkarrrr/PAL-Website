@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, FileText, Users, Handshake, Heart, ShieldAlert } from 'lucide-react';
-import { useAuth } from '@/context/AuthContext';
 
 const formCollections = [
   { name: 'membershipApplications', title: 'Membership Applications', icon: Users },
@@ -15,13 +14,11 @@ const formCollections = [
 ];
 
 export default function AdminDashboardPage() {
-    const { logout } = useAuth();
   return (
     <div className="min-h-screen bg-muted/40">
         <header className="bg-background border-b sticky top-0 z-30">
             <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                 <h1 className="text-xl font-bold font-headline">Admin Dashboard</h1>
-                <Button variant="outline" onClick={logout}>Logout</Button>
             </div>
         </header>
       <main className="container mx-auto px-4 py-8">
