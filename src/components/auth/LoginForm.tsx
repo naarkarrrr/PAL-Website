@@ -33,8 +33,8 @@ export function LoginForm() {
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
-      email: '',
-      password: '',
+      email: 'admin@pal.foundation',
+      password: 'password123',
     },
   });
 
@@ -45,7 +45,24 @@ export function LoginForm() {
       await login(data.email, data.password);
       // Redirect is handled by the AuthProvider
     } catch (err: any) {
-      setError(err.message || 'An unexpected error occurred.');
+      let errorMessage = 'An unexpected error occurred.';
+      if (err.code) {
+        switch (err.code) {
+          case 'auth/wrong-password':
+            errorMessage = 'Incorrect password. Please try again.';
+            break;
+          case 'auth/user-not-found':
+            errorMessage = 'No account found with this email. A new account will be created.';
+            // This case is handled in the login function, but we can set a message here.
+            break;
+           case 'auth/invalid-credential':
+            errorMessage = 'Invalid credentials. Please check your email and password.';
+            break;
+          default:
+            errorMessage = err.message;
+        }
+      }
+      setError(errorMessage);
     } finally {
         setIsLoading(false);
     }

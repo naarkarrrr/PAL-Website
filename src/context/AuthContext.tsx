@@ -1,7 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { getAuth, onAuthStateChanged, User, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, User, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword } from 'firebase/auth';
 import { useRouter, usePathname } from 'next/navigation';
 import { initializeFirebase } from '@/firebase';
 
@@ -40,7 +40,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [auth, pathname, router]);
 
   const login = async (email: string, pass: string) => {
-    return signInWithEmailAndPassword(auth, email, pass);
+    try {
+        return await signInWithEmailAndPassword(auth, email, pass);
+    } catch (error: any) {
+        // If the user does not exist, create a new one.
+        if (error.code === 'auth/user-not-found') {
+            try {
+                return await createUserWithEmailAndPassword(auth, email, pass);
+            } catch (createError) {
+                 throw createError;
+            }
+        }
+        throw error;
+    }
   };
 
   const logout = async () => {
