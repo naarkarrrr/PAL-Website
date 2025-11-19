@@ -7,6 +7,7 @@ import { useToast } from '@/hooks/use-toast';
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -20,8 +21,16 @@ import { submitVolunteerForm } from '@/lib/actions';
 import { useState } from 'react';
 import { Loader2 } from 'lucide-react';
 import { MotionDiv } from '../shared/MotionDiv';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
+import { Checkbox } from '../ui/checkbox';
 
 type VolunteerFormValues = z.infer<typeof VolunteerSchema>;
+
+const availabilityItems = [
+  { id: 'weekdays', label: 'Weekdays' },
+  { id: 'weekends', label: 'Weekends' },
+  { id: 'both', label: 'Both' },
+];
 
 export function VolunteerForm() {
   const { toast } = useToast();
@@ -32,8 +41,11 @@ export function VolunteerForm() {
       name: '',
       email: '',
       phone: '',
-      availability: '',
-      skills: '',
+      location: '',
+      preferredRole: undefined,
+      availability: [],
+      bio: '',
+      agreement: false,
     },
   });
 
@@ -44,8 +56,8 @@ export function VolunteerForm() {
 
     if (result.success) {
       toast({
-        title: 'Application Sent!',
-        description: "Thank you for your interest. We'll be in touch soon.",
+        title: 'Thank you for joining!',
+        description: "We'll reach out soon.",
       });
       form.reset();
     } else {
@@ -68,7 +80,48 @@ export function VolunteerForm() {
               <FormItem>
                 <FormLabel>Full Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="John Doe" {...field} />
+                  <Input placeholder="John Doe" {...field} aria-label="Full Name" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <div className="grid md:grid-cols-2 gap-8">
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input placeholder="you@example.com" {...field} type="email" aria-label="Email" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Phone Number</FormLabel>
+                  <FormControl>
+                    <Input placeholder="(123) 456-7890" {...field} type="tel" aria-label="Phone Number" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <FormField
+            control={form.control}
+            name="location"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Location (City/District)</FormLabel>
+                <FormControl>
+                  <Input placeholder="e.g., Mumbai" {...field} aria-label="Location" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -76,26 +129,24 @@ export function VolunteerForm() {
           />
           <FormField
             control={form.control}
-            name="email"
+            name="preferredRole"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input placeholder="you@example.com" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Phone Number</FormLabel>
-                <FormControl>
-                  <Input placeholder="(123) 456-7890" {...field} />
-                </FormControl>
+                <FormLabel>Preferred Role</FormLabel>
+                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormControl>
+                    <SelectTrigger aria-label="Preferred Role">
+                      <SelectValue placeholder="Select a role" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="Rescue">Rescue</SelectItem>
+                    <SelectItem value="Adoption">Adoption</SelectItem>
+                    <SelectItem value="Feeding">Feeding</SelectItem>
+                    <SelectItem value="Ambulance">Ambulance</SelectItem>
+                    <SelectItem value="Admin">Admin</SelectItem>
+                  </SelectContent>
+                </Select>
                 <FormMessage />
               </FormItem>
             )}
@@ -103,11 +154,63 @@ export function VolunteerForm() {
           <FormField
             control={form.control}
             name="availability"
+            render={() => (
+              <FormItem>
+                <div className="mb-4">
+                  <FormLabel>Availability</FormLabel>
+                </div>
+                <div className="flex flex-wrap gap-4">
+                  {availabilityItems.map((item) => (
+                    <FormField
+                      key={item.id}
+                      control={form.control}
+                      name="availability"
+                      render={({ field }) => {
+                        return (
+                          <FormItem
+                            key={item.id}
+                            className="flex flex-row items-start space-x-3 space-y-0"
+                          >
+                            <FormControl>
+                              <Checkbox
+                                checked={field.value?.includes(item.id)}
+                                onCheckedChange={(checked) => {
+                                  return checked
+                                    ? field.onChange([...(field.value || []), item.id])
+                                    : field.onChange(
+                                      field.value?.filter(
+                                        (value) => value !== item.id
+                                      )
+                                    )
+                                }}
+                              />
+                            </FormControl>
+                            <FormLabel className="font-normal">
+                              {item.label}
+                            </FormLabel>
+                          </FormItem>
+                        )
+                      }}
+                    />
+                  ))}
+                </div>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="bio"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Availability</FormLabel>
+                <FormLabel>Brief Bio</FormLabel>
                 <FormControl>
-                  <Input placeholder="e.g., Weekends, weekday evenings" {...field} />
+                  <Textarea
+                    placeholder="Tell us a little about yourself and why you want to volunteer..."
+                    className="resize-y min-h-[120px]"
+                    {...field}
+                    aria-label="Brief Bio"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -115,18 +218,25 @@ export function VolunteerForm() {
           />
           <FormField
             control={form.control}
-            name="skills"
+            name="agreement"
             render={({ field }) => (
-              <FormItem>
-                <FormLabel>Relevant Skills (Optional)</FormLabel>
+              <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4 shadow-sm">
                 <FormControl>
-                  <Textarea
-                    placeholder="Tell us about any skills like animal handling, photography, event planning, etc."
-                    className="resize-none"
-                    {...field}
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                    aria-label="Agree to terms and conditions"
                   />
                 </FormControl>
-                <FormMessage />
+                <div className="space-y-1 leading-none">
+                  <FormLabel>
+                    I agree to the terms and conditions.
+                  </FormLabel>
+                  <FormDescription>
+                    You agree to our Volunteer Agreement and Privacy Policy.
+                  </FormDescription>
+                  <FormMessage />
+                </div>
               </FormItem>
             )}
           />

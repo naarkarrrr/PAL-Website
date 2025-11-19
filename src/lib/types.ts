@@ -24,10 +24,18 @@ export const VolunteerSchema = z.object({
   name: z.string().min(2, "Name is required."),
   email: z.string().email("Invalid email address."),
   phone: z.string().min(10, "Please enter a valid phone number."),
-  availability: z.string().min(3, "Please specify your availability."),
-  skills: z.string().optional(),
+  location: z.string().min(3, "Please specify your location."),
+  preferredRole: z.enum(["Rescue", "Adoption", "Feeding", "Ambulance", "Admin"]),
+  availability: z.array(z.string()).refine((value) => value.some((item) => item), {
+    message: "You have to select at least one availability option.",
+  }),
+  bio: z.string().min(10, "Please tell us a little about yourself.").max(500, "Bio is too long."),
+  agreement: z.boolean().refine((val) => val === true, {
+    message: "You must agree to the terms and conditions.",
+  }),
 });
 export type Volunteer = z.infer<typeof VolunteerSchema>;
+
 
 // Contact Schema
 export const ContactSchema = z.object({
