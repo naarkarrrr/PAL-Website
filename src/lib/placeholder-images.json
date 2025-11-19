@@ -91,6 +91,12 @@
       "imageHint": "animal rescue"
     },
     {
+      "id": "ambulance_illustration",
+      "description": "An illustration of an ambulance with a city skyline in the background.",
+      "imageUrl": "https://i.imgur.com/eB44Q9g.png",
+      "imageHint": "ambulance illustration"
+    },
+    {
       "id": "donate_header",
       "description": "Pet toys and food.",
       "imageUrl": "https://images.unsplash.com/photo-1591946614720-90a587da4a36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwZXQlMjBzdXBwbGllc3xlbnwwfHx8fDE3NjM0ODQwMDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
