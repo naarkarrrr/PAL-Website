@@ -42,8 +42,8 @@ export default async function AdoptPage() {
   return (
     <div>
       <PageHeader
-        title="Find Your New Best Friend"
-        subtitle="Browse our loving animals who are waiting for a forever home."
+        title="Adopt a Pet"
+        subtitle="Browse our loving animals who are waiting for a forever home. Give a rescue pet a second chance."
       />
       <div className="container mx-auto px-4 py-16">
         <div className="bg-card shadow-lg rounded-xl p-6 mb-12 sticky top-24 z-10 border">

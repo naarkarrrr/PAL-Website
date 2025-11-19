@@ -6,8 +6,8 @@ import { Toaster } from "@/components/ui/toaster";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "PAL Foundation",
-  description: "A sanctuary for animals in need. Adopt, volunteer, or donate to make a difference.",
+  title: "PAL Foundation | Animal Rescue, Adoption & Welfare",
+  description: "PAL Foundation is a non-profit animal rescue organization. We rescue, rehabilitate, and rehome animals in need. Adopt a pet, volunteer, or donate to support our mission.",
 };
 
 export default function RootLayout({

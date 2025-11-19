@@ -26,7 +26,7 @@ export default function Home() {
               className="text-center md:text-left"
             >
               <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight">
-                Rescue • Rehabilitate • Restart Lives
+                Giving Animals a Second Chance
               </h1>
               <p className="mt-6 text-lg md:text-xl max-w-2xl mx-auto md:mx-0 text-muted-foreground">
                 PAL Foundation is a non-profit organization dedicated to animal welfare, providing rescue, medical care, and a safe haven for animals in need.
