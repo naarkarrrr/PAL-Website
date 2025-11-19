@@ -81,9 +81,7 @@ export function Header() {
                     </NavigationMenuContent>
                   </>
                 ) : (
-                  <Link href={item.href || '#'}>
-                    {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */
-                    }
+                  <Link href={item.href || '#'} passHref>
                     <NavigationMenuLink active={pathname === item.href} className={navigationMenuTriggerStyle()}>
                       {item.title}
                     </NavigationMenuLink>
@@ -115,20 +113,28 @@ export function Header() {
                     <nav className="mt-8 flex flex-col gap-4">
                         {mainNav.map((item) => (
                             item.href ? (
-                              <NavigationMenuLink
-                              href={item.href || "#"}
-                              active={pathname === item.href}
-                              className={navigationMenuTriggerStyle()}
-                            >
-                              {item.title}
-                            </NavigationMenuLink>
-                            
+                              <Link href={item.href || "#"} key={item.title} passHref>
+                                <NavigationMenuLink
+                                  active={pathname === item.href}
+                                  className={cn(navigationMenuTriggerStyle(), "w-full justify-start")}
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                  {item.title}
+                                </NavigationMenuLink>
+                              </Link>
                             ) : (
                                 <div key={item.title}>
                                     <h3 className="font-bold px-4">{item.title}</h3>
                                     <div className="flex flex-col gap-2 mt-2">
                                         {item.subLinks?.map((sub) =>(
-                                            <Link key={sub.title} href={sub.href} className={cn(navigationMenuTriggerStyle(), "justify-start font-normal text-muted-foreground")}>{sub.title}</Link>
+                                            <Link key={sub.title} href={sub.href} passHref>
+                                              <NavigationMenuLink
+                                                className={cn(navigationMenuTriggerStyle(), "justify-start font-normal text-muted-foreground")}
+                                                onClick={() => setIsMobileMenuOpen(false)}
+                                              >
+                                                {sub.title}
+                                              </NavigationMenuLink>
+                                            </Link>
                                         ))}
                                     </div>
                                 </div>
@@ -150,19 +156,20 @@ const ListItem = forwardRef<
 >(({ className, title, children, ...props }, ref) => {
   return (
     <li>
-      <NavigationMenuLink
-        href={props.href}
-        className={cn(
-          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-          className
-        )}
-      >
-        <div className="text-sm font-medium leading-none">{title}</div>
-        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-          {children}
-        </p>
-      </NavigationMenuLink>
-
+      <Link href={props.href || "#"} passHref>
+        <NavigationMenuLink
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </NavigationMenuLink>
+      </Link>
     </li>
   )
 })
