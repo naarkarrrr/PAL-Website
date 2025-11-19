@@ -10,8 +10,8 @@ export default function LoginPage() {
             <div className="flex justify-center mb-4">
                 <Logo />
             </div>
-          <h1 className="text-3xl font-bold font-headline">Admin Panel</h1>
-          <p className="text-muted-foreground">Sign in to continue</p>
+          <h1 className="text-3xl font-bold font-headline">Admin Dashboard</h1>
+          <p className="text-muted-foreground">Sign in as a guest to continue</p>
         </div>
         <LoginForm />
       </div>
