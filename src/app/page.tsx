@@ -47,14 +47,14 @@ export default function Home() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-               <div className="absolute bg-destructive/80 rounded-full w-[450px] h-[450px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
+               <div className="absolute bg-accent/80 rounded-full w-[450px] h-[450px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
                <Image
                   src={heroImage?.imageUrl || ''}
                   alt={heroImage?.description || ''}
                   data-ai-hint={heroImage?.imageHint}
                   width={500}
                   height={500}
-                  className="object-contain z-10 drop-shadow-xl"
+                  className="object-contain z-10"
                   priority
                 />
                 <div className="absolute top-20 right-0 z-20">
