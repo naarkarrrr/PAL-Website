@@ -17,6 +17,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { Logo } from '../shared/Logo';
+import { ScrollArea } from '../ui/scroll-area';
 
 const mainNav: {
   title: string;
@@ -145,35 +146,37 @@ export function Header() {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left">
-              <div className="p-4">
-                <Logo />
-                <nav className="mt-8 flex flex-col gap-4">
-                  {mainNav.map((item) => (
-                    item.href ? (
-                      <Link key={item.title} href={item.href} onClick={() => setIsMobileMenuOpen(false)}>
-                        <div className={cn(navigationMenuTriggerStyle(), 'w-full justify-start', pathname === item.href && 'bg-accent/50')}>
-                          {item.title}
+            <SheetContent side="left" className="w-full max-w-sm flex flex-col p-0">
+                <div className="p-4">
+                  <Logo />
+                </div>
+                <ScrollArea className="flex-1">
+                  <nav className="mt-4 flex flex-col gap-4 px-4 pb-8">
+                    {mainNav.map((item) => (
+                      item.href ? (
+                        <Link key={item.title} href={item.href} onClick={() => setIsMobileMenuOpen(false)}>
+                          <div className={cn(navigationMenuTriggerStyle(), 'w-full justify-start', pathname === item.href && 'bg-accent/50')}>
+                            {item.title}
+                          </div>
+                        </Link>
+                      ) : (
+                        <div key={item.title}>
+                          <h3 className="font-bold px-4">{item.title}</h3>
+                          <div className="flex flex-col gap-2 mt-2">
+                            {item.subLinks?.map((sub) => (
+                              <Link key={sub.title} href={sub.href} onClick={() => setIsMobileMenuOpen(false)}>
+                                <div className={cn(navigationMenuTriggerStyle(), "justify-start font-normal text-muted-foreground w-full")}>
+                                  {sub.title}
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
                         </div>
-                      </Link>
-                    ) : (
-                      <div key={item.title}>
-                        <h3 className="font-bold px-4">{item.title}</h3>
-                        <div className="flex flex-col gap-2 mt-2">
-                          {item.subLinks?.map((sub) => (
-                            <Link key={sub.title} href={sub.href} onClick={() => setIsMobileMenuOpen(false)}>
-                              <div className={cn(navigationMenuTriggerStyle(), "justify-start font-normal text-muted-foreground")}>
-                                {sub.title}
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    )
-                  ))}
-                </nav>
-              </div>
-            </SheetContent>
+                      )
+                    ))}
+                  </nav>
+                </ScrollArea>
+              </SheetContent>
           </Sheet>
         </div>
       </div>
