@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { onAuthStateChanged, signInWithEmailAndPassword, signOut, User } from 'firebase/auth';
-import { auth } from "@/lib/firebase";
+import { auth } from "@/firebase";
 import { useRouter, usePathname } from 'next/navigation';
 import type { LoginCredentials } from '@/lib/types';
 
@@ -38,14 +38,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const signIn = async ({ email, password }: LoginCredentials) => {
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      // The useEffect above will handle the redirect.
+      const userCred = await signInWithEmailAndPassword(auth, email, password);
+      console.log("Logged in:", userCred);
+      router.replace("/admin/dashboard");
     } catch (error) {
-      // Re-throw the error so the calling component (LoginForm) can catch it
-      // and display an appropriate message to the user.
       throw error;
     }
   };
+  
 
   const handleSignOut = async () => {
     try {
