@@ -10,6 +10,7 @@ import { WhatWeDo } from '@/components/home/WhatWeDo';
 import { WhyChooseUs } from '@/components/home/WhyChooseUs';
 import { SuccessStories } from '@/components/home/SuccessStories';
 import { RotatingText } from '@/components/home/RotatingText';
+import { Campaigns } from '@/components/home/Campaigns';
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'hero');
 
@@ -75,6 +76,9 @@ export default function Home() {
 
         {/* What We Do Section */}
         <WhatWeDo />
+
+        {/* Campaigns Section */}
+        <Campaigns />
         
         {/* Featured Animals Section */}
         <FeaturedAnimals />
