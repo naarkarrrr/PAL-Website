@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Check } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { MotionDiv } from '../shared/MotionDiv';
 import { PawPrint } from 'lucide-react';
@@ -38,14 +38,15 @@ export function WhyChooseUs() {
             className="relative"
           >
             <div className="relative aspect-square w-full max-w-lg mx-auto">
-              <div className="absolute inset-0 bg-primary/10 rounded-full" />
-              <Image
-                src={image?.imageUrl || ''}
-                alt={image?.description || ''}
-                data-ai-hint={image?.imageHint}
-                fill
-                className="object-contain p-8"
-              />
+                <div className="absolute w-[80%] h-[80%] top-0 left-0 bg-accent/30 rounded-full animate-wobble-slow" />
+                <div className="absolute w-[70%] h-[70%] bottom-0 right-0 bg-primary/20 rounded-full animate-wobble-slow animation-delay-200" />
+                <Image
+                    src={image?.imageUrl || ''}
+                    alt={image?.description || ''}
+                    data-ai-hint={image?.imageHint}
+                    fill
+                    className="object-contain p-8 z-10"
+                />
             </div>
           </MotionDiv>
           <MotionDiv
@@ -65,8 +66,8 @@ export function WhyChooseUs() {
             <div className="grid sm:grid-cols-2 gap-x-8 gap-y-6">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <div className="bg-primary/10 text-primary rounded-full p-1.5 mt-1">
-                    <Check className="h-4 w-4" />
+                  <div className="bg-primary/10 text-primary rounded-full p-1 mt-1">
+                    <CheckCircle className="h-5 w-5" />
                   </div>
                   <div>
                     <h4 className="font-bold text-lg">{feature.title}</h4>

@@ -83,11 +83,18 @@ export default {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' },
         },
+        'wobble-slow': {
+            '0%, 100%': { transform: 'translateY(0) translateX(0)' },
+            '25%': { transform: 'translateY(-5px) translateX(5px)' },
+            '50%': { transform: 'translateY(0) translateX(-5px)' },
+            '75%': { transform: 'translateY(5px) translateX(0)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'spin-slow': 'spin-slow 10s linear infinite',
+        'wobble-slow': 'wobble-slow 8s ease-in-out infinite',
       },
     },
   },
