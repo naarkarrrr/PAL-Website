@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -13,7 +12,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Card } from '../ui/card';
-import { ArrowLeft, ArrowRight, PawPrint } from 'lucide-react';
+import { PawPrint } from 'lucide-react';
 import Link from 'next/link';
 
 const campaigns = [
@@ -83,7 +82,7 @@ export function Campaigns() {
                                 <Progress value={progress} className="h-2" />
                                 <div
                                     className="absolute -top-1 text-xs font-bold text-primary-foreground bg-primary px-2 py-0.5 rounded-full"
-                                    style={{ left: `calc(${Math.min(progress, 95)}%)` }}
+                                    style={{ left: `calc(${Math.min(progress, 95)}% - 10px)` }}
                                 >
                                     {Math.round(progress)}%
                                 </div>
@@ -92,7 +91,7 @@ export function Campaigns() {
                             <div className="flex justify-between items-center text-sm mb-6">
                                 <div className="flex items-center gap-2">
                                     <div className="w-6 h-6 rounded-full border-2 border-muted flex items-center justify-center">
-                                       <ArrowLeft className="w-3 h-3 text-muted-foreground" />
+                                       
                                     </div>
                                     <div>
                                         <span className="text-muted-foreground text-xs">Raised:</span>
@@ -105,7 +104,7 @@ export function Campaigns() {
                                         <p className="font-bold text-base">₹{campaign.goal.toLocaleString()}</p>
                                     </div>
                                     <div className="w-6 h-6 rounded-full border-2 border-muted flex items-center justify-center">
-                                       <ArrowRight className="w-3 h-3 text-muted-foreground" />
+                                       
                                     </div>
                                 </div>
                             </div>
