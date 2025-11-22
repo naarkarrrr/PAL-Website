@@ -74,11 +74,9 @@ export function SuccessStories() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="h-full overflow-visible shadow-none border-none bg-transparent group">
+              <Card className="h-full overflow-hidden shadow-lg border hover:shadow-xl transition-shadow group">
                 <CardHeader className="p-0">
-                  <div className="relative w-full aspect-[4/3] p-3">
-                    <div className="absolute inset-0 bg-dashed-border group-hover:animate-dashed-border"></div>
-                    <div className="relative w-full h-full rounded-xl overflow-hidden">
+                  <div className="relative w-full aspect-[4/3] overflow-hidden">
                        <Image
                         src={story.imageUrl}
                         alt={story.title}
@@ -91,7 +89,6 @@ export function SuccessStories() {
                           <Badge key={tag} variant="default" className="bg-primary/80 backdrop-blur-sm">{tag}</Badge>
                         ))}
                       </div>
-                    </div>
                   </div>
                 </CardHeader>
                 <CardContent className="p-4">

@@ -16,9 +16,6 @@ export default {
       },
     },
     extend: {
-      backgroundImage: {
-        'dashed-border': `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='999' ry='999' stroke='%23D1D5DB' stroke-width='2' stroke-dasharray='10' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
-      },
       fontFamily: {
         body: ['"Plus Jakarta Sans"', 'sans-serif'],
         headline: ['"Baloo Bhaina 2"', 'sans-serif'],
@@ -86,20 +83,13 @@ export default {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' },
         },
-        'dashed-border': {
-          '0%': { 'stroke-dashoffset': '0' },
-          '100%': { 'stroke-dashoffset': '-20' },
-        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'spin-slow': 'spin-slow 10s linear infinite',
-        'dashed-border': 'spin-slow 1s linear infinite',
       },
     },
   },
   plugins: [require('tailwindcss-animate')],
 } satisfies Config;
-
-    
