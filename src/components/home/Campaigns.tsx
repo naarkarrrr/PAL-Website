@@ -11,8 +11,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
-import { Card } from '../ui/card';
-import { PawPrint } from 'lucide-react';
+import { PawPrint, RefreshCcw, Target } from 'lucide-react';
 import Link from 'next/link';
 
 const campaigns = [
@@ -41,90 +40,86 @@ const campaigns = [
 
 export function Campaigns() {
   return (
-    <section className="py-16 md:py-24 bg-primary/10 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
-          {/* You can add a subtle background pattern here if you want */}
-      </div>
-      <div className="container mx-auto px-4 relative">
-        <div className="text-center mb-12">
-            <div className="flex items-center justify-center gap-2 text-primary mb-2">
-              <PawPrint className="h-5 w-5" />
-              <h3 className="font-bold uppercase tracking-wider">Campaigns</h3>
+    <section className="py-16 md:py-24 bg-primary/5">
+       <div className="container mx-auto px-4">
+        <div className="bg-card rounded-2xl shadow-lg p-8 md:p-12">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div className="relative">
+                    <Carousel
+                        opts={{
+                        align: 'start',
+                        loop: true,
+                        }}
+                        className="w-full"
+                    >
+                        <CarouselContent>
+                        {campaigns.map((campaign, index) => {
+                            const progress = (campaign.raised / campaign.goal) * 100;
+                            return (
+                            <CarouselItem key={index}>
+                                <div className='flex flex-col gap-6'>
+                                    <h4 className="text-3xl font-bold font-headline text-accent">
+                                        {campaign.title}
+                                    </h4>
+                                    <p className="text-muted-foreground">
+                                        {campaign.description}
+                                    </p>
+                                    <div className="relative pt-4">
+                                        <Progress value={progress} className="h-2 bg-secondary" />
+                                        <div
+                                            className="absolute -top-1 text-xs font-bold text-primary-foreground bg-primary px-2 py-0.5 rounded-full"
+                                            style={{ left: `calc(${Math.min(progress, 95)}% - 10px)` }}
+                                        >
+                                            {Math.round(progress)}%
+                                        </div>
+                                    </div>
+
+                                    <div className="flex justify-between items-center text-sm">
+                                        <div className="flex items-center gap-2">
+                                            <div className="p-2 bg-primary/10 rounded-full text-primary">
+                                                <RefreshCcw className="h-4 w-4" />
+                                            </div>
+                                            <div>
+                                                <span className="text-muted-foreground text-xs">Raised:</span>
+                                                <p className="font-bold text-base">₹{campaign.raised.toLocaleString()}</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center gap-2">
+                                            <div className="p-2 bg-primary/10 rounded-full text-primary">
+                                                <Target className="h-4 w-4" />
+                                            </div>
+                                            <div className="text-right">
+                                                <span className="text-muted-foreground text-xs">Goal:</span>
+                                                <p className="font-bold text-base">₹{campaign.goal.toLocaleString()}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <Button asChild className="w-full" size="lg">
+                                        <Link href="/donate">Donate Now</Link>
+                                    </Button>
+                                </div>
+                            </CarouselItem>
+                            );
+                        })}
+                        </CarouselContent>
+                        <CarouselPrevious className="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2" />
+                        <CarouselNext className="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2" />
+                    </Carousel>
+                </div>
+                <div className="relative h-80 md:h-[400px] w-full rounded-xl overflow-hidden shadow-md hidden md:block">
+                     {campaigns[0].image && (
+                        <Image
+                            src={campaigns[0].image.imageUrl}
+                            alt={campaigns[0].image.description}
+                            data-ai-hint={campaigns[0].image.imageHint}
+                            fill
+                            className="object-cover"
+                        />
+                    )}
+                </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">
-              Join Our Lifesaving Missions
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Encouraging hands and hearts to rewrite the fate of countless street animals. Your contribution can make all the difference.
-            </p>
         </div>
-
-        <Carousel
-            opts={{
-            align: 'start',
-            loop: true,
-            }}
-            className="w-full"
-        >
-            <CarouselContent>
-            {campaigns.map((campaign, index) => {
-                const progress = (campaign.raised / campaign.goal) * 100;
-                return (
-                <CarouselItem key={index}>
-                    <div className="p-1">
-                        <div className="grid md:grid-cols-2 gap-8 items-center bg-card p-8 md:p-12 rounded-2xl shadow-lg">
-                            <div className='flex flex-col gap-6'>
-                                <h4 className="text-2xl font-bold font-headline text-accent">
-                                    {campaign.title}
-                                </h4>
-                                <p className="text-muted-foreground">
-                                    {campaign.description}
-                                </p>
-                                <div className="relative pt-4">
-                                    <Progress value={progress} className="h-2" />
-                                    <div
-                                        className="absolute -top-1 text-xs font-bold text-primary-foreground bg-primary px-2 py-0.5 rounded-full"
-                                        style={{ left: `calc(${Math.min(progress, 95)}% - 10px)` }}
-                                    >
-                                        {Math.round(progress)}%
-                                    </div>
-                                </div>
-
-                                <div className="flex justify-between items-center text-sm">
-                                    <div>
-                                        <span className="text-muted-foreground text-xs">Raised:</span>
-                                        <p className="font-bold text-base">₹{campaign.raised.toLocaleString()}</p>
-                                    </div>
-                                    <div className="text-right">
-                                        <span className="text-muted-foreground text-xs">Goal:</span>
-                                        <p className="font-bold text-base">₹{campaign.goal.toLocaleString()}</p>
-                                    </div>
-                                </div>
-                                <Button asChild className="w-full" size="lg">
-                                    <Link href="/donate">Donate Now</Link>
-                                </Button>
-                            </div>
-                            <div className="relative h-80 md:h-[350px] w-full rounded-xl overflow-hidden shadow-md hidden md:block">
-                                {campaign.image && (
-                                    <Image
-                                        src={campaign.image.imageUrl}
-                                        alt={campaign.image.description}
-                                        data-ai-hint={campaign.image.imageHint}
-                                        fill
-                                        className="object-cover"
-                                    />
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                </CarouselItem>
-                );
-            })}
-            </CarouselContent>
-            <CarouselPrevious className="absolute left-0 md:left-4 top-1/2 -translate-y-1/2" />
-            <CarouselNext className="absolute right-0 md:right-4 top-1/2 -translate-y-1/2" />
-        </Carousel>
-      </div>
+       </div>
     </section>
   );
 }
