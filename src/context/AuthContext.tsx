@@ -2,8 +2,8 @@
 
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { onAuthStateChanged, signInWithEmailAndPassword, signOut, User } from 'firebase/auth';
-import { auth } from '@/firebase'; // ⭐ Correct import
-import { useRouter } from 'next/navigation';
+import { auth } from "@/lib/firebase";
+import { useRouter, usePathname } from 'next/navigation';
 import type { LoginCredentials } from '@/lib/types';
 
 interface AuthContextType {
@@ -19,27 +19,30 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
       setLoading(false);
-
-      if (user && window.location.pathname.startsWith('/admin/login')) {
-        router.push('/admin/dashboard');
-      }
     });
 
     return () => unsubscribe();
-  }, [router]);
+  }, []);
+
+  useEffect(() => {
+    if (!loading && user && pathname.startsWith('/admin/login')) {
+      router.replace('/admin/dashboard');
+    }
+  }, [user, loading, pathname, router]);
 
   const signIn = async ({ email, password }: LoginCredentials) => {
     try {
-      const userCred = await signInWithEmailAndPassword(auth, email, password);
-      console.log("Logged in:", userCred);
-
-      router.replace("/admin/dashboard");
+      await signInWithEmailAndPassword(auth, email, password);
+      // The useEffect above will handle the redirect.
     } catch (error) {
+      // Re-throw the error so the calling component (LoginForm) can catch it
+      // and display an appropriate message to the user.
       throw error;
     }
   };
