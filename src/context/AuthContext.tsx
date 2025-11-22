@@ -21,32 +21,34 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const router = useRouter();
   const pathname = usePathname();
 
+  // Track auth state
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
       setLoading(false);
     });
-
     return () => unsubscribe();
   }, []);
 
+  // Redirect if logged in but on login page
   useEffect(() => {
     if (!loading && user && pathname.startsWith('/admin/login')) {
       router.replace('/admin/dashboard');
     }
   }, [user, loading, pathname, router]);
 
+  // Handle Sign-in
   const signIn = async ({ email, password }: LoginCredentials) => {
     try {
-      const userCred = await signInWithEmailAndPassword(auth, email, password);
-      console.log("Logged in:", userCred);
+      await signInWithEmailAndPassword(auth, email, password);
       router.replace("/admin/dashboard");
     } catch (error) {
+      console.error("Login Failed:", error);
       throw error;
     }
   };
-  
 
+  // Handle Sign-out
   const handleSignOut = async () => {
     try {
       await signOut(auth);
