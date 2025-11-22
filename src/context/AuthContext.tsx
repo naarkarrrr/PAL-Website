@@ -38,9 +38,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, [auth, router]);
 
   const signIn = async ({ email, password }: LoginCredentials) => {
-    await signInWithEmailAndPassword(auth, email, password);
-    // Directly navigate to dashboard on successful sign-in
-    router.push('/admin/dashboard');
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      // Directly navigate to dashboard on successful sign-in
+      router.push('/admin/dashboard');
+    } catch (error) {
+      // Re-throw the error so the calling component can catch it
+      throw error;
+    }
   };
 
   const handleSignOut = async () => {
