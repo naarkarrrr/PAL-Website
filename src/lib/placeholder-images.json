@@ -9,7 +9,7 @@
     {
       "id": "hero",
       "description": "A police officer holding a white cat",
-      "imageUrl": "https://i.postimg.cc/8P4Y7f0J/police-officer-with-cat.png",
+      "imageUrl": "https://i.postimg.cc/tTpb1gTP/pal1.png",
       "imageHint": "officer cat"
     },
     {
@@ -128,9 +128,9 @@
     },
     {
       "id": "why_choose_us",
-      "description": "A person holding a small, happy puppy.",
-      "imageUrl": "https://images.unsplash.com/photo-1692165027673-50d64cbe6372?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwZXJzb24lMjBwdXBweXxlbnwwfHx8fDE3NjM4MDg3MzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "person puppy"
+      "description": "PAL Foundation team celebrating",
+      "imageUrl": "https://i.postimg.cc/mD3VzZJc/pal-team.jpg",
+      "imageHint": "team celebration"
     },
     {
       "id": "gallery1",
