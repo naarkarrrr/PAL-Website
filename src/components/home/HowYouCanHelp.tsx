@@ -18,12 +18,12 @@ const helpOptions = [
     href: '/volunteer',
     image: PlaceHolderImages.find(p => p.id === 'volunteer_card'),
   },
-  // {
-  //   title: 'Adopt',
-  //   description: "Give an animal a second chance at life by adopting one of our rescues. You're not just gaining a pet – you're saving a life.",
-  //   href: '/adopt',
-  //   image: PlaceHolderImages.find(p => p.id === 'adopt_card'),
-  // },
+  {
+    title: 'Sponsor & Partner',
+    description: "Align your brand with a cause that matters. Join us as a corporate sponsor or partner to make a lasting impact.",
+    href: '/sponsor-partner',
+    image: PlaceHolderImages.find(p => p.id === 'sponsor_card'),
+  },
 ];
 
 export function HowYouCanHelp() {
@@ -34,7 +34,7 @@ export function HowYouCanHelp() {
         <p className="max-w-3xl mx-auto text-muted-foreground mb-12 text-lg">
           Together, we can make a difference in the lives of countless animals. Thank you for supporting our cause!
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {helpOptions.map((option, index) => (
              <MotionDiv
                 key={option.title}
