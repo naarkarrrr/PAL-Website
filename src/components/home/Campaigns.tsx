@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -18,6 +17,13 @@ import Link from 'next/link';
 
 const campaigns = [
   {
+    title: 'Emergency Surgery Fund',
+    description: 'Contribute to our fund for life-saving emergency surgeries.',
+    raised: 8200,
+    goal: 15000,
+    image: PlaceHolderImages.find((p) => p.id === 'sterilization_header'),
+  },
+  {
     title: 'Homeless Street Cat',
     description: 'Funding medical care and food for a recently rescued street cat.',
     raised: 1350,
@@ -30,13 +36,6 @@ const campaigns = [
     raised: 450,
     goal: 1000,
     image: PlaceHolderImages.find((p) => p.id === 'why_choose_us'),
-  },
-  {
-    title: 'Emergency Surgery Fund',
-    description: 'Contribute to our fund for life-saving emergency surgeries.',
-    raised: 8200,
-    goal: 15000,
-    image: PlaceHolderImages.find((p) => p.id === 'sterilization_header'),
   },
 ];
 
@@ -73,15 +72,15 @@ export function Campaigns() {
                 return (
                 <CarouselItem key={index}>
                     <div className="p-1">
-                        <div className="grid md:grid-cols-2 gap-0 items-center bg-card p-8 md:p-12 rounded-2xl shadow-lg">
-                            <div>
-                                <h4 className="text-xl font-bold font-headline text-accent mb-2">
+                        <div className="grid md:grid-cols-2 gap-8 items-center bg-card p-8 md:p-12 rounded-2xl shadow-lg">
+                            <div className='flex flex-col gap-6'>
+                                <h4 className="text-xl font-bold font-headline text-accent">
                                     {campaign.title}
                                 </h4>
-                                <p className="text-sm text-muted-foreground mb-4">
+                                <p className="text-sm text-muted-foreground">
                                     {campaign.description}
                                 </p>
-                                <div className="relative mb-4 pt-4">
+                                <div className="relative pt-4">
                                     <Progress value={progress} className="h-2" />
                                     <div
                                         className="absolute -top-1 text-xs font-bold text-primary-foreground bg-primary px-2 py-0.5 rounded-full"
@@ -91,7 +90,7 @@ export function Campaigns() {
                                     </div>
                                 </div>
 
-                                <div className="flex justify-between items-center text-sm mb-6">
+                                <div className="flex justify-between items-center text-sm">
                                     <div>
                                         <span className="text-muted-foreground text-xs">Raised:</span>
                                         <p className="font-bold text-base">₹{campaign.raised.toLocaleString()}</p>
@@ -122,8 +121,8 @@ export function Campaigns() {
                 );
             })}
             </CarouselContent>
-            <CarouselPrevious className="absolute -left-4 top-1/2 -translate-y-1/2" />
-            <CarouselNext className="absolute -right-4 top-1/2 -translate-y-1/2" />
+            <CarouselPrevious className="absolute left-0 md:left-4 top-1/2 -translate-y-1/2" />
+            <CarouselNext className="absolute right-0 md:right-4 top-1/2 -translate-y-1/2" />
         </Carousel>
       </div>
     </section>
