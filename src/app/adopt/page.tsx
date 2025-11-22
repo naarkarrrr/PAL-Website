@@ -1,107 +1,20 @@
-'use client';
+
 import { PageHeader } from "@/components/shared/PageHeader";
-import { AnimalCard } from "@/components/adoption/AnimalCard";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
-import type { Animal } from "@/lib/types";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Search } from "lucide-react";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
-import { useEffect, useState } from "react";
+import { PawPrint } from "lucide-react";
 
-
-async function getAnimals(): Promise<Animal[]> {
-  const mockAnimals: Animal[] = PlaceHolderImages
-    .filter(p => ['1', '2', '3', '4', '5', '6'].includes(p.id))
-    .map(p => ({
-      id: p.id,
-      name: p.description,
-      species: p.imageHint.includes('cat') ? 'Cat' : 'Dog',
-      breed: p.imageHint.includes('golden') ? 'Golden Retriever' : 
-             p.imageHint.includes('tabby') ? 'Tabby' :
-             p.imageHint.includes('shepherd') ? 'German Shepherd' : 'Mixed Breed',
-      age: 'Adult',
-      gender: 'Female', // Static for now to avoid hydration issues
-      personality: 'Friendly and playful',
-      description: `This is a wonderful animal looking for a forever home.`,
-      imageUrl: p.imageUrl,
-      imageHint: p.imageHint
-    }));
-  
-  return mockAnimals;
-}
-
-
-export default async function AdoptPage() {
-  const animals = await getAnimals();
-
+export default function AdoptPage() {
   return (
     <div>
       <PageHeader
         title="Adopt a Pet"
-        subtitle="Find your perfect companion. Give a rescue pet a second chance at a happy life."
+        subtitle="Find your perfect companion. Our adoption section is launching soon!"
       />
-      <div className="container mx-auto px-4 py-16">
-        <div className="bg-card shadow-lg rounded-xl p-6 mb-12 sticky top-24 z-10 border">
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 items-end">
-            <div className="sm:col-span-2 md:col-span-4 lg:col-span-2">
-              <label htmlFor="search" className="block text-sm font-medium text-foreground mb-2">Search by keyword</label>
-              <div className="relative">
-                 <Input id="search" placeholder="e.g. Golden Retriever, playful..." className="pl-10" />
-                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-              </div>
-            </div>
-             <div>
-              <label htmlFor="type" className="block text-sm font-medium text-foreground mb-2">Animal Type</label>
-                <Select>
-                  <SelectTrigger id="type" className="bg-background">
-                    <SelectValue placeholder="Any Type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="dog">Dog</SelectItem>
-                    <SelectItem value="cat">Cat</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
-                  </SelectContent>
-                </Select>
-            </div>
-            <div>
-              <label htmlFor="age" className="block text-sm font-medium text-foreground mb-2">Age</label>
-              <Select>
-                <SelectTrigger id="age" className="bg-background">
-                  <SelectValue placeholder="Any Age" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="puppy">Puppy/Kitten</SelectItem>
-                  <SelectItem value="young">Young</SelectItem>
-                  <SelectItem value="adult">Adult</SelectItem>
-                  <SelectItem value="senior">Senior</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 text-base">
-              <Search className="mr-2 h-4 w-4"/>
-              Find a Pet
-            </Button>
-          </div>
-        </div>
-
-        {animals.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {animals.map((animal) => (
-              <AnimalCard key={animal.id} animal={animal} />
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-20">
-            <p className="text-lg text-muted-foreground">No animals are currently available for adoption. Please check back soon!</p>
-          </div>
-        )}
+      <div className="container mx-auto px-4 py-16 text-center">
+        <PawPrint className="mx-auto h-16 w-16 text-primary mb-6" />
+        <h2 className="text-3xl font-bold font-headline mb-4">Coming Soon!</h2>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          We are working hard to bring our new adoption platform to life. Soon, you'll be able to meet all the wonderful animals waiting for their forever homes. Please check back shortly!
+        </p>
       </div>
     </div>
   );

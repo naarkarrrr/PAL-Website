@@ -17,12 +17,12 @@ const helpOptions = [
         description: "Give your time and skills to make a direct impact on the ground.",
         href: "/volunteer"
     },
-    {
-        icon: PawPrint,
-        title: "Adopt a Pet",
-        description: "Open your heart and home to an animal in need of a second chance.",
-        href: "/adopt"
-    },
+    // {
+    //     icon: PawPrint,
+    //     title: "Adopt a Pet",
+    //     description: "Open your heart and home to an animal in need of a second chance.",
+    //     href: "/adopt"
+    // },
     {
         icon: Droplet,
         title: "Water Bowl Project",

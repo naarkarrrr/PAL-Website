@@ -50,7 +50,7 @@ const mainNav: {
       { title: "Animal Cruelty", href: "/what-we-do/animal-cruelty", description: "Awareness on laws and reporting." },
     ]
   },
-  { title: "Adopt", href: "/adopt" },
+  // { title: "Adopt", href: "/adopt" },
   {
     title: "How to Help",
     subLinks: [
@@ -69,7 +69,7 @@ const mainNav: {
     subLinks: [
       { title: "Become Member & Volunteer", href: "/volunteer", description: "Join our team of dedicated volunteers." },
       { title: "Advocate AWO & Humanright Officer", href: "/advocate", description: "Become an advocate for animal rights." },
-      { title: "Adoption", href: "/adopt", description: "Find your new best friend." },
+      // { title: "Adoption", href: "/adopt", description: "Find your new best friend." },
       { title: "Sponsor & Partner", href: "/sponsor-partner", description: "Support us through sponsorship." },
       { title: "Collaboration", href: "/collaboration", description: "Work with us on projects." },
     ],
