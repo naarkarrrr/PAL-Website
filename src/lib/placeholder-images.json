@@ -3,7 +3,7 @@
     {
       "id": "logo",
       "description": "PAL Foundation Logo",
-      "imageUrl": "https://i.postimg.cc/3JVnWwKj/Pal_Logo_02.png",
+      "imageUrl": "https://i.postimg.cc/3JVnWwKj/Pal-Logo-02.png",
       "imageHint": "PAL logo"
     },
     {
@@ -128,9 +128,9 @@
     },
     {
       "id": "why_choose_us",
-      "description": "A happy Bernese Mountain Dog.",
-      "imageUrl": "https://images.unsplash.com/photo-1559190394-df5a28aab5c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxoYXBweSUyMGRvZ3xlbnwwfHx8fDE3NjM0NDI2MTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "happy dog"
+      "description": "Man holding a puppy",
+      "imageUrl": "https://i.postimg.cc/q7bBzv8X/IMG-20240423-WA0167-removebg-preview.png",
+      "imageHint": "man puppy"
     },
     {
       "id": "gallery1",
@@ -255,7 +255,7 @@
     {
       "id": "donate_card",
       "description": "A police officer feeding a dog.",
-      "imageUrl": "https://storage.googleapis.com/aifire.dev/PAL-assets/police-officer-cat.png",
+      "imageUrl": "https://i.postimg.cc/QdG9h5yV/police-officer-feeding-dog.png",
       "imageHint": "officer dog"
     },
     {
