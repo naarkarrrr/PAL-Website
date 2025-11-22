@@ -11,7 +11,7 @@ export default function NotFound() {
     <div className="flex items-center justify-center min-h-screen bg-muted/40 p-4">
       <div className="relative w-full max-w-4xl bg-card rounded-2xl shadow-lg overflow-hidden">
         <div className="grid md:grid-cols-2 items-center">
-          <div className="p-8 md:p-16 text-center md:text-left">
+          <div className="p-8 md:p-16 text-center md:text-left z-10 order-2 md:order-1">
             <h1 className="text-5xl md:text-6xl font-bold font-headline leading-tight">This Cat is shocked</h1>
             <div className="flex items-center gap-4 mt-4 justify-center md:justify-start">
               <div className="h-0.5 w-12 bg-accent" />
@@ -23,9 +23,9 @@ export default function NotFound() {
               </Link>
             </Button>
           </div>
-          <div className="relative h-64 md:h-full w-full">
+          <div className="relative h-64 md:h-full w-full order-1 md:order-2">
             {notFoundImage && (
-                <div className='relative h-full w-full min-h-[300px]'>
+                <div className='relative h-full w-full min-h-[300px] md:min-h-[450px]'>
                     <Image
                         src={notFoundImage.imageUrl}
                         alt={notFoundImage.description}
@@ -35,13 +35,6 @@ export default function NotFound() {
                     />
                 </div>
             )}
-             <div className="absolute top-1/4 left-1/4 md:top-10 md:left-10 transform -translate-x-1/2 -translate-y-1/2">
-                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-24 h-24 md:w-32 md:h-32 text-foreground">
-                    <path d="M21.5 24C41.5 9 78.5 10.5 91 30.5" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M91 30.5L84 19.5" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M91 30.5L78.5 35" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-            </div>
           </div>
         </div>
       </div>
