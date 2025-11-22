@@ -4,10 +4,22 @@ import { Logo } from '@/components/shared/Logo';
 import { Facebook, Instagram, Twitter, Youtube, ArrowUp, Phone, Mail } from 'lucide-react';
 import Link from 'next/link';
 
+const ThreadsIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    {...props}
+  >
+    <path d="M14.51 3.522a1.5 1.5 0 0 0-2.02 0l-5 6A1.5 1.5 0 0 0 9 12h6a1.5 1.5 0 0 0 1.5-2.478l-2-3zm-6.52 7a1.5 1.5 0 0 0-1 2.478l2 3A1.5 1.5 0 0 0 11 17h2a1.5 1.5 0 0 0 1-2.478l-5-6a1.5 1.5 0 0 0-1.99.002z" />
+  </svg>
+);
+
+
 const socialLinks = [
-  { icon: Facebook, href: '#', 'aria-label': 'Facebook' },
-  { icon: Instagram, href: '#', 'aria-label': 'Instagram' },
-  { icon: Twitter, href: '#', 'aria-label': 'Twitter' },
+  { icon: ThreadsIcon, href: 'https://www.threads.com/@palfoundation.in', 'aria-label': 'Threads' },
+  { icon: Instagram, href: 'https://www.instagram.com/palfoundation.in', 'aria-label': 'Instagram' },
+  { icon: Facebook, href: 'https://www.facebook.com/groups/828807104596599', 'aria-label': 'Facebook' },
 ];
 
 const quickLinks = [
