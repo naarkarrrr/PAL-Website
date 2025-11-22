@@ -89,23 +89,13 @@ export function Campaigns() {
                             </div>
 
                             <div className="flex justify-between items-center text-sm mb-6">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-6 h-6 rounded-full border-2 border-muted flex items-center justify-center">
-                                       
-                                    </div>
-                                    <div>
-                                        <span className="text-muted-foreground text-xs">Raised:</span>
-                                        <p className="font-bold text-base">₹{campaign.raised.toLocaleString()}</p>
-                                    </div>
+                                <div>
+                                    <span className="text-muted-foreground text-xs">Raised:</span>
+                                    <p className="font-bold text-base">₹{campaign.raised.toLocaleString()}</p>
                                 </div>
-                                <div className="flex items-center gap-2 text-right">
-                                     <div>
-                                        <span className="text-muted-foreground text-xs">Goal:</span>
-                                        <p className="font-bold text-base">₹{campaign.goal.toLocaleString()}</p>
-                                    </div>
-                                    <div className="w-6 h-6 rounded-full border-2 border-muted flex items-center justify-center">
-                                       
-                                    </div>
+                                <div className="text-right">
+                                    <span className="text-muted-foreground text-xs">Goal:</span>
+                                    <p className="font-bold text-base">₹{campaign.goal.toLocaleString()}</p>
                                 </div>
                             </div>
                             <Button asChild className="w-full" size="lg">
