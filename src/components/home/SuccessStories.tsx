@@ -76,7 +76,8 @@ export function SuccessStories() {
             >
               <Card className="h-full overflow-visible shadow-none border-none bg-transparent group">
                 <CardHeader className="p-0">
-                  <div className="relative w-full aspect-[4/3] bg-dashed-border p-3">
+                  <div className="relative w-full aspect-[4/3] p-3">
+                    <div className="absolute inset-0 bg-dashed-border group-hover:animate-dashed-border"></div>
                     <div className="relative w-full h-full rounded-xl overflow-hidden">
                        <Image
                         src={story.imageUrl}
