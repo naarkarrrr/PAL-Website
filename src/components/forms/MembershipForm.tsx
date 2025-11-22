@@ -61,16 +61,6 @@ export function MembershipForm() {
 
   async function onSubmit(data: MembershipFormValues) {
     setIsSubmitting(true);
-    
-    // const formData = new FormData();
-    // Object.entries(data).forEach(([key, value]) => {
-    //     if (key === 'aadhaarCard') {
-    //         formData.append(key, value[0]);
-    //     } else {
-    //         formData.append(key, value);
-    //     }
-    // });
-    
     const result = await submitMembershipForm(data);
     setIsSubmitting(false);
 
@@ -332,25 +322,6 @@ export function MembershipForm() {
                 />
             </div>
             
-            <FormField
-                control={form.control}
-                name="aadhaarCard"
-                render={({ field }) => (
-                    <FormItem>
-                        <FormLabel>Upload Aadhaar Card</FormLabel>
-                        <FormControl>
-                             <Input 
-                                type="file" 
-                                accept="image/*,.pdf" 
-                                onChange={(e) => field.onChange(e.target.files ? e.target.files[0] : null)}
-                            />
-                        </FormControl>
-                        <FormMessage />
-                    </FormItem>
-                )}
-            />
-
-
             <FormField
                 control={form.control}
                 name="agreement"

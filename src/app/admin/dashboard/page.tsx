@@ -1,3 +1,4 @@
+
 'use client';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -6,12 +7,12 @@ import { ArrowRight, FileText, Users, Handshake, Heart, ShieldAlert, LogOut } fr
 import { useAuth } from '@/context/AuthContext';
 
 const formCollections = [
-  { name: 'membershipApplications', title: 'Membership Applications', icon: Users },
-  { name: 'advocates', title: 'Advocate Applications', icon: ShieldAlert },
-  { name: 'collaborations', title: 'Collaboration Proposals', icon: Handshake },
-  { name: 'sponsors', title: 'Sponsor Inquiries', icon: Heart },
+  { name: 'membership_applications', title: 'Membership Applications', icon: Users },
+  { name: 'advocate_applications', title: 'Advocate Applications', icon: ShieldAlert },
+  { name: 'collaboration_proposals', title: 'Collaboration Proposals', icon: Handshake },
+  { name: 'sponsor_inquiries', title: 'Sponsor Inquiries', icon: Heart },
   { name: 'ambulance_requests', title: 'Ambulance Requests', icon: FileText },
-  { name: 'contact_form_submissions', title: 'Contact Form', icon: FileText },
+  { name: 'contact_messages', title: 'Contact Messages', icon: FileText },
 ];
 
 export default function AdminDashboardPage() {
@@ -37,7 +38,7 @@ export default function AdminDashboardPage() {
               </CardHeader>
               <CardContent>
                 <Button asChild variant="link" className="px-0">
-                  <Link href={`/admin/dashboard/${collection.name}`}>
+                  <Link href={`/admin/submissions/${collection.name}`}>
                     View Submissions <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

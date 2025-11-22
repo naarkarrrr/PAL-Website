@@ -20,7 +20,7 @@ export const AnimalSchema = z.object({
 });
 export type Animal = z.infer<typeof AnimalSchema>;
 
-// Volunteer Schema
+// Volunteer Schema - This seems to be replaced by MembershipSchema in the UI
 export const VolunteerSchema = z.object({
   name: z.string().min(2, 'Name is required.'),
   email: z.string().email('Invalid email address.'),
@@ -65,7 +65,8 @@ export const MembershipSchema = z.object({
   membershipReason: z.string().min(10, 'Please provide a reason for membership.'),
   selectedDate: z.date(),
   selectedTime: z.string().min(1, 'Please select a time'),
-  aadhaarCard: z.any().optional(),
+  // Aadhaar card upload is removed for simplicity of Firestore submission
+  // aadhaarCard: z.any().optional(),
   agreement: z.boolean().refine((val) => val === true, {
     message: 'You must agree to the terms and conditions.',
   }),

@@ -2,11 +2,10 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp, query, where, getDocs, limit } from 'firebase/firestore';
 import { z } from 'zod';
 import { db } from '@/firebase';
-import { AmbulanceRequestSchema, AnimalSchema, ContactSchema, MembershipSchema, VolunteerSchema, AdvocateSchema, CollaborationSchema, SponsorSchema } from './types';
-// import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { AmbulanceRequestSchema, AnimalSchema, ContactSchema, MembershipSchema, AdvocateSchema, CollaborationSchema, SponsorSchema } from './types';
 
 // Generic function to handle form submission
 async function handleFormSubmission(
@@ -17,7 +16,24 @@ async function handleFormSubmission(
 ) {
   try {
     const validatedData = schema.parse(data);
-    await addDoc(collection(db, collectionName), validatedData);
+
+    // Check for duplicates based on email if it exists in the schema
+    if (validatedData.email) {
+      const q = query(
+        collection(db, collectionName),
+        where("email", "==", validatedData.email),
+        limit(1)
+      );
+      const querySnapshot = await getDocs(q);
+      if (!querySnapshot.empty) {
+        return { success: false, message: 'A submission with this email already exists.' };
+      }
+    }
+
+    await addDoc(collection(db, collectionName), {
+      ...validatedData,
+      createdAt: serverTimestamp(),
+    });
 
     if (revalidationPath) {
       revalidatePath(revalidationPath);
@@ -32,16 +48,12 @@ async function handleFormSubmission(
   }
 }
 
-export async function submitVolunteerForm(data: unknown) {
-  return handleFormSubmission('volunteers', VolunteerSchema, data);
-}
-
 export async function submitAmbulanceRequest(data: unknown) {
   return handleFormSubmission('ambulance_requests', AmbulanceRequestSchema, data);
 }
 
 export async function submitContactForm(data: unknown) {
-  return handleFormSubmission('contact_form_submissions', ContactSchema, data);
+  return handleFormSubmission('contact_messages', ContactSchema, data);
 }
 
 export async function addAnimal(data: unknown) {
@@ -49,53 +61,17 @@ export async function addAnimal(data: unknown) {
 }
 
 export async function submitAdvocateForm(data: unknown) {
-  return handleFormSubmission('advocates', AdvocateSchema, data);
+  return handleFormSubmission('advocate_applications', AdvocateSchema, data);
 }
 
 export async function submitCollaborationForm(data: unknown) {
-  return handleFormSubmission('collaborations', CollaborationSchema, data);
+  return handleFormSubmission('collaboration_proposals', CollaborationSchema, data);
 }
 
 export async function submitSponsorForm(data: unknown) {
-  return handleFormSubmission('sponsors', SponsorSchema, data);
+  return handleFormSubmission('sponsor_inquiries', SponsorSchema, data);
 }
 
-
-// Function to upload a file to Firebase Storage
-// async function uploadFileToStorage(file: File, uid: string) {
-//   const storage = getStorage();
-//   const storageRef = ref(storage, `volunteers/${uid}/aadhaar/${file.name}`);
-//   const snapshot = await uploadBytes(storageRef, file);
-//   const downloadURL = await getDownloadURL(snapshot.ref);
-//   return downloadURL;
-// }
-
-
 export async function submitMembershipForm(data: unknown) {
-  try {
-    const validatedData = MembershipSchema.parse(data);
-    // const { aadhaarCard, ...formData } = validatedData;
-    
-    // let fileUrl = '';
-    // if (aadhaarCard && aadhaarCard.size > 0) {
-    //   // A real UID should be generated or retrieved from auth
-    //   const uid = new Date().getTime().toString(); 
-    //   fileUrl = await uploadFileToStorage(aadhaarCard, uid);
-    // }
-
-    await addDoc(collection(db, 'membershipApplications'), {
-      ...validatedData,
-      // aadhaarCardUrl: fileUrl,
-      createdAt: new Date(),
-    });
-
-    return { success: true, message: 'Registration submitted! We will reach out soon.' };
-
-  } catch (error) {
-    console.error('Error submitting membership form:', error);
-     if (error instanceof z.ZodError) {
-      return { success: false, message: 'Validation failed.', errors: error.errors };
-    }
-    return { success: false, message: 'An unexpected error occurred.' };
-  }
+  return handleFormSubmission('membership_applications', MembershipSchema, data);
 }
