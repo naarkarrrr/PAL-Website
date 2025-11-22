@@ -21,73 +21,73 @@
     {
       "id": "1",
       "description": "Buddy",
-      "imageUrl": "https://images.unsplash.com/photo-1602241628512-459cdd3234fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxnb2xkZW4lMjByZXRyaWV2ZXJ8ZW58MHx8fHwxNzYzNDc3MzQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/mDcf4S15/Whats-App-Image-2024-07-25-at-12-05-18-PM.jpg",
       "imageHint": "golden retriever"
     },
     {
       "id": "2",
       "description": "Luna",
-      "imageUrl": "https://images.unsplash.com/photo-1625060241508-22488e1e9264?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0YWJieSUyMGNhdHxlbnwwfHx8fDE3NjM0ODY3MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/L6h5gXzF/Whats-App-Image-2024-07-25-at-12-05-20-PM.jpg",
       "imageHint": "tabby cat"
     },
     {
       "id": "3",
       "description": "Rocky",
-      "imageUrl": "https://images.unsplash.com/photo-1630283208569-20434a2dce4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwbGF5ZnVsJTIwcHVwcHl8ZW58MHx8fHwxNzYzNTM0NjYwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/C1bHkGz7/Whats-App-Image-2024-07-25-at-12-05-22-PM-1.jpg",
       "imageHint": "playful puppy"
     },
     {
       "id": "4",
       "description": "Daisy",
-      "imageUrl": "https://images.unsplash.com/photo-1614016038933-fab68d4adb8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxmbHVmZnklMjBjYXR8ZW58MHx8fHwxNzYzNTM0NjU5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/8cmcRFyY/Whats-App-Image-2024-07-25-at-12-05-22-PM.jpg",
       "imageHint": "fluffy cat"
     },
     {
       "id": "5",
       "description": "Max",
-      "imageUrl": "https://images.unsplash.com/photo-1649923625793-af1cbd33c8bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxnZXJtYW4lMjBzaGVwaGVyZHxlbnwwfHx8fDE3NjM0NTc5MjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/3JvV0k5x/Whats-App-Image-2024-07-25-at-12-05-23-PM-1.jpg",
       "imageHint": "german shepherd"
     },
     {
       "id": "6",
       "description": "Coco",
-      "imageUrl": "https://images.unsplash.com/photo-1478991031579-5f22c0ee9c9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzbWFsbCUyMGRvZ3xlbnwwfHx8fDE3NjM1MDU0MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/qMkG0sPS/Whats-App-Image-2024-07-25-at-12-05-23-PM-2.jpg",
       "imageHint": "small dog"
     },
     {
       "id": "story1",
       "description": "A police officer holding a white cat.",
-      "imageUrl": "https://storage.googleapis.com/aifire.dev/PAL-assets/police-officer-cat.png",
+      "imageUrl": "https://i.postimg.cc/zX8k12fM/Whats-App-Image-2024-07-25-at-12-05-18-PM-2.jpg",
       "imageHint": "officer cat"
     },
     {
       "id": "story2",
       "description": "An elderly person holding a cat.",
-      "imageUrl": "https://images.unsplash.com/photo-1706170324980-b502c50981e5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZXJzb24lMjBjYXQ8ZW58MHx8fHwxNzYzNDM2NTk0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/y8M3BFCW/Whats-App-Image-2024-07-25-at-12-05-19-PM-1.jpg",
       "imageHint": "person cat"
     },
     {
       "id": "story3",
       "description": "A child with a kitten.",
-      "imageUrl": "https://images.unsplash.com/photo-1760669254927-10849aa52a1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjaGlsZCUyMGtpdHRlbnxlbnwwfHx8fDE3NjM1MzQ2NjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/J4s3DP7N/Whats-App-Image-2024-07-25-at-12-05-19-PM.jpg",
       "imageHint": "child kitten"
     },
     {
       "id": "contact_header",
       "description": "Close-up of a dog's nose.",
-      "imageUrl": "https://images.unsplash.com/photo-1493723258571-01372f1c5e04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZG9nJTIwbm9zZXxlbnwwfHx8fDE3NjM1MzQ2NTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/C1bHkGz7/Whats-App-Image-2024-07-25-at-12-05-22-PM-1.jpg",
       "imageHint": "dog nose"
     },
     {
       "id": "volunteer_header",
       "description": "Volunteers with puppies.",
-      "imageUrl": "https://images.unsplash.com/photo-1650101711559-4cf1a2da5a43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZW9wbGUlMjBwdXBwaWVzfGVufDB8fHx8MTc2MzUzNDY1OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/HLp1NRG0/Whats-App-Image-2024-07-25-at-12-05-20-PM-1.jpg",
       "imageHint": "people puppies"
     },
     {
       "id": "ambulance_header",
       "description": "Carrying an injured animal.",
-      "imageUrl": "https://images.unsplash.com/photo-1554830072-52d78d0d4c18?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhbmltYWwlMjByZXNjdWV8ZW58MHx8fHwxNzYzNTM0NjU5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/zX8k12fM/Whats-App-Image-2024-07-25-at-12-05-18-PM-2.jpg",
       "imageHint": "animal rescue"
     },
     {
@@ -99,31 +99,31 @@
     {
       "id": "donate_header",
       "description": "Pet toys and food.",
-      "imageUrl": "https://images.unsplash.com/photo-1591946614720-90a587da4a36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxwZXQlMjBzdXBwbGllc3xlbnwwfHx8fDE3NjM0ODQwMDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/L6h5gXzF/Whats-App-Image-2024-07-25-at-12-05-20-PM.jpg",
       "imageHint": "pet supplies"
     },
     {
       "id": "about_header",
       "description": "A group of diverse volunteers.",
-      "imageUrl": "https://images.unsplash.com/photo-1743793174491-bcbdf1882ad5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkaXZlcnNlJTIwdm9sdW50ZWVyc3xlbnwwfHx8fDE3NjM1Mzc4MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/qMkG0sPS/Whats-App-Image-2024-07-25-at-12-05-23-PM-2.jpg",
       "imageHint": "diverse volunteers"
     },
     {
       "id": "mission_header",
       "description": "A path leading to a bright horizon.",
-      "imageUrl": "https://images.unsplash.com/photo-1588880956285-5cd24e4ad1f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxob3BlZnVsJTIwcGF0aHxlbnwwfHx8fDE3NjM1Mzc4MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/3JvV0k5x/Whats-App-Image-2024-07-25-at-12-05-23-PM-1.jpg",
       "imageHint": "hopeful path"
     },
     {
       "id": "team_header",
       "description": "A collaborative team at work.",
-      "imageUrl": "https://images.unsplash.com/photo-1748256622734-92241ae7b43f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29sbGFib3JhdGl2ZSUyMHRlYW18ZW58MHx8fHwxNzYzNTM3ODA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/8cmcRFyY/Whats-App-Image-2024-07-25-at-12-05-22-PM.jpg",
       "imageHint": "collaborative team"
     },
     {
       "id": "founder",
       "description": "A portrait of a confident person.",
-      "imageUrl": "https://images.unsplash.com/photo-1672072963471-cb38bd03fe41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb25maWRlbnQlMjBwZXJzb258ZW58MHx8fHwxNzYzNTM3ODA3fDA&ixlibrb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/J4s3DP7N/Whats-App-Image-2024-07-25-at-12-05-19-PM.jpg",
       "imageHint": "confident person"
     },
     {
@@ -135,121 +135,121 @@
     {
       "id": "gallery1",
       "description": "A man lovingly holding a small white dog",
-      "imageUrl": "https://images.unsplash.com/photo-1568572933382-74d440642117?q=80&w=1935&auto=format&fit=crop",
+      "imageUrl": "https://i.postimg.cc/zX8k12fM/Whats-App-Image-2024-07-25-at-12-05-18-PM-2.jpg",
       "imageHint": "man dog"
     },
     {
       "id": "gallery2",
       "description": "A veterinarian checking a dog's teeth",
-      "imageUrl": "https://images.unsplash.com/photo-1626549887483-3c7217c8657f?q=80&w=1770&auto=format&fit=crop",
+      "imageUrl": "https://i.postimg.cc/T3q1T55S/Whats-App-Image-2024-07-25-at-12-05-21-PM-1.jpg",
       "imageHint": "vet dog"
     },
     {
       "id": "gallery3",
       "description": "A woman feeding a group of stray dogs",
-      "imageUrl": "https://images.unsplash.com/photo-1627839379921-205b3810f353?q=80&w=1770&auto=format&fit=crop",
+      "imageUrl": "https://i.postimg.cc/RhB3WnC6/Whats-App-Image-2024-07-25-at-12-05-21-PM-2.jpg",
       "imageHint": "feeding strays"
     },
     {
       "id": "gallery4",
       "description": "A playful ginger cat reaching for the camera",
-      "imageUrl": "https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?q=80&w=1780&auto=format&fit=crop",
+      "imageUrl": "https://i.postimg.cc/mDcf4S15/Whats-App-Image-2024-07-25-at-12-05-18-PM.jpg",
       "imageHint": "playful cat"
     },
     {
       "id": "gallery5",
       "description": "A team of volunteers caring for puppies",
-      "imageUrl": "https://images.unsplash.com/photo-1650101711559-4cf1a2da5a43?q=80&w=1770&auto=format&fit=crop",
+      "imageUrl": "https://i.postimg.cc/HLp1NRG0/Whats-App-Image-2024-07-25-at-12-05-20-PM-1.jpg",
       "imageHint": "volunteers puppies"
     },
     {
       "id": "gallery6",
       "description": "A close-up of a rescued dog's happy face",
-      "imageUrl": "https://images.unsplash.com/photo-1583512603805-3cc6b41f3edb?q=80&w=1887&auto=format&fit=crop",
+      "imageUrl": "https://i.postimg.cc/C1bHkGz7/Whats-App-Image-2024-07-25-at-12-05-22-PM-1.jpg",
       "imageHint": "happy dog"
     },
     {
       "id": "gallery7",
       "description": "A person administering eyedrops to a small kitten",
-      "imageUrl": "https://images.unsplash.com/photo-1488015795646-7e22a773d72a?q=80&w=1770&auto=format&fit=crop",
+      "imageUrl": "https://i.postimg.cc/y8M3BFCW/Whats-App-Image-2024-07-25-at-12-05-19-PM-1.jpg",
       "imageHint": "caring kitten"
     },
     {
       "id": "gallery8",
       "description": "A rescued puppy sleeping soundly in a blanket",
-      "imageUrl": "https://images.unsplash.com/photo-1591692122949-1662491b7e4f?q=80&w=1770&auto=format&fit=crop",
+      "imageUrl": "https://i.postimg.cc/L6h5gXzF/Whats-App-Image-2024-07-25-at-12-05-20-PM.jpg",
       "imageHint": "puppy sleeping"
     },
     {
       "id": "gallery9",
       "description": "A vet bandaging a dog's paw",
-      "imageUrl": "https://images.unsplash.com/photo-1549483321-435752498505?q=80&w=1770&auto=format&fit=crop",
+      "imageUrl": "https://i.postimg.cc/3JvV0k5x/Whats-App-Image-2024-07-25-at-12-05-23-PM-1.jpg",
       "imageHint": "vet bandage"
     },
     {
       "id": "water_bowl_header",
       "description": "A dog drinking water from a bowl on a hot day",
-      "imageUrl": "https://images.unsplash.com/photo-1662279057897-446f8960f84b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkb2clMjBkcmlua2luZ3xlbnwwfHx8fDE3NjM1NzY4NTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/8cmcRFyY/Whats-App-Image-2024-07-25-at-12-05-22-PM.jpg",
       "imageHint": "dog drinking"
     },
     {
       "id": "water_bowl_content1",
       "description": "A row of water bowls for stray animals",
-      "imageUrl": "https://images.unsplash.com/photo-1570299341458-803af2f4a83b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3YXRlciUyMGJvd2xzfGVufDB8fHx8MTc2MzU3Njg1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/qMkG0sPS/Whats-App-Image-2024-07-25-at-12-05-23-PM-2.jpg",
       "imageHint": "water bowls"
     },
     {
       "id": "water_bowl_content2",
       "description": "A person refilling a water bowl",
-      "imageUrl": "https://images.unsplash.com/photo-1635456825450-af2a330d1c6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxyZWZpbGxpbmclMjBib3dsfGVufDB8fHx8MTc2MzU3Njg1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/mDcf4S15/Whats-App-Image-2024-07-25-at-12-05-18-PM.jpg",
       "imageHint": "refilling bowl"
     },
     {
       "id": "feeding_drive_header",
       "description": "A volunteer feeding a group of stray dogs",
-      "imageUrl": "https://images.unsplash.com/photo-1638241906516-32462a8e35bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx2b2x1bnRlZXIlMjBmZWVkaW5nfGVufDB8fHx8MTc2MzU3Njg1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/RhB3WnC6/Whats-App-Image-2024-07-25-at-12-05-21-PM-2.jpg",
       "imageHint": "volunteer feeding"
     },
     {
       "id": "feeding_drive_content1",
       "description": "Close-up of dog food in a bowl",
-      "imageUrl": "https://images.unsplash.com/photo-1682536192307-c25211b1d4ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkb2clMjBmb29kfGVufDB8fHx8MTc2MzQ4OTQ0OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/T3q1T55S/Whats-App-Image-2024-07-25-at-12-05-21-PM-1.jpg",
       "imageHint": "dog food"
     },
     {
       "id": "vaccination_header",
       "description": "A veterinarian giving a vaccine to a puppy",
-      "imageUrl": "https://images.unsplash.com/photo-1643213641079-1e60ef170910?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx2ZXQlMjBwdXBweXxlbnwwfHx8fDE3NjM1NzY4NTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/L6h5gXzF/Whats-App-Image-2024-07-25-at-12-05-20-PM.jpg",
       "imageHint": "vet puppy"
     },
     {
       "id": "vaccination_content1",
       "description": "A healthy, happy dog wearing a 'vaccinated' tag",
-      "imageUrl": "https://images.unsplash.com/photo-1719464454959-9cf304ef4774?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkb2clMjB2YWNjaW5hdGVkfGVufDB8fHx8MTc2MzU3Njg1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/C1bHkGz7/Whats-App-Image-2024-07-25-at-12-05-22-PM-1.jpg",
       "imageHint": "dog vaccinated"
     },
     {
       "id": "collar_belt_header",
       "description": "A dog with a reflective collar at night",
-      "imageUrl": "https://images.unsplash.com/photo-1585505771896-3ca607d71bf8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkb2clMjByZWZsZWN0aXZlfGVufDB8fHx8MTc2MzU3Njg1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/3JvV0k5x/Whats-App-Image-2024-07-25-at-12-05-23-PM-1.jpg",
       "imageHint": "dog reflective"
     },
     {
       "id": "collar_belt_content1",
       "description": "A hand holding a reflective collar",
-      "imageUrl": "https://images.unsplash.com/photo-1760545183227-ade8e61afd1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxyZWZsZWN0aXZlJTIwY29sbGFyfGVufDB8fHx8MTc2MzU3Njg1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/qMkG0sPS/Whats-App-Image-2024-07-25-at-12-05-23-PM-2.jpg",
       "imageHint": "reflective collar"
     },
     {
       "id": "sterilization_header",
       "description": "A veterinarian in a surgery room",
-      "imageUrl": "https://images.unsplash.com/photo-1725859189289-a48cca8ad6af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx2ZXQlMjBzdXJnZXJ5fGVufDB8fHx8MTc2MzU3Njg1Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/zX8k12fM/Whats-App-Image-2024-07-25-at-12-05-18-PM-2.jpg",
       "imageHint": "vet surgery"
     },
     {
       "id": "sterilization_content1",
       "description": "A sleeping dog post-surgery",
-      "imageUrl": "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkb2clMjByZWNvdmVyeXxlbnwwfHx8fDE3NjM1NzY4NTZ8MA&ixlibrb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/y8M3BFCW/Whats-App-Image-2024-07-25-at-12-05-19-PM-1.jpg",
       "imageHint": "dog recovery"
     },
     {
@@ -261,13 +261,13 @@
     {
       "id": "volunteer_card",
       "description": "A person petting a golden retriever.",
-      "imageUrl": "https://images.unsplash.com/photo-1548681528-6a5c45b66b42?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwZXR0aW5nJTIwZG9nfGVufDB8fHx8MTc2MzU5MzI3MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/J4s3DP7N/Whats-App-Image-2024-07-25-at-12-05-19-PM.jpg",
       "imageHint": "petting dog"
     },
     {
       "id": "adopt_card",
       "description": "A person holding a small puppy.",
-      "imageUrl": "https://images.unsplash.com/photo-1597517109214-9d5f0b542611?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxob2xkaW5nJTIwcHVwcHl8ZW58MHx8fHwxNzYzNTkzMjcyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.postimg.cc/HLp1NRG0/Whats-App-Image-2024-07-25-at-12-05-20-PM-1.jpg",
       "imageHint": "holding puppy"
     }
   ]
