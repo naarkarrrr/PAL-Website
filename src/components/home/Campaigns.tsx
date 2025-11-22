@@ -63,16 +63,21 @@ export function Campaigns() {
                         <p className="text-muted-foreground">
                           {campaign.description}
                         </p>
-                        <div className="relative pt-4">
-                           <Progress value={progress} className="h-2" />
+                        <div className="relative pt-8">
+                           <Progress value={progress} className="h-2 bg-muted" />
                             <div
-                                className="absolute top-0 text-xs font-bold text-primary-foreground bg-primary px-2 py-0.5 rounded-full"
+                                className="absolute top-0"
                                 style={{
                                     left: `${progress}%`,
                                     transform: 'translateX(-50%)',
                                 }}
                             >
-                                {Math.round(progress)}%
+                                <div className="relative w-16 h-12">
+                                     <div className="absolute bottom-0 w-full h-10 bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold">
+                                        {Math.round(progress)}%
+                                    </div>
+                                    <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-b-[10px] border-b-primary"></div>
+                                </div>
                             </div>
                         </div>
 
