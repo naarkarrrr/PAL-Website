@@ -74,10 +74,10 @@ export function Campaigns() {
                     <div className="p-1">
                         <div className="grid md:grid-cols-2 gap-8 items-center bg-card p-8 md:p-12 rounded-2xl shadow-lg">
                             <div className='flex flex-col gap-6'>
-                                <h4 className="text-xl font-bold font-headline text-accent">
+                                <h4 className="text-2xl font-bold font-headline text-accent">
                                     {campaign.title}
                                 </h4>
-                                <p className="text-sm text-muted-foreground">
+                                <p className="text-muted-foreground">
                                     {campaign.description}
                                 </p>
                                 <div className="relative pt-4">
