@@ -46,7 +46,7 @@ export default function FeedTheStrayPage() {
                         alt={contentImage2.description}
                         data-ai-hint={contentImage2.imageHint}
                         fill
-                        className="object-cover"
+                        className="object-contain"
                     />
                 </div>
             }
