@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function CollarBeltPage() {
   const headerImage = PlaceHolderImages.find(p => p.id === 'collar_belt_header');
@@ -62,7 +63,9 @@ export default function CollarBeltPage() {
              <div className="bg-card p-8 rounded-lg border shadow-sm max-w-md mx-auto">
                 <h3 className="text-2xl font-bold font-headline mb-4">Sponsor a Collar</h3>
                 <p className="text-muted-foreground mb-6">With just <strong>₹100</strong>, you can sponsor a reflective collar and protect one precious life from a roadside accident.</p>
-                <Button size="lg">Sponsor a Collar Now</Button>
+                <Button size="lg" asChild>
+                    <Link href="/donate">Sponsor a Collar Now</Link>
+                </Button>
             </div>
           </div>
       </section>

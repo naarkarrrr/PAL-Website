@@ -10,8 +10,8 @@ const formCollections = [
   { name: 'advocates', title: 'Advocate Applications', icon: ShieldAlert },
   { name: 'collaborations', title: 'Collaboration Proposals', icon: Handshake },
   { name: 'sponsors', title: 'Sponsor Inquiries', icon: Heart },
-  { name: 'ambulanceRequests', title: 'Ambulance Requests', icon: FileText },
-  { name: 'contacts', title: 'Contact Form', icon: FileText },
+  { name: 'ambulance_requests', title: 'Ambulance Requests', icon: FileText },
+  { name: 'contact_form_submissions', title: 'Contact Form', icon: FileText },
 ];
 
 export default function AdminDashboardPage() {

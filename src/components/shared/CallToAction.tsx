@@ -23,10 +23,10 @@ export function CallToAction() {
           Join PAL Foundation today. Your contribution, whether through adoption, volunteering, or donation, can change a life forever.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button asChild size="lg" disabled>
+          <Button asChild size="lg">
             <Link href="/adopt">
               <PawPrint className="mr-2 h-5 w-5" />
-              Adopt a Pet (Coming Soon)
+              Adopt a Pet
             </Link>
           </Button>
           <Button asChild size="lg" variant="outline">

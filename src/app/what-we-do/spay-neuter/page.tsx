@@ -5,6 +5,7 @@ import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Button } from "@/components/ui/button";
 import { Heart, PawPrint } from "lucide-react";
+import Link from "next/link";
 
 export default function SpayNeuterPage() {
   const headerImage = PlaceHolderImages.find(p => p.id === 'sterilization_header');
@@ -78,7 +79,9 @@ export default function SpayNeuterPage() {
 
              <div className="text-center mt-12">
                 <p className="text-lg font-semibold mb-2">Help us continue this vital work.</p>
-                <Button size="lg">Sponsor a Sterilization Surgery</Button>
+                 <Button size="lg" asChild>
+                    <Link href="/donate">Sponsor a Sterilization Surgery</Link>
+                </Button>
             </div>
         </div>
       </section>

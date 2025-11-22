@@ -37,15 +37,15 @@ export async function submitVolunteerForm(data: unknown) {
 }
 
 export async function submitAmbulanceRequest(data: unknown) {
-  return handleFormSubmission('ambulanceRequests', AmbulanceRequestSchema, data);
+  return handleFormSubmission('ambulance_requests', AmbulanceRequestSchema, data);
 }
 
 export async function submitContactForm(data: unknown) {
-  return handleFormSubmission('contacts', ContactSchema, data);
+  return handleFormSubmission('contact_form_submissions', ContactSchema, data);
 }
 
 export async function addAnimal(data: unknown) {
-  return handleFormSubmission('animals', AnimalSchema, data, '/adopt');
+  return handleFormSubmission('adoptable_animals', AnimalSchema, data, '/adopt');
 }
 
 export async function submitAdvocateForm(data: unknown) {
