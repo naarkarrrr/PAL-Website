@@ -1,67 +1,42 @@
-'use client';
-import { useState, useEffect } from 'react';
-import { collection, getDocs, onSnapshot, doc, getDoc, DocumentReference } from 'firebase/firestore';
-import { initializeFirebase } from '@/firebase';
+"use client";
 
-const { firestore } = initializeFirebase();
+import { useState, useEffect } from "react";
+import { collection, getDocs, onSnapshot, doc, getDoc, DocumentReference } from "firebase/firestore";
+import { db } from "@/firebase"; // <- use db, not initializeFirebase
 
-export function useCollectionData(collectionName: string) {
-  const [data, setData] = useState<any[] | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
+// Fetch all docs from a collection
+export function useCollection(collectionName: string) {
+  const [data, setData] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!collectionName) {
-        setIsLoading(false);
-        return;
-    };
-
-    const collectionRef = collection(firestore, collectionName);
-
-    const unsubscribe = onSnapshot(collectionRef, (snapshot) => {
-        const documents = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-        setData(documents);
-        setIsLoading(false);
-    }, (err) => {
-        console.error("Error fetching collection: ", err);
-        setError(err);
-        setIsLoading(false);
+    const ref = collection(db, collectionName);
+    const unsub = onSnapshot(ref, (snapshot) => {
+      setData(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      setLoading(false);
     });
 
-    return () => unsubscribe();
+    return () => unsub();
   }, [collectionName]);
 
-  return { data, isLoading, error };
+  return { data, loading };
 }
 
-export function useDoc<T>(path: string) {
-  const [data, setData] = useState<T | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<Error | null>(null);
+// Fetch a single document
+export function useDocument(path: string) {
+  const [data, setData] = useState<any | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!path) {
-      setIsLoading(false);
-      return;
-    }
+    const ref = doc(db, path);
 
-    const docRef = doc(firestore, path) as DocumentReference<T>;
-
-    const unsubscribe = onSnapshot(docRef, (docSnap) => {
-      if (docSnap.exists()) {
-        setData({ id: docSnap.id, ...docSnap.data() } as T);
-      } else {
-        setData(null);
-      }
-      setIsLoading(false);
-    }, (err) => {
-      console.error(`Error fetching document from ${path}:`, err);
-      setError(err);
-      setIsLoading(false);
+    const unsub = onSnapshot(ref, (snapshot) => {
+      setData(snapshot.exists() ? snapshot.data() : null);
+      setLoading(false);
     });
 
-    return () => unsubscribe();
+    return () => unsub();
   }, [path]);
 
-  return { data, isLoading, error };
+  return { data, loading };
 }
