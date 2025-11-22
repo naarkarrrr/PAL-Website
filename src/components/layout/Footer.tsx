@@ -101,12 +101,6 @@ export function Footer() {
        <div className="border-t border-primary-foreground/20 bg-primary">
           <div className="container mx-auto px-4 py-6 flex justify-between items-center text-xs text-primary-foreground/80">
             <p>&copy; {new Date().getFullYear()} PAL Foundation. All Rights Reserved.</p>
-            <div className="flex gap-4">
-                <Link href="#" className="hover:text-accent">Support</Link>
-                <Link href="#" className="hover:text-accent">Terms & Conditions</Link>
-                <Link href="#" className="hover:text-accent">Privacy Policy</Link>
-                <Link href="#" className="hover:text-accent">Career</Link>
-            </div>
           </div>
         </div>
         <button
