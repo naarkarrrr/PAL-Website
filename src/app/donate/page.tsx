@@ -1,3 +1,4 @@
+
 import { DonationForm } from '@/components/forms/DonationForm';
 import { PageHeader } from '@/components/shared/PageHeader';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -34,6 +35,19 @@ export default function DonatePage() {
                 <DonationForm />
             </div>
             <div className="flex flex-col gap-8">
+                <div className="border rounded-2xl p-8 shadow-sm bg-card">
+                    <h3 className="text-2xl font-bold font-headline mb-6">Direct Bank Transfer</h3>
+                    <ul className="space-y-3 text-sm">
+                        {bankDetails.map(detail => (
+                            <li key={detail.label} className="flex justify-between items-center group">
+                                <span className="font-semibold text-muted-foreground">{detail.label}:</span>
+                                <div className="flex items-center gap-2">
+                                    <span className="font-mono text-foreground">{detail.value}</span>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
                 <div className="bg-primary p-8 rounded-lg">
                     <h3 className="text-2xl font-bold font-headline text-primary-foreground mb-4">Why Your Donation Matters</h3>
                     <p className="text-primary-foreground/80 mb-6">
@@ -58,20 +72,6 @@ export default function DonatePage() {
                                 <strong>Rescue Operations:</strong> Fueling our ambulance to reach animals in distress and bring them to safety.
                             </span>
                         </li>
-                    </ul>
-                </div>
-                
-                <div className="border rounded-2xl p-8 shadow-sm bg-card">
-                    <h3 className="text-2xl font-bold font-headline mb-6">Direct Bank Transfer</h3>
-                    <ul className="space-y-3 text-sm">
-                        {bankDetails.map(detail => (
-                            <li key={detail.label} className="flex justify-between items-center group">
-                                <span className="font-semibold text-muted-foreground">{detail.label}:</span>
-                                <div className="flex items-center gap-2">
-                                    <span className="font-mono text-foreground">{detail.value}</span>
-                                </div>
-                            </li>
-                        ))}
                     </ul>
                 </div>
             </div>
