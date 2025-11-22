@@ -13,7 +13,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Card } from '../ui/card';
-import { ArrowRight, PawPrint } from 'lucide-react';
+import { ArrowLeft, ArrowRight, PawPrint } from 'lucide-react';
 import Link from 'next/link';
 
 const campaigns = [
@@ -82,8 +82,8 @@ export function Campaigns() {
                             <div className="relative mb-4 pt-4">
                                 <Progress value={progress} className="h-2" />
                                 <div
-                                    className="absolute -top-1 text-xs font-bold text-primary-foreground bg-primary px-2 py-0.5 rounded-md"
-                                    style={{ left: `calc(${Math.min(progress, 95)}%)`, transform: 'translateX(-50%)' }}
+                                    className="absolute -top-1 text-xs font-bold text-primary-foreground bg-primary px-2 py-0.5 rounded-full"
+                                    style={{ left: `calc(${Math.min(progress, 95)}%)` }}
                                 >
                                     {Math.round(progress)}%
                                 </div>
@@ -92,7 +92,7 @@ export function Campaigns() {
                             <div className="flex justify-between items-center text-sm mb-6">
                                 <div className="flex items-center gap-2">
                                     <div className="w-6 h-6 rounded-full border-2 border-muted flex items-center justify-center">
-                                       <ArrowRight className="w-3 h-3 text-muted-foreground transform rotate-180" />
+                                       <ArrowLeft className="w-3 h-3 text-muted-foreground" />
                                     </div>
                                     <div>
                                         <span className="text-muted-foreground text-xs">Raised:</span>
