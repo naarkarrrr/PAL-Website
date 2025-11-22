@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button";
 export default function FeedTheStrayPage() {
   const headerImage = PlaceHolderImages.find(p => p.id === 'feeding_drive_header');
   const contentImage1 = PlaceHolderImages.find(p => p.id === 'feeding_drive_content1');
+  const contentImage2 = PlaceHolderImages.find(p => p.id === 'feed_stray_content2');
+  const contentImage3 = PlaceHolderImages.find(p => p.id === 'feed_stray_content3');
 
   return (
     <div>
@@ -36,17 +38,31 @@ export default function FeedTheStrayPage() {
             </p>
         </div>
 
-        {contentImage1 &&
-            <div className="relative aspect-video max-w-5xl mx-auto rounded-lg overflow-hidden shadow-lg my-12">
-                <Image
-                    src={contentImage1.imageUrl}
-                    alt={contentImage1.description}
-                    data-ai-hint={contentImage1.imageHint}
-                    fill
-                    className="object-cover"
-                />
-            </div>
-        }
+        <div className="grid md:grid-cols-2 gap-4 max-w-5xl mx-auto my-12">
+            {contentImage2 &&
+                <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                        src={contentImage2.imageUrl}
+                        alt={contentImage2.description}
+                        data-ai-hint={contentImage2.imageHint}
+                        fill
+                        className="object-cover"
+                    />
+                </div>
+            }
+            {contentImage3 &&
+                <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                        src={contentImage3.imageUrl}
+                        alt={contentImage3.description}
+                        data-ai-hint={contentImage3.imageHint}
+                        fill
+                        className="object-cover"
+                    />
+                </div>
+            }
+        </div>
+
 
         <div className="max-w-4xl mx-auto">
              <h3 className="text-2xl font-bold font-headline mb-4">Our Approach</h3>

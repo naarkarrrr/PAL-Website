@@ -287,6 +287,18 @@
       "description": "A balanced scale of justice.",
       "imageUrl": "https://images.unsplash.com/photo-1589994998204-f7b2c99a897b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "scale justice"
+    },
+    {
+      "id": "feed_stray_content2",
+      "description": "A volunteer feeding a stray dog.",
+      "imageUrl": "https://i.postimg.cc/5y2T0TxF/Home_2_jpg.jpg",
+      "imageHint": "volunteer feeding"
+    },
+    {
+      "id": "feed_stray_content3",
+      "description": "A person holding a bowl of food for a dog.",
+      "imageUrl": "https://i.postimg.cc/QNy6PjPh/ododo.png",
+      "imageHint": "feeding dog"
     }
   ]
 }
