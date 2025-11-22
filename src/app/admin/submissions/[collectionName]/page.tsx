@@ -130,7 +130,7 @@ export default function SubmissionsListPage() {
                 </Table>
                 {(!data || data.length === 0) && (
                     <div className="text-center p-8">
-                        <p className="text-muted-foreground">No submissions found for this category.</p>
+                        <p className="text-muted-foreground">No submissions found for this category yet.</p>
                     </div>
                 )}
             </Card>
