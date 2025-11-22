@@ -64,23 +64,18 @@ export default function DonatePage() {
         <div className="mt-20">
             <h2 className="text-3xl font-bold font-headline text-center mb-8">Other Ways to Donate</h2>
             <div className="max-w-4xl mx-auto border rounded-2xl p-8 shadow-sm bg-card">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <h3 className="text-2xl font-bold font-headline mb-6">Direct Bank Transfer</h3>
-                        <ul className="space-y-3 text-sm">
-                            {bankDetails.map(detail => (
-                                <li key={detail.label} className="flex justify-between items-center group">
-                                    <span className="font-semibold text-muted-foreground">{detail.label}:</span>
-                                    <div className="flex items-center gap-2">
-                                        <span className="font-mono text-foreground">{detail.value}</span>
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="bg-primary/5 rounded-lg p-8 flex items-center justify-center">
-                       <Logo />
-                    </div>
+                <div>
+                    <h3 className="text-2xl font-bold font-headline mb-6">Direct Bank Transfer</h3>
+                    <ul className="space-y-3 text-sm">
+                        {bankDetails.map(detail => (
+                            <li key={detail.label} className="flex justify-between items-center group">
+                                <span className="font-semibold text-muted-foreground">{detail.label}:</span>
+                                <div className="flex items-center gap-2">
+                                    <span className="font-mono text-foreground">{detail.value}</span>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </div>
