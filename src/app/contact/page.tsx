@@ -2,7 +2,7 @@
 import { ContactForm } from '@/components/forms/ContactForm';
 import { PageHeader } from '@/components/shared/PageHeader';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Phone, Mail, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Phone, Mail, Facebook, Instagram, Twitter, Share2 } from 'lucide-react';
 import Link from 'next/link';
 
 const socialLinks = [
@@ -22,33 +22,36 @@ export default function ContactPage() {
         imageAlt={headerImage?.description}
         imageHint={headerImage?.imageHint}
       />
-      <div className="container mx-auto max-w-2xl px-4 py-16">
-        <div className="bg-card p-8 rounded-xl border shadow-sm mb-12">
+      <div className="container mx-auto max-w-4xl px-4 py-16">
+        <div className="mb-12">
              <h2 className="text-2xl font-bold font-headline mb-6 text-center">Contact Information</h2>
-             <ul className="space-y-4 text-muted-foreground max-w-sm mx-auto">
-                 <li className="flex items-start gap-4">
-                    <Phone className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                        <p className="font-semibold text-foreground">Phone Number</p>
-                        <a href="tel:+918424032020" className="hover:text-accent transition-colors">+91 8424032020</a>
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-card p-6 rounded-xl border shadow-sm text-center">
+                    <div className="inline-block bg-primary/10 text-primary p-3 rounded-full mb-3">
+                        <Phone className="h-6 w-6" />
                     </div>
-                 </li>
-                 <li className="flex items-start gap-4">
-                    <Mail className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-                    <div>
-                        <p className="font-semibold text-foreground">Email Address</p>
-                        <a href="mailto:palfoundation.in@gmail.com" className="hover:text-accent transition-colors">palfoundation.in@gmail.com</a>
+                    <h3 className="font-semibold text-foreground text-lg">Phone Number</h3>
+                    <a href="tel:+918424032020" className="text-muted-foreground hover:text-accent transition-colors">+91 8424032020</a>
+                </div>
+                 <div className="bg-card p-6 rounded-xl border shadow-sm text-center">
+                    <div className="inline-block bg-primary/10 text-primary p-3 rounded-full mb-3">
+                        <Mail className="h-6 w-6" />
                     </div>
-                 </li>
-             </ul>
-             <div className="mt-8 pt-6 border-t">
-                <h3 className="text-lg font-semibold text-foreground mb-4 text-center">Follow Us</h3>
-                <div className="flex gap-4 justify-center">
-                    {socialLinks.map((social) => (
-                        <Link key={social['aria-label']} href={social.href} aria-label={social['aria-label']} className="bg-primary/10 text-primary hover:bg-accent hover:text-accent-foreground rounded-full p-3 transition-colors">
-                            <social.icon className="h-5 w-5" />
-                        </Link>
-                    ))}
+                    <h3 className="font-semibold text-foreground text-lg">Email Address</h3>
+                    <a href="mailto:palfoundation.in@gmail.com" className="text-muted-foreground hover:text-accent transition-colors">palfoundation.in@gmail.com</a>
+                </div>
+                 <div className="bg-card p-6 rounded-xl border shadow-sm text-center">
+                    <div className="inline-block bg-primary/10 text-primary p-3 rounded-full mb-3">
+                        <Share2 className="h-6 w-6" />
+                    </div>
+                    <h3 className="font-semibold text-foreground text-lg">Follow Us</h3>
+                     <div className="flex gap-3 justify-center mt-1">
+                        {socialLinks.map((social) => (
+                            <Link key={social['aria-label']} href={social.href} aria-label={social['aria-label']} className="text-muted-foreground hover:text-accent transition-colors">
+                                <social.icon className="h-5 w-5" />
+                            </Link>
+                        ))}
+                    </div>
                 </div>
              </div>
         </div>
