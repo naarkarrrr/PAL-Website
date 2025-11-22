@@ -7,12 +7,12 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { MotionDiv } from '@/components/shared/MotionDiv';
 import { ArrowRight, PawPrint } from 'lucide-react';
-import { useCollectionData } from '@/hooks/use-firestore';
+import { useRealtimeCollection } from '@/hooks/use-firestore';
 import type { Animal } from '@/lib/types';
 import { Skeleton } from '../ui/skeleton';
 
 export function FeaturedAnimals() {
-  const { data: animals, isLoading } = useCollectionData('adoptable_animals');
+  const { data: animals, isLoading } = useRealtimeCollection('adoptable_animals');
 
   const featuredAnimals = animals?.slice(0, 3) as Animal[] | undefined;
 

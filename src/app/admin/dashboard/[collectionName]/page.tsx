@@ -1,6 +1,6 @@
 'use client';
 import { useParams } from 'next/navigation';
-import { useCollectionData } from '@/hooks/use-firestore';
+import { useRealtimeCollection } from '@/hooks/use-firestore';
 import { SubmissionsTable } from '@/components/admin/SubmissionsTable';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
@@ -14,7 +14,7 @@ export default function SubmissionsPage() {
     ? params.collectionName[0]
     : params.collectionName;
     
-  const { data, isLoading, error } = useCollectionData(collectionName);
+  const { data, isLoading, error } = useRealtimeCollection(collectionName);
 
   const formatTitle = (name: string) => {
     return name

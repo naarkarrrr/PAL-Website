@@ -2,13 +2,13 @@
 'use client';
 import { PageHeader } from "@/components/shared/PageHeader";
 import { AnimalCard } from "@/components/adoption/AnimalCard";
-import { useCollectionData } from "@/hooks/use-firestore";
+import { useRealtimeCollection } from "@/hooks/use-firestore";
 import type { Animal } from "@/lib/types";
 import { Skeleton } from "@/components/ui/skeleton";
 import { PawPrint } from "lucide-react";
 
 export default function AdoptPage() {
-  const { data: animals, isLoading, error } = useCollectionData('adoptable_animals');
+  const { data: animals, isLoading, error } = useRealtimeCollection('adoptable_animals');
 
   return (
     <div>
