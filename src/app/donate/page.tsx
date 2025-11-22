@@ -33,38 +33,35 @@ export default function DonatePage() {
                  <h2 className="text-3xl font-bold font-headline mb-6">Make a Donation</h2>
                 <DonationForm />
             </div>
-            <div className="bg-primary p-8 rounded-lg">
-                <h3 className="text-2xl font-bold font-headline text-primary-foreground mb-4">Why Your Donation Matters</h3>
-                <p className="text-primary-foreground/80 mb-6">
-                    Every contribution, no matter the size, helps us provide essential care. Your donation can fund:
-                </p>
-                <ul className="space-y-4">
-                    <li className="flex items-start gap-4">
-                        <Heart className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
-                        <span className="text-primary-foreground">
-                            <strong>Medical Care:</strong> Vaccinations, treatments, and emergency surgeries for sick or injured animals.
-                        </span>
-                    </li>
-                    <li className="flex items-start gap-4">
-                        <Gift className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
-                        <span className="text-primary-foreground">
-                            <strong>Food and Shelter:</strong> Nutritious meals and a safe, comfortable place for animals to rest and recover.
-                        </span>
-                    </li>
-                     <li className="flex items-start gap-4">
-                        <ShieldCheck className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
-                        <span className="text-primary-foreground">
-                            <strong>Rescue Operations:</strong> Fueling our ambulance to reach animals in distress and bring them to safety.
-                        </span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        
-        <div className="mt-20">
-            <h2 className="text-3xl font-bold font-headline text-center mb-8">Other Ways to Donate</h2>
-            <div className="max-w-4xl mx-auto border rounded-2xl p-8 shadow-sm bg-card">
-                <div>
+            <div className="flex flex-col gap-8">
+                <div className="bg-primary p-8 rounded-lg">
+                    <h3 className="text-2xl font-bold font-headline text-primary-foreground mb-4">Why Your Donation Matters</h3>
+                    <p className="text-primary-foreground/80 mb-6">
+                        Every contribution, no matter the size, helps us provide essential care. Your donation can fund:
+                    </p>
+                    <ul className="space-y-4">
+                        <li className="flex items-start gap-4">
+                            <Heart className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
+                            <span className="text-primary-foreground">
+                                <strong>Medical Care:</strong> Vaccinations, treatments, and emergency surgeries for sick or injured animals.
+                            </span>
+                        </li>
+                        <li className="flex items-start gap-4">
+                            <Gift className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
+                            <span className="text-primary-foreground">
+                                <strong>Food and Shelter:</strong> Nutritious meals and a safe, comfortable place for animals to rest and recover.
+                            </span>
+                        </li>
+                         <li className="flex items-start gap-4">
+                            <ShieldCheck className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
+                            <span className="text-primary-foreground">
+                                <strong>Rescue Operations:</strong> Fueling our ambulance to reach animals in distress and bring them to safety.
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div className="border rounded-2xl p-8 shadow-sm bg-card">
                     <h3 className="text-2xl font-bold font-headline mb-6">Direct Bank Transfer</h3>
                     <ul className="space-y-3 text-sm">
                         {bankDetails.map(detail => (
@@ -79,7 +76,6 @@ export default function DonatePage() {
                 </div>
             </div>
         </div>
-
       </div>
     </div>
   );
