@@ -2,23 +2,17 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  const authToken = request.cookies.get('firebase-auth-token');
+  // The 'firebase-auth-token' cookie is not a reliable way to check auth status with Firebase v9.
+  // Auth state is managed on the client. We will use a client-side guard in AuthContext.
+  // This middleware is now simplified or could be removed if all auth logic is client-side.
+  
   const { pathname } = request.nextUrl;
 
-  // If the user is trying to access the admin dashboard without an auth token,
-  // redirect them to the login page.
-  if (pathname.startsWith('/admin/dashboard') && !authToken) {
-    const loginUrl = new URL('/admin/login', request.url);
-    return NextResponse.redirect(loginUrl);
-  }
+  // If a user tries to go to a /admin page other than login, the client-side
+  // AuthContext will handle redirecting them if they aren't logged in.
+  // This middleware primarily exists to prevent flicker.
 
-  // If the user is logged in and tries to access the login page,
-  // redirect them to the dashboard.
-  if (pathname === '/admin/login' && authToken) {
-    const dashboardUrl = new URL('/admin/dashboard', request.url);
-    return NextResponse.redirect(dashboardUrl);
-  }
-
+  // Let the client-side handle the logic.
   return NextResponse.next();
 }
 
