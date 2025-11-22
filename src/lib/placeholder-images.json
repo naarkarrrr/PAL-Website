@@ -20,7 +20,7 @@
     },
     {
       "id": "1",
-      "description": "Buddy",
+      "description": "Charlie",
       "imageUrl": "https://i.postimg.cc/mDcf4S15/Whats-App-Image-2024-07-25-at-12-05-18-PM.jpg",
       "imageHint": "golden retriever"
     },
@@ -269,6 +269,12 @@
       "description": "A person holding a small puppy.",
       "imageUrl": "https://i.postimg.cc/HLp1NRG0/Whats-App-Image-2024-07-25-at-12-05-20-PM-1.jpg",
       "imageHint": "holding puppy"
+    },
+    {
+      "id": "not-found-cat",
+      "description": "A shocked cat with wide eyes.",
+      "imageUrl": "https://i.postimg.cc/tJk02Yj1/shocked-cat.png",
+      "imageHint": "shocked cat"
     }
   ]
 }
