@@ -1,7 +1,19 @@
 import { DonationForm } from '@/components/forms/DonationForm';
 import { PageHeader } from '@/components/shared/PageHeader';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Heart, Gift, ShieldCheck } from 'lucide-react';
+import { Logo } from '@/components/shared/Logo';
+import { Heart, Gift, ShieldCheck, Copy } from 'lucide-react';
+
+const bankDetails = [
+    { label: "Bank", value: "KOTAK MAHINDRA BANK" },
+    { label: "Account Name", value: "Pure Animal Lovers PAL Welfare Foundation" },
+    { label: "A/C No.", value: "9349453621" },
+    { label: "IFSC Code", value: "KKBK0001471" },
+    { label: "Branch", value: "Orlem, Malad West" },
+    { label: "UPI ID", value: "9820032020@ibl" },
+    { label: "Tax Exemption under 80G", value: "AAFTP6877RF20241" },
+    { label: "PAN", value: "AAFTP6877R" },
+];
 
 export default function DonatePage() {
   const headerImage = PlaceHolderImages.find(p => p.id === 'donate_header');
@@ -48,6 +60,31 @@ export default function DonatePage() {
                 </ul>
             </div>
         </div>
+        
+        <div className="mt-20">
+            <h2 className="text-3xl font-bold font-headline text-center mb-8">Other Ways to Donate</h2>
+            <div className="max-w-4xl mx-auto border rounded-2xl p-8 shadow-sm bg-card">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 className="text-2xl font-bold font-headline mb-6">Direct Bank Transfer</h3>
+                        <ul className="space-y-3 text-sm">
+                            {bankDetails.map(detail => (
+                                <li key={detail.label} className="flex justify-between items-center group">
+                                    <span className="font-semibold text-muted-foreground">{detail.label}:</span>
+                                    <div className="flex items-center gap-2">
+                                        <span className="font-mono text-foreground">{detail.value}</span>
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="bg-primary/5 rounded-lg p-8 flex items-center justify-center">
+                       <Logo />
+                    </div>
+                </div>
+            </div>
+        </div>
+
       </div>
     </div>
   );
