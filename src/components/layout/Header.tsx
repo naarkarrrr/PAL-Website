@@ -98,12 +98,8 @@ export function Header() {
             {mainNav.map((item) => (
               <NavigationMenuItem key={item.title}>
                 {item.href ? (
-                  <NavigationMenuLink
-                    asChild
-                    className={navigationMenuTriggerStyle()}
-                    active={pathname === item.href}
-                  >
-                    <Link href={item.href || "#"}>
+                  <NavigationMenuLink asChild active={pathname === item.href}>
+                    <Link href={item.href} className={navigationMenuTriggerStyle()}>
                       {item.title}
                     </Link>
                   </NavigationMenuLink>
