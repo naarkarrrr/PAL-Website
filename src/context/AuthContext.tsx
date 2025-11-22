@@ -1,7 +1,8 @@
+
 'use client';
 
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, User } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, User } from 'firebase/auth';
 import { initializeFirebase } from '@/firebase';
 import { useRouter } from 'next/navigation';
 import type { LoginCredentials } from '@/lib/types';
@@ -37,17 +38,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, [auth, router]);
 
   const signIn = async ({ email, password }: LoginCredentials) => {
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-    } catch (error: any) {
-      // If user not found, try to create a new user.
-      if (error.code === 'auth/user-not-found' || error.code === 'auth/invalid-credential') {
-        await createUserWithEmailAndPassword(auth, email, password);
-      } else {
-        // For all other errors, re-throw them to be handled by the form.
-        throw error;
-      }
-    }
+    await signInWithEmailAndPassword(auth, email, password);
   };
 
   const handleSignOut = async () => {
