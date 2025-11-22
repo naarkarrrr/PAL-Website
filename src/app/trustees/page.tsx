@@ -6,19 +6,19 @@ const trustees = [
     {
         name: "Anjali Mehta",
         role: "Chairperson",
-        imageUrl: "https://i.postimg.cc/L6h5gXzF/Whats-App-Image-2024-07-25-at-12-05-20-PM.jpg",
+        imageUrl: "https://picsum.photos/seed/anjali/600/600",
         bio: "Oversees the foundation's strategic direction and ensures our mission is always at the forefront.",
     },
     {
         name: "Vikram Reddy",
         role: "Treasurer",
-        imageUrl: "https://i.postimg.cc/HLp1NRG0/Whats-App-Image-2024-07-25-at-12-05-20-PM-1.jpg",
+        imageUrl: "https://picsum.photos/seed/vikram/600/600",
         bio: "Manages the foundation's finances with transparency and a commitment to our cause.",
     },
     {
         name: "Sunita Patel",
         role: "Secretary",
-        imageUrl: "https://i.postimg.cc/T3q1T55S/Whats-App-Image-2024-07-25-at-12-05-21-PM-1.jpg",
+        imageUrl: "https://picsum.photos/seed/sunita/600/600",
         bio: "Handles our organizational records and communications, keeping our operations smooth.",
     },
 ];

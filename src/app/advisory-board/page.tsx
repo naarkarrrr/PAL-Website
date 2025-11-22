@@ -6,19 +6,19 @@ const advisoryBoardMembers = [
     {
         name: "Dr. Anya Sharma",
         role: "Veterinary Medicine Expert",
-        imageUrl: "https://i.postimg.cc/zX8k12fM/Whats-App-Image-2024-07-25-at-12-05-18-PM-2.jpg",
+        imageUrl: "https://picsum.photos/seed/anya/600/600",
         bio: "A leading veterinarian with 20 years of experience in animal health and surgical procedures.",
     },
     {
         name: "Rajesh Kumar",
         role: "Legal Counsel",
-        imageUrl: "https://i.postimg.cc/y8M3BFCW/Whats-App-Image-2024-07-25-at-12-05-19-PM-1.jpg",
+        imageUrl: "https://picsum.photos/seed/rajesh/600/600",
         bio: "A seasoned lawyer specializing in animal welfare laws and public interest litigation.",
     },
     {
         name: "Priya Singh",
         role: "Community Outreach Strategist",
-        imageUrl: "https://i.postimg.cc/J4s3DP7N/Whats-App-Image-2024-07-25-at-12-05-19-PM.jpg",
+        imageUrl: "https://picsum.photos/seed/priya/600/600",
         bio: "An expert in building community programs and driving public engagement for social causes.",
     },
 ];
