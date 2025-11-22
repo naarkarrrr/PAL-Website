@@ -7,12 +7,10 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 
 const timelineEvents = [
-    { year: 2018, event: "Founded with a mission to provide a voice for the voiceless." },
-    { year: 2019, event: "Launched our 24/7 ambulance service, rescuing over 100 animals in the first year." },
-    { year: 2020, event: "Expanded our volunteer program, doubling our team of dedicated animal lovers." },
-    { year: 2021, event: "Opened our first rehabilitation center, providing specialized care for injured animals." },
-    { year: 2022, event: "Reached a milestone of 1,000 successful adoptions, finding forever homes for our rescues." },
-    { year: 2023, event: "Launched the 'Feed the Stray' initiative, providing daily meals to over 500 animals." },
+    { year: 2020, event: "Founded with a vision to be a voice for the voiceless." },
+    { year: 2021, event: "Launched our 24/7 ambulance service, rescuing over 100 animals in the first year." },
+    { year: 2022, event: "Expanded our volunteer program, doubling our team of dedicated animal lovers." },
+    { year: 2023, event: "Reached a milestone of 1,000 successful adoptions and rehabilitations." },
 ];
 
 export default function OurStoryPage() {
@@ -50,12 +48,19 @@ export default function OurStoryPage() {
                     </div>
                     <div>
                         <h2 className="text-3xl font-bold font-headline mb-4">A Message from Our Founder</h2>
-                        <p className="text-lg text-muted-foreground mb-6">
-                            “Our journey began with a simple act of kindness—a commitment to not look away. Every animal deserves a chance at life, love, and a place to call home. PAL Foundation is the embodiment of that belief, and every rescue, every adoption, every volunteer who joins us is a testament to the power of compassion. We are not just an organization; we are a community united by a shared love for animals.”
-                        </p>
-                        <p className="font-bold font-headline text-lg">- Samar Shiya</p>
+                        <div className="text-muted-foreground space-y-4">
+                            <p>PAL Welfare Foundation began with a simple yet powerful vision—to be the voice for the voiceless and create a safe, compassionate world for all living beings. Founded in 2020, the foundation has since grown into a trusted and registered entity, dedicated to the welfare and protection of animals and birds across India.</p>
+                            <p>The heart and soul behind this movement is our visionary founder, Sr. PI. Sudhir Kudalker Sir—a respected officer and a compassionate soul who transformed his love for animals into a life-changing mission. His deep-rooted belief in justice, empathy, and responsibility towards all beings became the driving force behind PAL. Under his leadership, PAL has not only saved lives but also ignited a spark of awareness and compassion within communities.</p>
+                        </div>
+                        <p className="font-bold font-headline text-lg mt-6">- Sr. PI. Sudhir Kudalker Sir</p>
                         <p className="text-muted-foreground">Founder, PAL Foundation</p>
                     </div>
+                </div>
+                <div className="mt-16 text-muted-foreground space-y-4 max-w-4xl mx-auto">
+                    <p>Since its inception, PAL has rescued and rehabilitated thousands of animals and birds, ranging from street dogs and cats to injured wildlife and distressed birds. Our foundation has also actively provided legal assistance, ensured justice for cruelty cases, and advocated for the legal and fundamental rights of animals and birds in India.</p>
+                    <p>What sets PAL apart is our focus on education, awareness, and systemic change. We believe in creating a society that not only helps animals in distress but also understands and protects their rights.</p>
+                    <p>From hands-on rescues to community drives, legal action to awareness campaigns, PAL continues to grow—driven by the values instilled by our founder and powered by a team of passionate volunteers, supporters, and well-wishers.</p>
+                    <p>Together, we are building a future where compassion leads the way, and every life—no matter how small—is treated with dignity, love, and respect.</p>
                 </div>
             </section>
 
