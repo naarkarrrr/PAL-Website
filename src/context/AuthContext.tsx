@@ -39,6 +39,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const signIn = async ({ email, password }: LoginCredentials) => {
     await signInWithEmailAndPassword(auth, email, password);
+    // Directly navigate to dashboard on successful sign-in
+    router.push('/admin/dashboard');
   };
 
   const handleSignOut = async () => {
