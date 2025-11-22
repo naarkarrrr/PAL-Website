@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 
 export default function FeedTheStrayPage() {
   const headerImage = PlaceHolderImages.find(p => p.id === 'feeding_drive_header');
-  const contentImage1 = PlaceHolderImages.find(p => p.id === 'feeding_drive_content1');
   const contentImage2 = PlaceHolderImages.find(p => p.id === 'feed_stray_content2');
   const contentImage3 = PlaceHolderImages.find(p => p.id === 'feed_stray_content3');
 
@@ -46,7 +45,7 @@ export default function FeedTheStrayPage() {
                         alt={contentImage2.description}
                         data-ai-hint={contentImage2.imageHint}
                         fill
-                        className="object-contain"
+                        className="object-cover"
                     />
                 </div>
             }
