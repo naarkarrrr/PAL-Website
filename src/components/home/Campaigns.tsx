@@ -13,7 +13,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Card } from '../ui/card';
-import { PawPrint } from 'lucide-react';
+import { ArrowRight, PawPrint } from 'lucide-react';
 import Link from 'next/link';
 
 const campaigns = [
@@ -47,7 +47,7 @@ export function Campaigns() {
           {/* You can add a subtle background pattern here if you want */}
       </div>
       <div className="container mx-auto px-4 relative">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center bg-card p-8 rounded-2xl shadow-lg">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center bg-card p-8 md:p-12 rounded-2xl shadow-lg">
           <div>
             <div className="flex items-center gap-2 text-primary mb-2">
               <PawPrint className="h-5 w-5" />
@@ -79,27 +79,37 @@ export function Campaigns() {
                             <p className="text-sm text-muted-foreground mb-4">
                                 {campaign.description}
                             </p>
-                            <div className="relative mb-4">
-                                <Progress value={progress} className="h-3" />
+                            <div className="relative mb-4 pt-4">
+                                <Progress value={progress} className="h-2" />
                                 <div
-                                    className="absolute -top-5 text-xs font-bold text-primary-foreground bg-primary px-2 py-0.5 rounded-full"
-                                    style={{ left: `calc(${Math.min(progress, 90)}% - 1rem)` }}
+                                    className="absolute -top-1 text-xs font-bold text-primary-foreground bg-primary px-2 py-0.5 rounded-md"
+                                    style={{ left: `calc(${Math.min(progress, 95)}%)`, transform: 'translateX(-50%)' }}
                                 >
                                     {Math.round(progress)}%
                                 </div>
                             </div>
 
                             <div className="flex justify-between items-center text-sm mb-6">
-                                <div>
-                                <span className="text-muted-foreground">Raised:</span>
-                                <p className="font-bold text-lg">${campaign.raised.toLocaleString()}</p>
+                                <div className="flex items-center gap-2">
+                                    <div className="w-6 h-6 rounded-full border-2 border-muted flex items-center justify-center">
+                                       <ArrowRight className="w-3 h-3 text-muted-foreground transform rotate-180" />
+                                    </div>
+                                    <div>
+                                        <span className="text-muted-foreground text-xs">Raised:</span>
+                                        <p className="font-bold text-base">₹{campaign.raised.toLocaleString()}</p>
+                                    </div>
                                 </div>
-                                <div className="text-right">
-                                <span className="text-muted-foreground">Goal:</span>
-                                <p className="font-bold text-lg">${campaign.goal.toLocaleString()}</p>
+                                <div className="flex items-center gap-2 text-right">
+                                     <div>
+                                        <span className="text-muted-foreground text-xs">Goal:</span>
+                                        <p className="font-bold text-base">₹{campaign.goal.toLocaleString()}</p>
+                                    </div>
+                                    <div className="w-6 h-6 rounded-full border-2 border-muted flex items-center justify-center">
+                                       <ArrowRight className="w-3 h-3 text-muted-foreground" />
+                                    </div>
                                 </div>
                             </div>
-                            <Button asChild className="w-full">
+                            <Button asChild className="w-full" size="lg">
                                 <Link href="/donate">Donate Now</Link>
                             </Button>
                         </Card>
@@ -108,11 +118,11 @@ export function Campaigns() {
                   );
                 })}
               </CarouselContent>
-              <CarouselPrevious className="-left-4" />
-              <CarouselNext className="-right-4" />
+              <CarouselPrevious className="absolute -left-4 top-1/2 -translate-y-1/2" />
+              <CarouselNext className="absolute -right-4 top-1/2 -translate-y-1/2" />
             </Carousel>
           </div>
-           <div className="relative h-80 md:h-full w-full rounded-xl overflow-hidden shadow-md">
+           <div className="relative h-80 md:h-[450px] w-full rounded-xl overflow-hidden shadow-md">
             <Image
                 src={PlaceHolderImages.find((p) => p.id === 'donate_card')?.imageUrl || ''}
                 alt="Campaign image"
