@@ -38,7 +38,7 @@ export default function OurStoryPage() {
             <section className="container mx-auto px-4 py-16">
                  <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div className="relative aspect-square">
-                         <Image
+                        <Image
                             src={founderImage?.imageUrl || ''}
                             alt={founderImage?.description || ''}
                             data-ai-hint={founderImage?.imageHint}
