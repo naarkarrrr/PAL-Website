@@ -45,22 +45,6 @@ export default function DonatePage() {
                         ))}
                     </ul>
                 </div>
-                 <div id="tax-info" className="bg-primary/10 p-8 rounded-lg border border-primary/20">
-                    <h3 className="text-2xl font-bold font-headline text-primary mb-4">Tax Exemption for Donations</h3>
-                    <p className="text-muted-foreground mb-6">
-                        Your contributions to PAL Foundation are eligible for tax exemption under Section 80G of the Income Tax Act. This means you can claim a deduction on your taxable income for the amount you donate.
-                    </p>
-                    <div className="bg-card p-4 rounded-md border text-sm">
-                        <p className="font-semibold">Our 80G Registration Details:</p>
-                        <ul className="space-y-1 mt-2 font-mono">
-                            <li><strong>Registration No:</strong> AAFTP6877RF20241</li>
-                            <li><strong>PAN:</strong> AAFTP6877R</li>
-                        </ul>
-                    </div>
-                     <p className="text-xs text-muted-foreground mt-4">
-                        A receipt for your donation will be sent to the email address you provide, which you can use for your tax filing purposes.
-                    </p>
-                </div>
                 <div className="bg-primary p-8 rounded-lg">
                     <h3 className="text-2xl font-bold font-headline text-primary-foreground mb-4">Why Your Donation Matters</h3>
                     <p className="text-primary-foreground/80 mb-6">
@@ -86,6 +70,22 @@ export default function DonatePage() {
                             </span>
                         </li>
                     </ul>
+                </div>
+                 <div id="tax-info" className="bg-primary/10 p-8 rounded-lg border border-primary/20">
+                    <h3 className="text-2xl font-bold font-headline text-primary mb-4">Tax Exemption for Donations</h3>
+                    <p className="text-muted-foreground mb-6">
+                        Your contributions to PAL Foundation are eligible for tax exemption under Section 80G of the Income Tax Act. This means you can claim a deduction on your taxable income for the amount you donate.
+                    </p>
+                    <div className="bg-card p-4 rounded-md border text-sm">
+                        <p className="font-semibold">Our 80G Registration Details:</p>
+                        <ul className="space-y-1 mt-2 font-mono">
+                            <li><strong>Registration No:</strong> AAFTP6877RF20241</li>
+                            <li><strong>PAN:</strong> AAFTP6877R</li>
+                        </ul>
+                    </div>
+                     <p className="text-xs text-muted-foreground mt-4">
+                        A receipt for your donation will be sent to the email address you provide, which you can use for your tax filing purposes.
+                    </p>
                 </div>
             </div>
         </div>
