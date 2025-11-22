@@ -114,14 +114,11 @@ export function Header() {
                     </NavigationMenuContent>
                   </>
                 ) : (
-                  <NavigationMenuLink
-                    href={item.href || "#"}
-                    asChild
-                  >
-                    <Link href={item.href || "#"} className={cn(navigationMenuTriggerStyle(), pathname === item.href && 'bg-accent/50')}>
+                  <Link href={item.href || "#"} legacyBehavior passHref>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === item.href && 'bg-accent/50')}>
                       {item.title}
-                    </Link>
-                  </NavigationMenuLink>
+                    </NavigationMenuLink>
+                  </Link>
                 )}
               </NavigationMenuItem>
             ))}
