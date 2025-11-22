@@ -251,6 +251,24 @@
       "description": "A sleeping dog post-surgery",
       "imageUrl": "https://images.unsplash.com/photo-1599443015574-be5fe8a05783?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkb2clMjByZWNvdmVyeXxlbnwwfHx8fDE3NjM1NzY4NTZ8MA&ixlibrb-4.1.0&q=80&w=1080",
       "imageHint": "dog recovery"
+    },
+    {
+      "id": "donate_card",
+      "description": "A police officer feeding a dog.",
+      "imageUrl": "https://storage.googleapis.com/aifire.dev/PAL-assets/police-officer-cat.png",
+      "imageHint": "officer dog"
+    },
+    {
+      "id": "volunteer_card",
+      "description": "A person petting a golden retriever.",
+      "imageUrl": "https://images.unsplash.com/photo-1548681528-6a5c45b66b42?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwZXR0aW5nJTIwZG9nfGVufDB8fHx8MTc2MzU5MzI3MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "petting dog"
+    },
+    {
+      "id": "adopt_card",
+      "description": "A person holding a small puppy.",
+      "imageUrl": "https://images.unsplash.com/photo-1597517109214-9d5f0b542611?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxob2xkaW5nJTIwcHVwcHl8ZW58MHx8fHwxNzYzNTkzMjcyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "holding puppy"
     }
   ]
 }
