@@ -97,12 +97,22 @@ export function Header() {
           <NavigationMenuList>
             {mainNav.map((item) => (
               <NavigationMenuItem key={item.title}>
-                {item.subLinks ? (
+                {item.href ? (
+                  <NavigationMenuLink
+                    asChild
+                    className={navigationMenuTriggerStyle()}
+                    active={pathname === item.href}
+                  >
+                    <Link href={item.href || "#"}>
+                      {item.title}
+                    </Link>
+                  </NavigationMenuLink>
+                ) : (
                   <>
                     <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                        {item.subLinks.map((component) => (
+                        {item.subLinks?.map((component) => (
                           <ListItem
                             key={component.title}
                             title={component.title}
@@ -114,16 +124,6 @@ export function Header() {
                       </ul>
                     </NavigationMenuContent>
                   </>
-                ) : (
-                  <NavigationMenuLink
-                    asChild
-                    className={navigationMenuTriggerStyle()}
-                    active={pathname === item.href}
-                  >
-                    <Link href={item.href || "#"}>
-                      {item.title}
-                    </Link>
-                  </NavigationMenuLink>
                 )}
               </NavigationMenuItem>
             ))}
