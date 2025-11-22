@@ -1,9 +1,8 @@
-
 'use client';
 
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, User } from 'firebase/auth';
-import { initializeFirebase } from '@/firebase';
+import { onAuthStateChanged, signInWithEmailAndPassword, signOut, User } from 'firebase/auth';
+import { auth } from '@/firebase'; // ⭐ Correct import
 import { useRouter } from 'next/navigation';
 import type { LoginCredentials } from '@/lib/types';
 
@@ -19,31 +18,28 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  const { auth } = initializeFirebase();
   const router = useRouter();
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
       setLoading(false);
-      if (user) {
-        // If user is detected, ensure they are on the dashboard
-        if (window.location.pathname.startsWith('/admin/login')) {
-           router.push('/admin/dashboard');
-        }
+
+      if (user && window.location.pathname.startsWith('/admin/login')) {
+        router.push('/admin/dashboard');
       }
     });
 
     return () => unsubscribe();
-  }, [auth, router]);
+  }, [router]);
 
   const signIn = async ({ email, password }: LoginCredentials) => {
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      // Directly navigate to dashboard on successful sign-in
-      router.push('/admin/dashboard');
+      const userCred = await signInWithEmailAndPassword(auth, email, password);
+      console.log("Logged in:", userCred);
+
+      router.replace("/admin/dashboard");
     } catch (error) {
-      // Re-throw the error so the calling component can catch it
       throw error;
     }
   };
@@ -66,8 +62,6 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
+  if (!context) throw new Error('useAuth must be used within an AuthProvider');
   return context;
 };
