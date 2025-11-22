@@ -225,13 +225,13 @@
     {
       "id": "vaccination_content1",
       "description": "A healthy, happy dog outdoors.",
-      "imageUrl": "https://images.unsplash.com/photo-1599908758973-b02eb044e5ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkb2clMjBoZWFsdGh5fGVufDB8fHx8MTc2MzgwODczM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1599908758973-b02eb044e5ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHhkb2clMjBoZWFsdGh5fGVufDB8fHx8MTc2MzgwODczM3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "dog healthy"
     },
     {
       "id": "collar_belt_header",
       "description": "A dog wearing a reflective collar at dusk.",
-      "imageUrl": "https://images.unsplash.com/photo-1650355595227-7474a19f2513?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkb2clMjByZWZsZWN0aXZlfGVufDB8fHx8MTc2MzgwODczNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1650355595227-7474a19f2513?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxyZWZsZWN0aXZlJTIwZG9nfGVufDB8fHx8MTc2MzgwODczNHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "dog reflective"
     },
     {
@@ -281,6 +281,12 @@
       "description": "A cat with wide, surprised eyes looking at the camera.",
       "imageUrl": "https://images.unsplash.com/photo-1568235104174-9079e7e69547?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxzaG9ja2VkJTIwY2F0fGVufDB8fHx8MTc2MzgwODczM3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "shocked cat"
+    },
+    {
+      "id": "legal_help_header",
+      "description": "A balanced scale of justice.",
+      "imageUrl": "https://images.unsplash.com/photo-1589994998204-f7b2c99a897b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "scale justice"
     }
   ]
 }
