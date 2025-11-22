@@ -115,7 +115,7 @@ export function Header() {
                     </NavigationMenuContent>
                   </>
                 ) : (
-                  <Link href={item.href || "#"} passHref>
+                  <Link href={item.href || "#"} legacyBehavior passHref>
                     <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), pathname === item.href && 'bg-accent/50')}>
                       {item.title}
                     </NavigationMenuLink>
@@ -180,7 +180,6 @@ export function Header() {
   );
 }
 
-/* CLEANED LIST ITEM — NO NESTED <a> */
 function ListItem({ className, title, children, href }: any) {
   return (
     <li>
