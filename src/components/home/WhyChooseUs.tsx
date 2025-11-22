@@ -45,7 +45,7 @@ export function WhyChooseUs() {
                     alt={image?.description || ''}
                     data-ai-hint={image?.imageHint}
                     fill
-                    className="object-cover rounded-full z-10"
+                    className="object-contain rounded-full z-10"
                 />
             </div>
           </MotionDiv>
