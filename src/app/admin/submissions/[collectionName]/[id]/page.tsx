@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation';
 import { useDoc } from '@/hooks/use-firestore';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Terminal, Download, CheckCircle, ArrowLeft } from 'lucide-react';
+import { Terminal, CheckCircle, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -49,15 +49,6 @@ export default function SubmissionDetailPage() {
       });
       console.error(err);
     }
-  };
-
-  const handleDownloadPdf = () => {
-    // In a real app, this would trigger a server-side function
-    // to generate a PDF from the submission data.
-    toast({
-      title: "PDF Download",
-      description: "PDF generation is not yet implemented.",
-    });
   };
 
   const formatValue = (value: any): string => {
@@ -129,7 +120,6 @@ export default function SubmissionDetailPage() {
                 </Button>
                 <h1 className="text-xl font-bold font-headline">{formatTitle(collectionName)}</h1>
                  <div className="flex items-center gap-2">
-                    <Button variant="outline" onClick={handleDownloadPdf}><Download className="mr-2 h-4 w-4"/> Download as PDF</Button>
                     <Button onClick={handleMarkAsReviewed} disabled={submission.isReviewed}>
                         <CheckCircle className="mr-2 h-4 w-4"/>
                         {submission.isReviewed ? 'Reviewed' : 'Mark as Reviewed'}

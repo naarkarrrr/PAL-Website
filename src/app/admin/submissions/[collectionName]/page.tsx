@@ -4,7 +4,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { useRealtimeCollection } from '@/hooks/use-firestore';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Terminal, ArrowRight, Check, Trash2, Phone } from 'lucide-react';
+import { Terminal, ArrowRight, Check, Trash2, Phone, Download } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -84,6 +84,16 @@ export default function SubmissionsListPage() {
       }
     }
   };
+
+  const handleDownloadPdf = () => {
+    // In a real app, this would trigger a server-side function
+    // to generate a PDF from the submission data.
+    toast({
+      title: "PDF Download",
+      description: "PDF generation is not yet implemented.",
+    });
+  };
+
 
   if (isLoading) {
     return (
@@ -166,6 +176,9 @@ export default function SubmissionsListPage() {
                                   onClick={() => handleToggleReviewed(item.id, item.isReviewed || false)}
                                 >
                                     <Check className={`h-4 w-4 ${item.isReviewed ? 'text-green-500' : ''}`} />
+                                </Button>
+                                <Button variant="ghost" size="icon" title="Download PDF" onClick={handleDownloadPdf}>
+                                    <Download className="h-4 w-4" />
                                 </Button>
                                 <Button variant="ghost" size="icon" title="Delete" onClick={() => handleDelete(item.id)}>
                                     <Trash2 className="h-4 w-4 text-destructive" />
