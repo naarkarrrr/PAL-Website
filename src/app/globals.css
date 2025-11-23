@@ -4,47 +4,47 @@
 
 @layer base {
   :root {
-    --background: 40 50% 98%; /* Light Beige */
-    --foreground: 240 10% 3.9%;
-    --card: 40 50% 98%;
-    --card-foreground: 240 10% 3.9%;
+    --background: 40 100% 95%; /* Cream White */
+    --foreground: 0 0% 13%; /* Charcoal Black */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 250 89% 67%; /* Soft Lavender */
-    --primary-foreground: 250 10% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 340 80% 96%; /* Muted Rose Accent */
+    --popover-foreground: 0 0% 13%;
+    --primary: 229 70% 20%; /* Deep Navy Blue */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 218 29% 91%; /* Soft Grey */
+    --secondary-foreground: 0 0% 13%;
+    --muted: 218 29% 94%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 340 82% 54%; /* Stronger Rose for CTAs */
-    --accent-foreground: 0 0% 98%;
+    --accent: 45 68% 55%; /* Warm Gold */
+    --accent-foreground: 0 0% 13%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --border: 218 29% 91%; /* Soft Grey */
+    --input: 218 29% 91%;
+    --ring: 229 65% 33%; /* Royal Blue */
     --radius: 0.8rem;
   }
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 250 89% 67%; /* Soft Lavender */
-    --primary-foreground: 250 10% 98%;
-    --secondary: 240 3.7% 15.9%;
+    --background: 0 0% 13%; /* Charcoal Black */
+    --foreground: 40 100% 95%; /* Cream White */
+    --card: 229 70% 12%; /* Darker Navy */
+    --card-foreground: 40 100% 95%;
+    --popover: 229 70% 12%;
+    --popover-foreground: 40 100% 95%;
+    --primary: 229 65% 33%; /* Royal Blue */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 229 70% 15%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 340 80% 15%; /* Muted Rose Accent */
+    --muted: 229 70% 15%;
     --muted-foreground: 240 5% 64.9%;
-    --accent: 340 82% 54%; /* Stronger Rose for CTAs */
-    --accent-foreground: 0 0% 98%;
+    --accent: 45 68% 55%; /* Warm Gold */
+    --accent-foreground: 0 0% 13%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 250 89% 67%;
+    --border: 229 70% 20%; /* Deep Navy Blue */
+    --input: 229 70% 20%;
+    --ring: 45 68% 55%; /* Warm Gold */
   }
 }
 @layer base {
