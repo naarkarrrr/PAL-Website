@@ -4,22 +4,28 @@ import { useParams, useRouter } from 'next/navigation';
 import { useRealtimeCollection } from '@/hooks/use-firestore';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Terminal, ArrowRight } from 'lucide-react';
+import { Terminal, ArrowRight, Check, Trash2, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { format } from 'date-fns';
+import { doc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { db } from '@/firebase';
+import { useToast } from '@/hooks/use-toast';
+import { WhatsappIcon } from '@/components/icons/WhatsappIcon';
 
 type Submission = {
   id: string;
   createdAt?: { seconds: number; nanoseconds: number };
+  isReviewed?: boolean;
   [key: string]: any;
 };
 
 export default function SubmissionsListPage() {
   const params = useParams();
   const router = useRouter();
+  const { toast } = useToast();
   const collectionName = Array.isArray(params.collectionName)
     ? params.collectionName[0]
     : params.collectionName;
@@ -54,14 +60,30 @@ export default function SubmissionsListPage() {
     return String(value);
   };
   
-  const headers = ['Name', 'Email', 'Phone', 'Submitted On'];
-  const fieldMapping: {[key: string]: string} = {
-    'Name': 'fullName' || 'reporterName' || 'name' || 'companyName',
-    'Email': 'email',
-    'Phone': 'phone' || 'phoneNumber',
-    'Submitted On': 'createdAt',
-  }
+  const handleToggleReviewed = async (id: string, currentStatus: boolean) => {
+    const docRef = doc(db, collectionName, id);
+    try {
+      await updateDoc(docRef, { isReviewed: !currentStatus });
+      toast({
+        title: 'Status Updated',
+        description: `Submission marked as ${!currentStatus ? 'reviewed' : 'not reviewed'}.`,
+      });
+    } catch (err) {
+      toast({ variant: 'destructive', title: 'Error', description: 'Could not update status.' });
+    }
+  };
 
+  const handleDelete = async (id: string) => {
+    if (window.confirm('Are you sure you want to delete this submission?')) {
+      const docRef = doc(db, collectionName, id);
+      try {
+        await deleteDoc(docRef);
+        toast({ title: 'Success', description: 'Submission deleted.' });
+      } catch (err) {
+        toast({ variant: 'destructive', title: 'Error', description: 'Could not delete submission.' });
+      }
+    }
+  };
 
   if (isLoading) {
     return (
@@ -109,19 +131,44 @@ export default function SubmissionsListPage() {
                         <TableHead>Email</TableHead>
                         <TableHead>Phone</TableHead>
                         <TableHead>Submitted On</TableHead>
-                        <TableHead className="text-right">Action</TableHead>
+                        <TableHead className="text-right">Actions</TableHead>
                     </TableRow>
                     </TableHeader>
                     <TableBody>
                     {(data as Submission[])?.map((item) => (
-                        <TableRow key={item.id} onClick={() => handleRowClick(item.id)} className="cursor-pointer">
+                        <TableRow key={item.id} className={item.isReviewed ? 'bg-green-100/50' : ''}>
                             <TableCell>{item.fullName || item.name || item.reporterName || item.companyName || 'N/A'}</TableCell>
                             <TableCell>{item.email || 'N/A'}</TableCell>
-                            <TableCell>{item.phone || item.phoneNumber || 'N/A'}</TableCell>
+                            <TableCell>
+                              <div className='flex items-center gap-2'>
+                                {item.phone || item.phoneNumber || 'N/A'}
+                                {(item.phone || item.phoneNumber) && (
+                                  <>
+                                    <a href={`tel:${item.phone || item.phoneNumber}`} title="Call">
+                                      <Phone className="h-4 w-4 text-gray-500 hover:text-primary" />
+                                    </a>
+                                    <a href={`https://wa.me/${item.phone || item.phoneNumber}`} target="_blank" rel="noopener noreferrer" title="WhatsApp">
+                                      <WhatsappIcon className="h-4 w-4 text-gray-500 hover:text-primary" />
+                                    </a>
+                                  </>
+                                )}
+                              </div>
+                            </TableCell>
                             <TableCell>{formatValue(item.createdAt)}</TableCell>
-                            <TableCell className="text-right">
-                                <Button variant="ghost" size="sm">
-                                    View <ArrowRight className="ml-2 h-4 w-4" />
+                            <TableCell className="text-right space-x-1">
+                                <Button variant="ghost" size="icon" title="View Details" onClick={() => handleRowClick(item.id)}>
+                                    <ArrowRight className="h-4 w-4" />
+                                </Button>
+                                <Button 
+                                  variant="ghost" 
+                                  size="icon" 
+                                  title={item.isReviewed ? "Mark as Not Reviewed" : "Mark as Reviewed"} 
+                                  onClick={() => handleToggleReviewed(item.id, item.isReviewed || false)}
+                                >
+                                    <Check className={`h-4 w-4 ${item.isReviewed ? 'text-green-500' : ''}`} />
+                                </Button>
+                                <Button variant="ghost" size="icon" title="Delete" onClick={() => handleDelete(item.id)}>
+                                    <Trash2 className="h-4 w-4 text-destructive" />
                                 </Button>
                             </TableCell>
                         </TableRow>
