@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, FileText, Users, Handshake, Heart, ShieldAlert, LogOut } from 'lucide-react';
+import { ArrowRight, FileText, Users, Handshake, Heart, ShieldAlert, LogOut, Gift } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 
 const formCollections = [
@@ -13,6 +13,8 @@ const formCollections = [
   { name: 'sponsor_inquiries', title: 'Sponsor Inquiries', icon: Heart },
   { name: 'ambulance_requests', title: 'Ambulance Requests', icon: FileText },
   { name: 'contact_messages', title: 'Contact Messages', icon: FileText },
+  { name: 'donations', title: 'Donations', icon: Gift },
+  { name: 'volunteers', title: 'Volunteers', icon: Users },
 ];
 
 export default function AdminDashboardPage() {
