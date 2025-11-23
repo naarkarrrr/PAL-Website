@@ -87,10 +87,10 @@ export default function SubmissionsListPage() {
 
   const handleDownloadPdf = () => {
     // In a real app, this would trigger a server-side function
-    // to generate a PDF from the submission data.
+    // to generate a PDF from all the submission data.
     toast({
       title: "PDF Download",
-      description: "PDF generation is not yet implemented.",
+      description: "PDF generation for all requests is not yet implemented.",
     });
   };
 
@@ -127,9 +127,15 @@ export default function SubmissionsListPage() {
         <header className="bg-background border-b sticky top-0 z-30">
             <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                 <h1 className="text-xl font-bold font-headline">{formatTitle(collectionName)}</h1>
-                <Button asChild variant="outline">
-                    <Link href="/admin/dashboard">Back to Dashboard</Link>
-                </Button>
+                <div className="flex items-center gap-2">
+                    <Button variant="outline" onClick={handleDownloadPdf}>
+                        <Download className="mr-2 h-4 w-4" />
+                        Download All as PDF
+                    </Button>
+                    <Button asChild variant="outline">
+                        <Link href="/admin/dashboard">Back to Dashboard</Link>
+                    </Button>
+                </div>
             </div>
         </header>
         <main className="container mx-auto px-4 py-8">
@@ -176,9 +182,6 @@ export default function SubmissionsListPage() {
                                   onClick={() => handleToggleReviewed(item.id, item.isReviewed || false)}
                                 >
                                     <Check className={`h-4 w-4 ${item.isReviewed ? 'text-green-500' : ''}`} />
-                                </Button>
-                                <Button variant="ghost" size="icon" title="Download PDF" onClick={handleDownloadPdf}>
-                                    <Download className="h-4 w-4" />
                                 </Button>
                                 <Button variant="ghost" size="icon" title="Delete" onClick={() => handleDelete(item.id)}>
                                     <Trash2 className="h-4 w-4 text-destructive" />
