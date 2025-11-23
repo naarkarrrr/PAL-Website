@@ -17,8 +17,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['"Plus Jakarta Sans"', 'sans-serif'],
-        headline: ['"Baloo Bhaina 2"', 'sans-serif'],
+        body: ['"PT Sans"', 'sans-serif'],
+        headline: ['"PT Sans"', 'sans-serif'],
       },
       colors: {
         border: 'hsl(var(--border))',
