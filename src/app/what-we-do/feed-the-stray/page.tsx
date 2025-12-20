@@ -39,7 +39,7 @@ export default function FeedTheStrayPage() {
 
         <div className="grid md:grid-cols-2 gap-4 max-w-5xl mx-auto my-12">
             {contentImage2 &&
-                <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+                <div className="relative aspect-square rounded-lg overflow-hidden shadow-lg">
                     <Image
                         src={contentImage2.imageUrl}
                         alt={contentImage2.description}
@@ -50,7 +50,7 @@ export default function FeedTheStrayPage() {
                 </div>
             }
             {contentImage3 &&
-                <div className="relative aspect-video rounded-lg overflow-hidden shadow-lg">
+                <div className="relative aspect-square rounded-lg overflow-hidden shadow-lg">
                     <Image
                         src={contentImage3.imageUrl}
                         alt={contentImage3.description}
