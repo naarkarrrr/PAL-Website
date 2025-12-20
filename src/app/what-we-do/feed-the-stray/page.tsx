@@ -37,7 +37,7 @@ export default function FeedTheStrayPage() {
             </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4 max-w-5xl mx-auto my-12">
+        <div className="grid grid-cols-1 gap-8 max-w-5xl mx-auto my-12">
             {contentImage2 &&
                 <div className="relative aspect-square rounded-lg overflow-hidden shadow-lg">
                     <Image
