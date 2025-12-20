@@ -42,7 +42,7 @@ export function VolunteerForm() {
       phoneNumber: '',
       areaPincode: '',
       whatsappGroup: 'Not a Member',
-      communityAnimalsCount: 0,
+      communityAnimalsCount: '0',
       whatsappNumber: '',
       aadhaarNumber: '',
       partOfNGO: 'No',

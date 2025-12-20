@@ -26,10 +26,7 @@ export const VolunteerSchema = z.object({
   phoneNumber: z.string().min(10, 'A valid 10-digit phone number is required.'),
   areaPincode: z.string().optional(),
   whatsappGroup: z.enum(['Group 1', 'Group 2', 'Not a Member']),
-  communityAnimalsCount: z.preprocess(
-    (val) => (val === '' ? 0 : Number(val)),
-    z.number().int().nonnegative().optional()
-  ),
+  communityAnimalsCount: z.string().optional(),
   whatsappNumber: z.string().optional(),
   aadhaarNumber: z.string().optional(),
   partOfNGO: z.enum(['Yes', 'No']),
