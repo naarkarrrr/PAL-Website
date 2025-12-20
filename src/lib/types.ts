@@ -20,33 +20,7 @@ export const AnimalSchema = z.object({
 });
 export type Animal = z.infer<typeof AnimalSchema>;
 
-// Volunteer Schema - This seems to be replaced by MembershipSchema in the UI
 export const VolunteerSchema = z.object({
-  name: z.string().min(2, 'Name is required.'),
-  email: z.string().email('Invalid email address.'),
-  phone: z.string().min(10, 'Please enter a valid phone number.'),
-  location: z.string().min(3, 'Please specify your location.'),
-  preferredRole: z.enum([
-    'Rescue Team',
-    'Adoption Team',
-    'Feeding Program',
-    'Ambulance Team',
-    'Administrative Support',
-  ]),
-  availability: z.array(z.string()).refine(value => value.some(item => item), {
-    message: 'You have to select at least one availability option.',
-  }),
-  bio: z
-    .string()
-    .min(10, 'Please tell us a little about yourself.')
-    .max(500, 'Bio is too long.'),
-  agreement: z.boolean().refine(val => val === true, {
-    message: 'You must agree to the terms and conditions.',
-  }),
-});
-export type Volunteer = z.infer<typeof VolunteerSchema>;
-
-export const MembershipSchema = z.object({
   fullName: z.string().min(2, 'Full name is required.'),
   email: z.string().email('Invalid email address.'),
   phoneNumber: z.string().min(10, 'A valid 10-digit phone number is required.'),
@@ -65,13 +39,11 @@ export const MembershipSchema = z.object({
   membershipReason: z.string().min(10, 'Please provide a reason for membership.'),
   selectedDate: z.date(),
   selectedTime: z.string().min(1, 'Please select a time'),
-  // Aadhaar card upload is removed for simplicity of Firestore submission
-  // aadhaarCard: z.any().optional(),
   agreement: z.boolean().refine((val) => val === true, {
     message: 'You must agree to the terms and conditions.',
   }),
 });
-export type Membership = z.infer<typeof MembershipSchema>;
+export type Volunteer = z.infer<typeof VolunteerSchema>;
 
 // Advocate Schema
 export const AdvocateSchema = z.object({

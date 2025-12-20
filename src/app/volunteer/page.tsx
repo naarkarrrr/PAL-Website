@@ -1,5 +1,5 @@
 
-import { MembershipForm } from '@/components/forms/MembershipForm';
+import { VolunteerForm } from '@/components/forms/VolunteerForm';
 import { PageHeader } from '@/components/shared/PageHeader';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -19,7 +19,7 @@ export default function VolunteerPage() {
         <p className="text-center text-muted-foreground mb-8">
           Fill out the form below to apply for a PAL Foundation membership card.
         </p>
-        <MembershipForm />
+        <VolunteerForm />
       </div>
     </div>
   );

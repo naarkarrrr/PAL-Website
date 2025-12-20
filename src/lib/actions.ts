@@ -5,7 +5,7 @@ import { revalidatePath } from 'next/cache';
 import { addDoc, collection, serverTimestamp, query, where, getDocs, limit } from 'firebase/firestore';
 import { z } from 'zod';
 import { db } from '@/firebase';
-import { AmbulanceRequestSchema, AnimalSchema, ContactSchema, MembershipSchema, AdvocateSchema, CollaborationSchema, SponsorSchema } from './types';
+import { AmbulanceRequestSchema, AnimalSchema, ContactSchema, VolunteerSchema, AdvocateSchema, CollaborationSchema, SponsorSchema } from './types';
 
 // Generic function to handle form submission
 async function handleFormSubmission(
@@ -72,6 +72,6 @@ export async function submitSponsorForm(data: unknown) {
   return handleFormSubmission('sponsor_inquiries', SponsorSchema, data);
 }
 
-export async function submitMembershipForm(data: unknown) {
-  return handleFormSubmission('membership_applications', MembershipSchema, data);
+export async function submitVolunteerForm(data: unknown) {
+  return handleFormSubmission('volunteers', VolunteerSchema, data);
 }

@@ -31,7 +31,7 @@ import { Calendar } from '../ui/calendar';
 
 type VolunteerFormValues = z.infer<typeof VolunteerSchema>;
 
-export function MembershipForm() {
+export function VolunteerForm() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useForm<VolunteerFormValues>({
