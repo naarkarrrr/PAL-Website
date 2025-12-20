@@ -39,7 +39,7 @@ export default function SpayNeuterPage() {
         </div>
 
         {contentImage1 &&
-            <div className="relative aspect-video max-w-5xl mx-auto rounded-lg overflow-hidden shadow-lg my-12">
+            <div className="relative aspect-square max-w-2xl mx-auto rounded-lg overflow-hidden shadow-lg my-12">
                 <Image
                     src={contentImage1.imageUrl}
                     alt={contentImage1.description}

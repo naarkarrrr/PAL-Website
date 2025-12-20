@@ -9,7 +9,7 @@
     {
       "id": "hero",
       "description": "A police officer holding a white cat",
-      "imageUrl": "https://i.postimg.cc/tTpb1gTP/pal1.png",
+      "imageUrl": "https://i.postimg.cc/5y2T0TxF/Home-2-jpg.jpg",
       "imageHint": "officer cat"
     },
     {
@@ -68,7 +68,7 @@
     },
     {
       "id": "story3",
-      "description": "A child playing with a kitten.",
+      "description": "Sudhir Sir with dog on his Desk.",
       "imageUrl": "https://i.postimg.cc/zfFJJh78/pal4.png",
       "imageHint": "child kitten"
     },
@@ -134,26 +134,26 @@
     },
     {
       "id": "gallery1",
-      "description": "A man lovingly holding a small white dog.",
-      "imageUrl": "https://images.unsplash.com/photo-1626921665123-577a588e433b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtYW4lMjBkb2d8ZW58MHx8fHwxNzYzNzMzNTk5fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "man dog"
+      "description": "Sudhir Sir holding dog's collar.",
+      "imageUrl": "https://i.postimg.cc/8zqfGP9j/image1.jpg",
+      "imageHint": "collar"
     },
     {
       "id": "gallery2",
-      "description": "A veterinarian gently checking a dog's teeth.",
-      "imageUrl": "https://images.unsplash.com/photo-1549359071-ec4f9113eb18?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx2ZXQlMjBkb2d8ZW58MHx8fHwxNzYzODA4NzM0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "vet dog"
+      "description": "Sudhir Sir with dogs eating from feeding spots.",
+      "imageUrl": "https://i.postimg.cc/QNy6PjPh/ododo.png",
+      "imageHint": "feeding"
     },
     {
       "id": "gallery3",
-      "description": "A woman feeding a group of stray dogs on the street.",
-      "imageUrl": "https://images.unsplash.com/photo-1591533828003-55f8fd4b1684?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmZWVkaW5nJTIwc3RyYXlzfGVufDB8fHx8MTc2MzgwODczM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "A woman holding a dog like a baby.",
+      "imageUrl": "https://i.postimg.cc/QCrRZ5kp/Image-208.jpg",
       "imageHint": "feeding strays"
     },
     {
       "id": "gallery4",
-      "description": "A playful ginger cat reaching towards the camera.",
-      "imageUrl": "https://images.unsplash.com/photo-1651590562248-f90574ad03a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwbGF5ZnVsJTIwY2F0fGVufDB8fHx8MTc2MzczNjM3OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "puppies resting near water bowl.",
+      "imageUrl": "https://i.postimg.cc/NM4ZQBwh/img3.webp",
       "imageHint": "playful cat"
     },
     {
@@ -248,8 +248,8 @@
     },
     {
       "id": "sterilization_content1",
-      "description": "A peaceful dog resting and recovering after surgery.",
-      "imageUrl": "https://images.unsplash.com/photo-1642513730687-13d52167b978?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkb2clMjByZWNvdmVyeXxlbnwwfHx8fDE3NjM4MDg3MzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "PAL Free Sterilization camp.",
+      "imageUrl": "https://i.postimg.cc/02vfRvh9/neuter.png",
       "imageHint": "dog recovery"
     },
     {
@@ -290,13 +290,13 @@
     },
     {
       "id": "feed_stray_content2",
-      "description": "A volunteer feeding a stray dog.",
+      "description": "Sudhir Sir feeding a stray dog.",
       "imageUrl": "https://i.postimg.cc/5y2T0TxF/Home_2_jpg.jpg",
       "imageHint": "volunteer feeding"
     },
     {
       "id": "feed_stray_content3",
-      "description": "A person holding a bowl of food for a dog.",
+      "description": "Sudhir Sir with dogs eating from feeding spots.",
       "imageUrl": "https://i.postimg.cc/QNy6PjPh/ododo.png",
       "imageHint": "feeding dog"
     }
