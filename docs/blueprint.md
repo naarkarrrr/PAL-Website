@@ -1,4 +1,4 @@
-# **App Name**: Kindred Paws
+# **App Name**: Pal Foundation
 
 ## Core Features:
 

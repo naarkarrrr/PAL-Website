@@ -15,8 +15,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Kindred Paws | Animal Rescue, Adoption & Welfare",
-  description: "Support Kindred Paws, a non-profit animal rescue. We rescue, rehabilitate, and rehome animals in need. Adopt, volunteer, or donate today.",
+  title: "Pal Foundation | Animal Rescue, Adoption & Welfare",
+  description: "Support Pal Foundation, a non-profit animal rescue. We rescue, rehabilitate, and rehome animals in need. Adopt, volunteer, or donate today.",
 };
 
 export default function RootLayout({
