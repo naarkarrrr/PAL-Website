@@ -1,25 +1,44 @@
+
 import { PageHeader } from "@/components/shared/PageHeader";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { TeamCard } from "@/components/team/TeamCard";
 
 const trustees = [
     {
-        name: "Anjali Mehta",
-        role: "Chairperson",
-        imageUrl: "https://picsum.photos/seed/anjali/600/600",
-        bio: "Oversees the foundation's strategic direction and ensures our mission is always at the forefront.",
+        name: "Bhart Setra",
+        role: "President",
+        imageUrl: "https://picsum.photos/seed/bhart/600/600",
+        bio: "Leads the foundation with a vision for a compassionate world for all animals.",
     },
     {
-        name: "Vikram Reddy",
-        role: "Treasurer",
-        imageUrl: "https://picsum.photos/seed/vikram/600/600",
-        bio: "Manages the foundation's finances with transparency and a commitment to our cause.",
-    },
-    {
-        name: "Sunita Patel",
+        name: "Sandhya Shetty",
         role: "Secretary",
-        imageUrl: "https://picsum.photos/seed/sunita/600/600",
-        bio: "Handles our organizational records and communications, keeping our operations smooth.",
+        imageUrl: "https://picsum.photos/seed/sandhya/600/600",
+        bio: "Manages organizational duties and communications, ensuring smooth operations.",
+    },
+    {
+        name: "Rakhi Choudhary",
+        role: "Treasurer",
+        imageUrl: "https://picsum.photos/seed/rakhi/600/600",
+        bio: "Handles the foundation's finances with transparency and dedication.",
+    },
+    {
+        name: "Subramaniam Parameswaran Iyer",
+        role: "Trust Member",
+        imageUrl: "https://picsum.photos/seed/subramaniam/600/600",
+        bio: "A dedicated member of our trust, contributing to our strategic decisions.",
+    },
+    {
+        name: "Deepali Jain",
+        role: "Trust Member",
+        imageUrl: "https://picsum.photos/seed/deepali/600/600",
+        bio: "An essential member of our trust, guiding our outreach and programs.",
+    },
+    {
+        name: "Pooja Lad",
+        role: "Trust Member",
+        imageUrl: "https://picsum.photos/seed/pooja/600/600",
+        bio: "A passionate trust member focused on the welfare of animals.",
     },
 ];
 

@@ -1,25 +1,26 @@
+
 import { PageHeader } from "@/components/shared/PageHeader";
 import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { TeamCard } from "@/components/team/TeamCard";
 
 const advisoryBoardMembers = [
     {
-        name: "Dr. Anya Sharma",
-        role: "Veterinary Medicine Expert",
-        imageUrl: "https://picsum.photos/seed/anya/600/600",
-        bio: "A leading veterinarian with 20 years of experience in animal health and surgical procedures.",
+        name: "Advocate Vijendra Jabra",
+        role: "Board Advisory Member",
+        imageUrl: "https://picsum.photos/seed/vijendra/600/600",
+        bio: "Provides expert advice to guide our foundation's mission and initiatives.",
     },
     {
-        name: "Rajesh Kumar",
-        role: "Legal Counsel",
-        imageUrl: "https://picsum.photos/seed/rajesh/600/600",
-        bio: "A seasoned lawyer specializing in animal welfare laws and public interest litigation.",
+        name: "Adv Dr. Manjula Biswas",
+        role: "Board Legal Adviser",
+        imageUrl: "https://picsum.photos/seed/manjula/600/600",
+        bio: "A seasoned lawyer specializing in animal welfare laws and legal advocacy.",
     },
     {
-        name: "Priya Singh",
-        role: "Community Outreach Strategist",
-        imageUrl: "https://picsum.photos/seed/priya/600/600",
-        bio: "An expert in building community programs and driving public engagement for social causes.",
+        name: "Sr. PI Sudhir Kudalkar",
+        role: "Legal Adviser",
+        imageUrl: "https://picsum.photos/seed/sudhir/600/600",
+        bio: "Guides our legal strategies with extensive experience in law enforcement.",
     },
 ];
 
