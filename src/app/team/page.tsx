@@ -15,6 +15,11 @@ type TeamMember = {
     imageUrl: string;
     bio: string;
     category: 'Leadership' | 'Advisory' | 'Trustee';
+    socials?: {
+        linkedin?: string;
+        facebook?: string;
+        instagram?: string;
+    };
 };
 
 const allTeamMembers: TeamMember[] = [
@@ -24,6 +29,11 @@ const allTeamMembers: TeamMember[] = [
         imageUrl: "https://picsum.photos/seed/sudhir/600/600",
         bio: "Guides our legal strategies with extensive experience in law enforcement.",
         category: "Advisory",
+        socials: {
+            linkedin: "https://www.linkedin.com/in/sudhir-kudalkar-26041b2b4",
+            facebook: "https://www.facebook.com/sudhir.kudalkar",
+            instagram: "https://www.instagram.com/sudhirkudalkar?igsh=a2ZkeGs0bjJndWdq",
+        },
     },
     {
         name: "Bhart Setra",
@@ -31,6 +41,10 @@ const allTeamMembers: TeamMember[] = [
         imageUrl: "https://picsum.photos/seed/bhart/600/600",
         bio: "Leads the foundation with a vision for a compassionate world for all animals.",
         category: "Leadership",
+        socials: {
+            instagram: "https://www.instagram.com/bharat_satra_?igsh=MTdtanZzdGZ1OGtubQ==",
+            facebook: "https://www.facebook.com/share/1BoMfeuHij/?mibextid=wwXIfr",
+        },
     },
     {
         name: "Sandhya Shetty",
@@ -38,6 +52,7 @@ const allTeamMembers: TeamMember[] = [
         imageUrl: "https://picsum.photos/seed/sandhya/600/600",
         bio: "Manages organizational duties and communications, ensuring smooth operations.",
         category: "Leadership",
+        socials: {},
     },
     {
         name: "Rakhi Choudhary",
@@ -45,6 +60,7 @@ const allTeamMembers: TeamMember[] = [
         imageUrl: "https://picsum.photos/seed/rakhi/600/600",
         bio: "Handles the foundation's finances with transparency and dedication.",
         category: "Leadership",
+        socials: {},
     },
     {
         name: "Subramaniam Parameswaran Iyer",
@@ -52,6 +68,7 @@ const allTeamMembers: TeamMember[] = [
         imageUrl: "https://picsum.photos/seed/subramaniam/600/600",
         bio: "A dedicated member of our trust, contributing to our strategic decisions.",
         category: "Trustee",
+        socials: {},
     },
     {
         name: "Deepali Jain",
@@ -59,6 +76,7 @@ const allTeamMembers: TeamMember[] = [
         imageUrl: "https://picsum.photos/seed/deepali/600/600",
         bio: "An essential member of our trust, guiding our outreach and programs.",
         category: "Trustee",
+        socials: {},
     },
     {
         name: "Pooja Lad",
@@ -66,6 +84,9 @@ const allTeamMembers: TeamMember[] = [
         imageUrl: "https://picsum.photos/seed/pooja/600/600",
         bio: "A passionate trust member focused on the welfare of animals.",
         category: "Trustee",
+        socials: {
+            instagram: "https://www.instagram.com/poobella27?igsh=M3NsNHdyanp0ajEw",
+        },
     },
     {
         name: "Advocate Vijendra Jabra",
@@ -73,6 +94,11 @@ const allTeamMembers: TeamMember[] = [
         imageUrl: "https://picsum.photos/seed/vijendra/600/600",
         bio: "Provides expert advice to guide our foundation's mission and initiatives.",
         category: "Advisory",
+        socials: {
+            linkedin: "https://www.linkedin.com/in/vijendra-jabra-99b18913",
+            facebook: "https://www.facebook.com/vijendraj",
+            instagram: "https://www.instagram.com/vijendraj?igsh=N2RwZjlkNDJsZDI5",
+        },
     },
     {
         name: "Adv Dr. Manjula Biswas",
@@ -80,6 +106,10 @@ const allTeamMembers: TeamMember[] = [
         imageUrl: "https://picsum.photos/seed/manjula/600/600",
         bio: "A seasoned lawyer specializing in animal welfare laws and legal advocacy.",
         category: "Advisory",
+        socials: {
+            instagram: "https://www.instagram.com/advmanjula?igsh=a28xZ2FzaHd1MmQz",
+            facebook: "https://www.facebook.com/share/1Bzrh3Zp1G/?mibextid=wwXIfr",
+        },
     },
 ];
 
