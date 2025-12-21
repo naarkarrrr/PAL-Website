@@ -5,6 +5,12 @@ import { TeamCard } from "@/components/team/TeamCard";
 
 const advisoryBoardMembers = [
     {
+        name: "Sr. PI Sudhir Kudalkar",
+        role: "Legal Adviser",
+        imageUrl: "https://picsum.photos/seed/sudhir/600/600",
+        bio: "Guides our legal strategies with extensive experience in law enforcement.",
+    },
+    {
         name: "Advocate Vijendra Jabra",
         role: "Board Advisory Member",
         imageUrl: "https://picsum.photos/seed/vijendra/600/600",
@@ -15,12 +21,6 @@ const advisoryBoardMembers = [
         role: "Board Legal Adviser",
         imageUrl: "https://picsum.photos/seed/manjula/600/600",
         bio: "A seasoned lawyer specializing in animal welfare laws and legal advocacy.",
-    },
-    {
-        name: "Sr. PI Sudhir Kudalkar",
-        role: "Legal Adviser",
-        imageUrl: "https://picsum.photos/seed/sudhir/600/600",
-        bio: "Guides our legal strategies with extensive experience in law enforcement.",
     },
 ];
 

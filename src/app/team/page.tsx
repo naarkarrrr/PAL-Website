@@ -14,7 +14,7 @@ type TeamMember = {
     role: string;
     imageUrl: string;
     bio: string;
-    category: 'Leadership' | 'Advisory' | 'Admin' | 'Field' | 'Medical';
+    category: 'Leadership' | 'Advisory' | 'Trustee';
 };
 
 const allTeamMembers: TeamMember[] = [
@@ -51,21 +51,21 @@ const allTeamMembers: TeamMember[] = [
         role: "Trust Member",
         imageUrl: "https://picsum.photos/seed/subramaniam/600/600",
         bio: "A dedicated member of our trust, contributing to our strategic decisions.",
-        category: "Leadership",
+        category: "Trustee",
     },
     {
         name: "Deepali Jain",
         role: "Trust Member",
         imageUrl: "https://picsum.photos/seed/deepali/600/600",
         bio: "An essential member of our trust, guiding our outreach and programs.",
-        category: "Leadership",
+        category: "Trustee",
     },
     {
         name: "Pooja Lad",
         role: "Trust Member",
         imageUrl: "https://picsum.photos/seed/pooja/600/600",
         bio: "A passionate trust member focused on the welfare of animals.",
-        category: "Leadership",
+        category: "Trustee",
     },
     {
         name: "Advocate Vijendra Jabra",
@@ -81,51 +81,9 @@ const allTeamMembers: TeamMember[] = [
         bio: "A seasoned lawyer specializing in animal welfare laws and legal advocacy.",
         category: "Advisory",
     },
-    {
-        name: "Samar Shiya",
-        role: "Founder & Lead Rescuer",
-        imageUrl: "https://picsum.photos/seed/samar/600/600",
-        bio: "With over a decade of experience in animal welfare, Samar leads our rescue operations with unwavering dedication.",
-        category: "Admin",
-    },
-    {
-        name: "Jane Doe",
-        role: "Adoption Coordinator",
-        imageUrl: "https://picsum.photos/seed/jane/600/600",
-        bio: "Jane connects our rescues with loving forever homes, ensuring a perfect match for every animal.",
-        category: "Admin",
-    },
-    {
-        name: "Dr. Emily Carter",
-        role: "Lead Veterinarian",
-        imageUrl: "https://picsum.photos/seed/emily/600/600",
-        bio: "Dr. Carter oversees all medical operations, providing expert care to our most critical cases.",
-        category: "Medical",
-    },
-    {
-        name: "Raj Patel",
-        role: "Senior Rescue Officer",
-        imageUrl: "https://picsum.photos/seed/raj/600/600",
-        bio: "Raj is our man on the ground, leading complex rescue missions with courage and compassion.",
-        category: "Field",
-    },
-    {
-        name: "Aisha Khan",
-        role: "Veterinary Technician",
-        imageUrl: "https://picsum.photos/seed/aisha/600/600",
-        bio: "Aisha assists in surgeries and provides daily medical care to our rehabilitating animals.",
-        category: "Medical",
-    },
-    {
-        name: "John Smith",
-        role: "Volunteer Manager",
-        imageUrl: "https://picsum.photos/seed/john/600/600",
-        bio: "John coordinates our incredible team of volunteers, the backbone of our organization.",
-        category: "Admin",
-    },
 ];
 
-type Filter = 'All' | 'Leadership' | 'Advisory' | 'Admin' | 'Field' | 'Medical';
+type Filter = 'All' | 'Leadership' | 'Advisory' | 'Trustee';
 
 export default function TeamPage() {
     const [filter, setFilter] = useState<Filter>('All');
@@ -136,7 +94,7 @@ export default function TeamPage() {
 
     const headerImage = PlaceHolderImages.find(p => p.id === 'team_header');
 
-    const filters: Filter[] = ['All', 'Leadership', 'Advisory', 'Admin', 'Field', 'Medical'];
+    const filters: Filter[] = ['All', 'Leadership', 'Advisory', 'Trustee'];
 
     return (
         <div>
