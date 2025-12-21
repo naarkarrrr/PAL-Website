@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from "react";
@@ -13,10 +14,73 @@ type TeamMember = {
     role: string;
     imageUrl: string;
     bio: string;
-    category: 'Admin' | 'Field' | 'Medical';
+    category: 'Leadership' | 'Advisory' | 'Admin' | 'Field' | 'Medical';
 };
 
 const allTeamMembers: TeamMember[] = [
+    {
+        name: "Sr. PI Sudhir Kudalkar",
+        role: "Legal Adviser",
+        imageUrl: "https://picsum.photos/seed/sudhir/600/600",
+        bio: "Guides our legal strategies with extensive experience in law enforcement.",
+        category: "Advisory",
+    },
+    {
+        name: "Bhart Setra",
+        role: "President",
+        imageUrl: "https://picsum.photos/seed/bhart/600/600",
+        bio: "Leads the foundation with a vision for a compassionate world for all animals.",
+        category: "Leadership",
+    },
+    {
+        name: "Sandhya Shetty",
+        role: "Secretary",
+        imageUrl: "https://picsum.photos/seed/sandhya/600/600",
+        bio: "Manages organizational duties and communications, ensuring smooth operations.",
+        category: "Leadership",
+    },
+    {
+        name: "Rakhi Choudhary",
+        role: "Treasurer",
+        imageUrl: "https://picsum.photos/seed/rakhi/600/600",
+        bio: "Handles the foundation's finances with transparency and dedication.",
+        category: "Leadership",
+    },
+    {
+        name: "Subramaniam Parameswaran Iyer",
+        role: "Trust Member",
+        imageUrl: "https://picsum.photos/seed/subramaniam/600/600",
+        bio: "A dedicated member of our trust, contributing to our strategic decisions.",
+        category: "Leadership",
+    },
+    {
+        name: "Deepali Jain",
+        role: "Trust Member",
+        imageUrl: "https://picsum.photos/seed/deepali/600/600",
+        bio: "An essential member of our trust, guiding our outreach and programs.",
+        category: "Leadership",
+    },
+    {
+        name: "Pooja Lad",
+        role: "Trust Member",
+        imageUrl: "https://picsum.photos/seed/pooja/600/600",
+        bio: "A passionate trust member focused on the welfare of animals.",
+        category: "Leadership",
+    },
+    {
+        name: "Advocate Vijendra Jabra",
+        role: "Board Advisory Member",
+        imageUrl: "https://picsum.photos/seed/vijendra/600/600",
+        bio: "Provides expert advice to guide our foundation's mission and initiatives.",
+        category: "Advisory",
+    },
+    {
+        name: "Adv Dr. Manjula Biswas",
+        role: "Board Legal Adviser",
+        imageUrl: "https://picsum.photos/seed/manjula/600/600",
+        bio: "A seasoned lawyer specializing in animal welfare laws and legal advocacy.",
+        category: "Advisory",
+    },
     {
         name: "Samar Shiya",
         role: "Founder & Lead Rescuer",
@@ -61,7 +125,7 @@ const allTeamMembers: TeamMember[] = [
     },
 ];
 
-type Filter = 'All' | 'Admin' | 'Field' | 'Medical';
+type Filter = 'All' | 'Leadership' | 'Advisory' | 'Admin' | 'Field' | 'Medical';
 
 export default function TeamPage() {
     const [filter, setFilter] = useState<Filter>('All');
@@ -72,7 +136,7 @@ export default function TeamPage() {
 
     const headerImage = PlaceHolderImages.find(p => p.id === 'team_header');
 
-    const filters: Filter[] = ['All', 'Admin', 'Field', 'Medical'];
+    const filters: Filter[] = ['All', 'Leadership', 'Advisory', 'Admin', 'Field', 'Medical'];
 
     return (
         <div>
@@ -95,14 +159,14 @@ export default function TeamPage() {
 
             <section className="container mx-auto px-4 py-16">
                 <div className="flex justify-center mb-12">
-                    <div className="bg-card p-2 rounded-full border flex gap-2">
+                    <div className="bg-card p-2 rounded-full border flex flex-wrap gap-2 justify-center">
                         {filters.map(f => (
                             <Button
                                 key={f}
                                 variant="ghost"
                                 onClick={() => setFilter(f)}
                                 className={cn(
-                                    "rounded-full px-6",
+                                    "rounded-full px-4 sm:px-6",
                                     filter === f && "bg-primary/10 text-primary hover:bg-primary/20 hover:text-primary"
                                 )}
                             >
