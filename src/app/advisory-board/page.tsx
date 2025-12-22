@@ -13,7 +13,7 @@ const advisoryBoardMembers = [
     {
         name: "Advocate Vijendra Jabra",
         role: "Board Advisory Member",
-        imageUrl: "https://picsum.photos/seed/vijendra/600/600",
+        imageUrl: "https://i.postimg.cc/g2ZGLQm5/pfp6.jpg",
         bio: "Provides expert advice to guide our foundation's mission and initiatives.",
     },
     {
