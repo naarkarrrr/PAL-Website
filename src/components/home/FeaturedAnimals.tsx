@@ -12,7 +12,7 @@ import type { Animal } from '@/lib/types';
 import { Skeleton } from '../ui/skeleton';
 
 export function FeaturedAnimals() {
-  const { data: animals, loading: isLoading } = useRealtimeCollection('adoptable_animals');
+  const { data: animals, isLoading, error } = useRealtimeCollection('adoptable_animals');
 
   const featuredAnimals = animals?.slice(0, 3) as Animal[] | undefined;
 
@@ -98,6 +98,8 @@ export function FeaturedAnimals() {
             </div>
           </>
         )}
+
+        {error && <p className="text-center text-red-500">Error: {error.message}</p>}
       </div>
     </section>
   );
