@@ -11,6 +11,7 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { RotatingText } from "./RotatingText";
+import { MotionDiv } from "@/components/shared/MotionDiv";
 
 const heroSlides = [
   PlaceHolderImages.find((p) => p.id === 'hero'),
@@ -57,7 +58,12 @@ export function HeroCarousel() {
               style={{ backgroundImage: `url(${slide?.imageUrl})` }}
             >
               <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-center">
-                 <div className="z-10 text-white container mx-auto px-4">
+                 <MotionDiv 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                    className="z-10 text-white container mx-auto px-4"
+                  >
                   <div className="flex justify-center items-center">
                     <RotatingText />
                   </div>
@@ -80,7 +86,7 @@ export function HeroCarousel() {
                       <Link href="/donate">Donate</Link>
                     </Button>
                   </div>
-                </div>
+                </MotionDiv>
               </div>
             </div>
           </SwiperSlide>
