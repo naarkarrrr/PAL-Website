@@ -8,6 +8,7 @@ import { SpayNeuterIcon } from '../icons/SpayNeuter';
 import { FeedStrayIcon } from '../icons/FeedStray';
 import { VaccinationIcon } from '../icons/Vaccination';
 import { MotionDiv } from '../shared/MotionDiv';
+import { GraduationCap } from 'lucide-react';
 
 
 const services = [
